@@ -54,7 +54,7 @@ Bestehende Tags werden nicht umbenannt. Reihenfolge (bump, Verlauf), wie bei rpm
 (`26.11_3` nach `26.11_2`, vor `27.0`); ein Wort (rc, alpha, beta, beliebige Buchstaben) vor dem Ende der Version ist ein Vorabkennzeichen und sortiert **vor** derselben
 Version ohne es: `1.0~rc1` < `1.0-rc1` < `1.0` < `1.0.1`, `rc1` < `rc2` < `rc10`, `alpha` < `beta` < `rc` (Wörter ohne Beachtung der Groß-/Kleinschreibung); `~` sortiert vor allem,
 auch vor dem Ende; ein `+build`-Teil wird ignoriert. Preis: `1.1.1a` < `1.1.1` (Schreibweise von OpenSSL). bump geht also nie von einer finalen Version auf einen Vorabstand zurück.
-Wechselt ein Upstream sein Schema, übernimmt bump die neue Version nicht; ein Mensch setzt den Tag. dann nach `N`; ein Paket mit `upstream` nimmt nur Wrapper-Tags, eines ohne nur `vMAJOR.MINOR.PATCH`; die Familien werden nie gemischt.
+Wechselt ein Upstream sein Schema, übernimmt bump die neue Version nicht; ein Mensch setzt den Tag. Ein Paket mit `upstream` nimmt nur Wrapper-Tags, eines ohne nur `vMAJOR.MINOR.PATCH`; die Familien werden nie gemischt.
 
 Ein Paket kann Format 2 allein verlangen: `schema = 2` in seiner `[[package]]`-Tabelle macht die Regeln von Format 2 nur für dieses Paket zu Fehlern, während die
 Datei für ältere Einträge bei `schema = 1` bleibt. Ein `server` wird nur angeboten, wenn sein Release ein signiertes rpm oder deb hat (ADR 0077 Abschnitt 3); sonst überspringt ihn der Generator.

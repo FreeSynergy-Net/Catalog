@@ -55,7 +55,7 @@ Existing tags are not renamed. Order (bump, history), as in rpm/dpkg: by upstrea
 (`26.11_3` after `26.11_2`, `26.11_3` before `27.0`); a word (rc, alpha, beta, any letters) before the end of the version is a pre-release marker and sorts
 **before** the same version without it: `1.0~rc1` < `1.0-rc1` < `1.0` < `1.0.1`, `rc1` < `rc2` < `rc10`, `alpha` < `beta` < `rc` (words compare
 case-insensitively); `~` sorts before everything, also before the end; a `+build` part is ignored. Price: `1.1.1a` < `1.1.1` (OpenSSL spelling). So bump never
-goes from a final version back to a pre-release. If an upstream changes its scheme, bump does not take the new version; a person sets that tag. then by `N`; a package with `upstream` takes only wrapper tags, one without only `vMAJOR.MINOR.PATCH`; the families are never mixed.
+goes from a final version back to a pre-release. If an upstream changes its scheme, bump does not take the new version; a person sets that tag. A package with `upstream` takes only wrapper tags, one without only `vMAJOR.MINOR.PATCH`; the families are never mixed.
 
 A package may ask for format 2 alone: `schema = 2` inside its `[[package]]` table makes the format-2 rules errors for that package only, while the
 file stays at `schema = 1` for the older entries. A `server` is offered only when its release has a signed rpm or deb (ADR 0077 section 3); the generator skips it otherwise.
