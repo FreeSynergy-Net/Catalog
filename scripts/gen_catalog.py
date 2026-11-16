@@ -54,7 +54,7 @@ def sums(release):
     return {line.split()[1].lstrip("*"): line.split()[0] for line in text.splitlines() if line.strip()}
 
 
-# (file name ending, fs-format, platform): what the store's catalog reader (fs-store-catalog) matches by arch and system.
+# (file name ending, fs-format, platform): what the store's catalog reader (fs-packages-catalog) matches by arch and system.
 NATIVE = [
     (".x86_64.rpm", "rpm", "x86_64-linux-gnu"),
     (".aarch64.rpm", "rpm", "aarch64-linux-gnu"),

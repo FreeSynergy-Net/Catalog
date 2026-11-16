@@ -1,6 +1,6 @@
 # TEST FIXTURE ONLY: a snapshot of fs-interfaces v0.0.21 schema/capabilities.txt so the tests run offline.
 # The generator never reads this file in production: it reads the pinned tag of fs-interfaces (packages.toml: capabilities_ref).
-# Capability names (ADR 0068): ONE list, read by fs-store (fs_interfaces::capabilities) and planned for the catalog generator
+# Capability names (ADR 0068): ONE list, read by fs-packages (fs_interfaces::capabilities) and planned for the catalog generator
 # (Catalog/scripts/gen_catalog.py). One line per capability, fields separated by `|`, spaces around them ignored:
 #   key | display name | status | description
 # key: lower-case dotted machine name (`topic` or `topic.facet`); a topic key is the name of its schema in fs-interfaces
@@ -8,7 +8,7 @@
 # status: `stable` (the interface exists) or `planned` (named, not built yet; is_known is true, is_planned tells).
 # A package states a level `major.minor` next to the key (provides, requires, recommends). Only append, never rename or remove.
 # `#` starts a comment line.
-messenger | Messages | stable | Saying something to someone (fs-messenger; the topic will be renamed `messages`, ADR 0087)
+messenger | Messages | stable | Saying something to someone (fs-messages; the capability key stays `messenger`, ADR 0087)
 people | People | stable | People and how to reach them (fs-people)
 people.persons | Persons | stable | A directory of persons (JSContact)
 people.users | Users | stable | Persons that can sign in

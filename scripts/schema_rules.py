@@ -109,7 +109,7 @@ def check_kind(c, p, kind, named):
         if c.schema < 2:
             c.err("kind", f"`{kind}` is only written with `schema = 2` in packages.toml (older stores do not know it)")
         if not p.get("min_store"):
-            c.err("min_store", f"`{kind}` needs `min_store` (the first fs-store version that reads this kind, e.g. \"0.0.13\"); put such packages into the real catalog only AFTER that store is released")
+            c.err("min_store", f"`{kind}` needs `min_store` (the first fs-packages version that reads this kind, e.g. \"0.0.13\"); put such packages into the real catalog only AFTER that store is released")
     if p.get("min_store") is not None and not (is_str(p["min_store"]) and SEMVER.match(p["min_store"])):
         c.err("min_store", "must be a version MAJOR.MINOR.PATCH")
     if kind in ("program", "server") and not named["provides"]:

@@ -18,7 +18,7 @@ import tomllib
 PATH = sys.argv[1] if len(sys.argv) > 1 else "packages.toml"
 HERE = os.path.dirname(os.path.abspath(__file__))
 # The one trust anchor: the project's primary key, the same as in the README, fs-release/release-signing-key.asc and the
-# store's built-in key (fs-store-pgp/keys/release-signing-key.asc). The key file next to the catalog must have this fingerprint.
+# store's built-in key (fs-packages-pgp/keys/release-signing-key.asc). The key file next to the catalog must have this fingerprint.
 FPR = "16A4A3EE563AEF51FCF0C55DED7B57C4A1904342"
 KEY_FILE = os.path.join(HERE, "..", "release-signing-key.asc")
 ORG = "FreeSynergy/"

@@ -37,9 +37,9 @@ FINGERPRINT = re.compile(r"^[0-9A-Fa-f ]{40,}$")
 CONTROL = re.compile("[\x00-\x08\x0b\x0c\x0e-\x1f\x7f\ud800-\udfff￾￿]")
 
 PNG_MAGIC = b"\x89PNG\r\n\x1a\n"
-ICON_LIMIT = 1024 * 1024          # icons: PNG only, at most 1 MiB (as fs-store-engine/src/icons.rs)
+ICON_LIMIT = 1024 * 1024          # icons: PNG only, at most 1 MiB (as fs-packages-engine/src/icons.rs)
 SCREENSHOT_LIMIT = 5 * 1024 * 1024
-# The same rule as the store's reader (fs-store-catalog details.rs `clear_license`).
+# The same rule as the store's reader (fs-packages-catalog details.rs `clear_license`).
 NOT_A_LICENSE = ("unknown", "none", "proprietary", "all rights reserved")
 
 
