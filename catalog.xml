@@ -1,38 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<components version="1.0" origin="freesynergy" fs-serial="1794840672" fs-expires="1797864672">
+<components version="1.0" origin="freesynergy" fs-serial="1794868375" fs-expires="1797892375">
   <component type="desktop-application">
-    <id>fs-store</id>
-    <name>FreeSynergy.Store</name>
-    <summary>Install, update and extend FreeSynergy programs</summary>
-    <description><p>The store of FreeSynergy: it installs the programs you choose from signed catalogs, keeps them up to date, and takes them away again. Every file is checked against the project key before anything is installed, and a failed update is rolled back.</p></description>
+    <id>fs-packages</id>
+    <name>FreeSynergy.Packages</name>
+    <summary>Install, update and remove FreeSynergy programs, frontends, components and themes</summary>
+    <description xml:lang="en"><p>FreeSynergy Packages: install, update and remove FreeSynergy programs, frontends, components and themes. Everything comes from signed catalogs and is checked against the project key before it is installed; a failed update is rolled back.</p></description>
+    <description xml:lang="de"><p>FreeSynergy Packages: Programme, Frontends, Komponenten und Themes von FreeSynergy installieren, aktualisieren und entfernen. Alles stammt aus signierten Katalogen und wird vor der Installation gegen den Projektschlüssel geprüft; ein fehlgeschlagenes Update wird zurückgerollt.</p></description>
     <url type="homepage">https://github.com/FreeSynergy/fs-packages</url>
     <releases>
-      <release version="0.0.17" date="2026-11-16">
+      <release version="0.0.18" date="2026-11-16">
         <artifacts>
           <artifact type="binary" platform="x86_64-linux-gnu">
-            <location>https://github.com/FreeSynergy/fs-packages/releases/download/v0.0.17/fs-store-0.0.17-linux-x86_64.tar.gz</location>
-            <checksum type="sha256">9af40fddd0fa4ed7fd362e5d0ca35f328b824c564dca0ecb820039d3e8ea048e</checksum>
-            <size type="download">17180238</size>
+            <location>https://github.com/FreeSynergy/fs-packages/releases/download/v0.0.18/fs-packages-0.0.18-linux-x86_64.tar.gz</location>
+            <checksum type="sha256">612cc182684a53c5b5cf33431d84dd87b2834714b3b28918996f88e5ea229212</checksum>
+            <size type="download">17183264</size>
           </artifact>
-          <artifact type="binary" platform="aarch64-linux-gnu" fs-format="rpm" fs-signature="https://github.com/FreeSynergy/fs-packages/releases/download/v0.0.17/fs-store-0.0.17-1.aarch64.rpm.asc">
-            <location>https://github.com/FreeSynergy/fs-packages/releases/download/v0.0.17/fs-store-0.0.17-1.aarch64.rpm</location>
-            <checksum type="sha256">274ff9112cef2a3a93ac680ff790ebab25e7ed5b6ad54d71b1b58bf4908dd310</checksum>
-            <size type="download">11294710</size>
+          <artifact type="binary" platform="aarch64-linux-gnu" fs-format="rpm" fs-signature="https://github.com/FreeSynergy/fs-packages/releases/download/v0.0.18/fs-packages-0.0.18-1.aarch64.rpm.asc">
+            <location>https://github.com/FreeSynergy/fs-packages/releases/download/v0.0.18/fs-packages-0.0.18-1.aarch64.rpm</location>
+            <checksum type="sha256">6d8a341fc44d17cd0b2efb33d4641f9fef8440c43427cd53f51476b03bb20322</checksum>
+            <size type="download">11280588</size>
           </artifact>
-          <artifact type="binary" platform="x86_64-linux-gnu" fs-format="rpm" fs-signature="https://github.com/FreeSynergy/fs-packages/releases/download/v0.0.17/fs-store-0.0.17-1.x86_64.rpm.asc">
-            <location>https://github.com/FreeSynergy/fs-packages/releases/download/v0.0.17/fs-store-0.0.17-1.x86_64.rpm</location>
-            <checksum type="sha256">3544e8a33204b6e1c41482b82becb97f7337647e91120e43b2dd9cdc571b88dd</checksum>
-            <size type="download">12331978</size>
+          <artifact type="binary" platform="x86_64-linux-gnu" fs-format="rpm" fs-signature="https://github.com/FreeSynergy/fs-packages/releases/download/v0.0.18/fs-packages-0.0.18-1.x86_64.rpm.asc">
+            <location>https://github.com/FreeSynergy/fs-packages/releases/download/v0.0.18/fs-packages-0.0.18-1.x86_64.rpm</location>
+            <checksum type="sha256">0c943cf7b09bc54caeb6ae4e5cec921a0f586b58dd909efe3c80f7a323654fad</checksum>
+            <size type="download">12330065</size>
           </artifact>
-          <artifact type="binary" platform="x86_64-linux-gnu" fs-format="deb" fs-signature="https://github.com/FreeSynergy/fs-packages/releases/download/v0.0.17/fs-store_0.0.17-1_amd64.deb.asc">
-            <location>https://github.com/FreeSynergy/fs-packages/releases/download/v0.0.17/fs-store_0.0.17-1_amd64.deb</location>
-            <checksum type="sha256">585140032420a4eb2662a53cbcfa2d0ee866523b07ea051dbcb27646fcb68292</checksum>
-            <size type="download">11456220</size>
+          <artifact type="binary" platform="x86_64-linux-gnu" fs-format="deb" fs-signature="https://github.com/FreeSynergy/fs-packages/releases/download/v0.0.18/fs-packages_0.0.18-1_amd64.deb.asc">
+            <location>https://github.com/FreeSynergy/fs-packages/releases/download/v0.0.18/fs-packages_0.0.18-1_amd64.deb</location>
+            <checksum type="sha256">e0f970856bc8a2dddbe1bea4ff5ef7aebb451f14f4600410d667e649292d6eab</checksum>
+            <size type="download">11451136</size>
           </artifact>
-          <artifact type="binary" platform="aarch64-linux-gnu" fs-format="deb" fs-signature="https://github.com/FreeSynergy/fs-packages/releases/download/v0.0.17/fs-store_0.0.17-1_arm64.deb.asc">
-            <location>https://github.com/FreeSynergy/fs-packages/releases/download/v0.0.17/fs-store_0.0.17-1_arm64.deb</location>
-            <checksum type="sha256">bc39b4eb007bd6d11fc3f3668c3bcde6a53247376773bd9df95b01a55691515b</checksum>
-            <size type="download">9757628</size>
+          <artifact type="binary" platform="aarch64-linux-gnu" fs-format="deb" fs-signature="https://github.com/FreeSynergy/fs-packages/releases/download/v0.0.18/fs-packages_0.0.18-1_arm64.deb.asc">
+            <location>https://github.com/FreeSynergy/fs-packages/releases/download/v0.0.18/fs-packages_0.0.18-1_arm64.deb</location>
+            <checksum type="sha256">d826cfbfa3c8c9d7bbb74c417e39e1eadde119f2dbc1a0eb4dda7f6de41a6e10</checksum>
+            <size type="download">9758648</size>
           </artifact>
         </artifacts>
       </release>
@@ -40,7 +41,7 @@
     <custom>
       <value key="fs:kind">program</value>
       <value key="fs:format">tar.gz</value>
-      <value key="fs:signature">https://github.com/FreeSynergy/fs-packages/releases/download/v0.0.17/fs-store-0.0.17-linux-x86_64.tar.gz.asc</value>
+      <value key="fs:signature">https://github.com/FreeSynergy/fs-packages/releases/download/v0.0.18/fs-packages-0.0.18-linux-x86_64.tar.gz.asc</value>
     </custom>
   </component>
   <component type="desktop-application">
