@@ -1,6 +1,7 @@
 # The packages this catalog offers. One table per package; `tag` is the release tag in `repo`.
 # `python3 scripts/gen_catalog.py` reads the public release and writes catalog.xml; CI does it and signs (sign.yml).
 # Versions count 0.0.N (ADR 0064).
+capabilities_ref = "v0.0.21"  # fs-interfaces tag whose schema/capabilities.txt is THE capability list
 
 [[package]]
 id = "fs-store"
@@ -75,8 +76,7 @@ kind = "program"
 # A mirrored server (ADR 0077): the upstream version is the tag (`v26.11_2` = upstream 26.11_2, our build 1; a later build of it would be
 # `v26.11_2-fs2`), the package is held to format 2
 # on its own (`schema = 2`) while the other entries stay on format 1. Needs a store from 0.0.13 on (older ones skip it).
-# `gateway.reverse-proxy` is `planned` in fs-interfaces (unreviewed/planned-capabilities, not tagged yet). This entry is checked green only after
-# fs-interfaces is released with it and `capabilities_ref` (default v0.0.19) points at that tag; the real CI check is red until then, by design.
+# `gateway.reverse-proxy` is `planned` in fs-interfaces since v0.0.21 (`capabilities_ref`); planned is a warning, not an error.
 [[package]]
 id = "zentinel"
 name = "Zentinel"

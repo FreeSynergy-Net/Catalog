@@ -2,7 +2,7 @@
 # the tests (tests/test_schema.py builds examples/catalog.example.xml from it, offline, and compares).
 # The pictures are made by examples/make_images.py and dedicated to the public domain (CC0-1.0).
 schema = 2                     # 2 = the rules of format 2 are errors (icon, provides, ...); without it they are warnings
-capabilities_ref = "v0.0.19"   # tag of fs-interfaces whose schema/capabilities.txt is THE capability list
+capabilities_ref = "v0.0.21"   # tag of fs-interfaces whose schema/capabilities.txt is THE capability list
 
 [[package]]
 id = "example-notes"

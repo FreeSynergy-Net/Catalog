@@ -6,7 +6,7 @@ import sys
 
 import catalog_schema as schema
 
-DEFAULT_CAPS_REF = "v0.0.19"  # the tag of fs-interfaces whose capabilities.txt tests/fixtures/capabilities.txt is a snapshot of
+DEFAULT_CAPS_REF = "v0.0.21"  # the tag of fs-interfaces whose capabilities.txt tests/fixtures/capabilities.txt is a snapshot of
 # Settings of this run (set by main; defaults let `entry` be called alone, as the tests do).
 CTX = {"schema": 1, "caps": None, "caps_file": None, "caps_ref": DEFAULT_CAPS_REF}
 
@@ -66,5 +66,5 @@ def read_settings(data):
         sys.exit(f"packages.toml: schema = {level!r} is not known (1 or 2)")
     ref = data.get("capabilities_ref", DEFAULT_CAPS_REF)
     if not isinstance(ref, str) or not re.match(r"^v[0-9]+\.[0-9]+\.[0-9]+\Z", ref):
-        sys.exit(f"packages.toml: capabilities_ref = {ref!r} must be a tag like v0.0.19")
+        sys.exit(f"packages.toml: capabilities_ref = {ref!r} must be a tag like v0.0.21")
     CTX["schema"], CTX["caps_ref"] = level, ref

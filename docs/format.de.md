@@ -11,7 +11,7 @@ Alle Befunde auf einmal als `<Paket>: <Feld>: <Meldung>`; Fehler stoppen den Lau
 | Schlüssel | Bedeutung |
 |---|---|
 | `schema` | `1` (Vorgabe) oder `2`. Mit `2` sind die unten mit „Format 2“ markierten Regeln **Fehler**, mit `1` Warnungen (die wöchentliche Signierung hält für einen alten Eintrag nie an). Der Katalog bekommt `fs-schema="2"` an `<components>`. |
-| `capabilities_ref` | Tag (Form `vX.Y.Z`, geprüft) von `fs-interfaces`, dessen `schema/capabilities.txt` DIE Fähigkeitenliste ist (Vorgabe `v0.0.19`). Wird mit `gh api` gelesen, nie in dieses Repo kopiert. `--capabilities DATEI` / `$FS_CAPABILITIES_FILE`: lokale Datei (offline). |
+| `capabilities_ref` | Tag (Form `vX.Y.Z`, geprüft) von `fs-interfaces`, dessen `schema/capabilities.txt` DIE Fähigkeitenliste ist (Vorgabe `v0.0.21`). Wird mit `gh api` gelesen, nie in dieses Repo kopiert. `--capabilities DATEI` / `$FS_CAPABILITIES_FILE`: lokale Datei (offline). |
 
 ## Je Paket (`[[package]]`)
 Unter-Tabellen (`[package.x]`, `[[package.x]]`) **nach** den einfachen Schlüsseln des Pakets schreiben: `bump_catalog.py` ändert `tag` als Text.

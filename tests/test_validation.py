@@ -190,8 +190,6 @@ class Validation(unittest.TestCase):
         data = tomllib.loads((ROOT / "packages.toml").read_text())
         for p in data["package"]:
             found = problems(p, schema=data.get("schema", 1))
-            if p["id"] == "zentinel":  # KNOWN BLOCKER: `gateway.reverse-proxy` is not in fs-interfaces yet (append it as `planned`, then drop this)
-                found = [i for i in found if not (i.field == "provides" and "gateway.reverse-proxy" in i.message)]
             self.assertEqual(found, [], p["id"])
 
 

@@ -11,7 +11,7 @@ Every finding is reported at once as `<package>: <field>: <message>`; errors sto
 | Key | Meaning |
 |---|---|
 | `schema` | `1` (default) or `2`. With `2` the rules marked "format 2" below are **errors**; with `1` they are warnings, so the weekly signing never stops for an old entry. The catalog gets `fs-schema="2"` on `<components>`. |
-| `capabilities_ref` | Tag (form `vX.Y.Z`, checked) of `fs-interfaces` whose `schema/capabilities.txt` is THE capability list (default `v0.0.19`). Read with `gh api`; never copied into this repo. `--capabilities FILE` / `$FS_CAPABILITIES_FILE` use a local file (offline). |
+| `capabilities_ref` | Tag (form `vX.Y.Z`, checked) of `fs-interfaces` whose `schema/capabilities.txt` is THE capability list (default `v0.0.21`). Read with `gh api`; never copied into this repo. `--capabilities FILE` / `$FS_CAPABILITIES_FILE` use a local file (offline). |
 
 ## Per package (`[[package]]`)
 Write sub-tables (`[package.x]`, `[[package.x]]`) **after** the plain keys of the package: `bump_catalog.py` edits `tag` by text.
