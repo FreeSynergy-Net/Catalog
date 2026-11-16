@@ -117,6 +117,7 @@ class BumpWrapperTest(unittest.TestCase):
         self.assertEqual(self.tag_after("v26.11_2", ["v26.11_3"]), "v26.11_3")
         self.assertEqual(self.tag_after("v26.11_3", ["v26.11.1_1"]), "v26.11_3")  # 26.11.1_1 is older than 26.11_3 by upstream's own numbers
         self.assertEqual(self.tag_after("v1.9.0-fs5", ["v1.10.0"]), "v1.10.0")  # 10 > 9, not text order; a new upstream version beats any build
+        self.assertEqual(self.tag_after("v1.0-fs5", ["v1.0.1"]), "v1.0.1")  # a longer upstream version is newer whatever the build number of the shorter one
         self.assertEqual(self.tag_after("v1.12.1", ["v1.12.1-fs2", "v1.12.0-fs9"]), "v1.12.1-fs2")
 
     def test_families_are_not_mixed(self):

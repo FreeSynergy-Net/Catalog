@@ -83,6 +83,13 @@ class Generator(unittest.TestCase):
         # the current release first, then the older ones: newest upstream version first, the build number numeric (fs10 > fs2 > none)
         self.assertEqual(order, ["26.11_2-fs10", "26.11_2-fs2", "26.11_2", "26.11.1_1", "26.10_11", "26.10_2"])
 
+    def test_history_build_number_never_outranks_a_longer_upstream_version(self):
+        hist = [{"version": v, "date": "2026-11-01", "changes": "x"} for v in ("1.0-fs5", "1.0.1", "1.0")]
+        p = with_(id="zentinel", kind="server", tag="v1.0.2", asset="zentinel-{version}-linux-amd64.tar.gz", min_store="0.0.13",
+                  upstream="https://u.org/z", source_code="https://u.org/z.tgz", maker="Z", schema=2, history=hist)
+        order = [r.get("version") for r in ET.fromstring(build(p, schema=1)).findall("releases/release")]
+        self.assertEqual(order, ["1.0.2", "1.0.1", "1.0-fs5", "1.0"])
+
     def test_server_without_rpm_or_deb_is_not_offered(self):  # ADR 0077 section 3, Gegenprobe
         p = with_(kind="server", min_store="0.0.13")
         rel = release_for(p)
