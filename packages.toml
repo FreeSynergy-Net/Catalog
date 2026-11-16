@@ -64,6 +64,16 @@ asset = "fs-wiki-{version}-linux-x86_64.tar.gz"
 kind = "program"
 
 [[package]]
+id = "fs-texts"
+name = "FreeSynergy.Texts"
+summary = "Texts that belong together"
+description = "Texts that belong together: pages in a tree with links and backlinks, search, and import and export of Markdown. The window opens editable; pages can be made, renamed, deleted and saved there. Your texts stay in your own data folder."
+repo = "FreeSynergy/fs-texts"
+tag = "v0.0.13"
+asset = "fs-texts-{version}-linux-x86_64.tar.gz"
+kind = "program"
+
+[[package]]
 id = "fs-groups"
 name = "FreeSynergy.Groups"
 summary = "Groups and nesting"
