@@ -18,7 +18,7 @@ Write sub-tables (`[package.x]`, `[[package.x]]`) **after** the plain keys of th
 
 | Key | XML | Rule |
 |---|---|---|
-| `id`, `name`, `summary`, `repo`, `tag`, `asset` | as before | required; `id` lower-case; `tag` `vMAJOR.MINOR.PATCH` (wrapper: `v<upstream>_<N>`, see below) |
+| `id`, `name`, `summary`, `repo`, `tag`, `asset` | as before | required; `id` lower-case; `tag` `vMAJOR.MINOR.PATCH` (wrapper: `v<upstream>[-fs<N>]`, see below) |
 | `kind` | `fs:kind`, component `type` | `program` (default), `frontend`, `component`, `theme`, `server`, `icon-theme`. AppStream type: program and frontend `desktop-application`, component and theme `addon`, server `service`, icon-theme `icon-theme`. `server` and `icon-theme` are new. Today's stores (before 0.0.13) **drop** such an entry ("unknown fs:kind", listed as skipped; the catalog and the other packages stay fine); a locked "not supported by this store version" offer is shown only by stores from 0.0.13 on (the reader fix is in progress). So they are written only with `schema = 2` AND `min_store`, and go into the REAL catalog only AFTER a store with the fixed reader is released. |
 | `description` | `<description>` | text, or a table `{ en = "..", de = ".." }` (variants of ONE description, `xml:lang`; `en` required, written first). Blank line = new paragraph. Format 2: required (it is the fallback of the store). |
 | `icon`, `icon_sha256` | `<icon type="remote" fs-sha256>` | https address of a **PNG of at most 1 MiB** (SVG is refused, as in the store). The generator downloads it, checks the PNG signature, writes its SHA-256 (and compares with `icon_sha256` when given). Format 2: **required for every package**. |
