@@ -6,8 +6,8 @@ capabilities_ref = "v0.0.21"  # fs-interfaces tag whose schema/capabilities.txt 
 [[package]]
 id = "fs-packages"
 name = "FreeSynergy.Packages"
-summary = "Install, update and extend FreeSynergy programs"
-description = "The store of FreeSynergy: it installs the programs you choose from signed catalogs, keeps them up to date, and takes them away again. Every file is checked against the project key before anything is installed, and a failed update is rolled back."
+summary = "Install, update and remove FreeSynergy programs, frontends, themes, fonts and servers"
+description = "FreeSynergy Packages: install, update and remove FreeSynergy programs, frontends, themes, fonts and servers. Everything comes from signed catalogs and is checked against the project key before it is installed; a failed update is rolled back."
 repo = "FreeSynergy/fs-packages"
 tag = "v0.0.18"
 asset = "fs-packages-{version}-linux-x86_64.tar.gz"
