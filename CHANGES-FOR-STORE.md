@@ -1,4 +1,4 @@
-# Changes for the store agent (fs-catalog format 2) · Änderungsliste für den Store-Agenten
+# Changes for the store agent (Catalog format 2) · Änderungsliste für den Store-Agenten
 
 Reference: docs/format.md. Example: examples/catalog.example.xml. Everything below is additive; format 1 entries are unchanged.
 

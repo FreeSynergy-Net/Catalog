@@ -64,7 +64,7 @@ jobs:
   # (fresh clone, signature against the project key, every tag present) runs here, after the push, as a second job.
   # Red = the "catalog signing failed" issue; the green run closes it.
   # TODO(fs-release, separate order): once FreeSynergy/fs-release/.github/workflows/_notify-red.yml exists, call it from
-  # both jobs with `uses: ...@<tag or SHA>` (issue "rot: sign fs-catalog", label rot, duplicate guard, closes on green).
+  # both jobs with `uses: ...@<tag or SHA>` (issue "rot: sign Catalog", label rot, duplicate guard, closes on green).
   verify:
     needs: sign
     runs-on: ubuntu-latest

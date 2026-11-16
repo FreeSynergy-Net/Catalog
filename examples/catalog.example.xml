@@ -7,14 +7,14 @@
     <description xml:lang="en"><p>Shows every field of the catalog format.</p><p>A second paragraph.</p></description>
     <description xml:lang="de"><p>Zeigt jedes Feld des Katalogformats.</p><p>Ein zweiter Absatz.</p></description>
     <url type="homepage">https://github.com/FreeSynergy/example-notes</url>
-    <icon type="remote" fs-sha256="66afeced1934177a358042daaee8fbce2ee6502cd875c248f9ca3c1870124e37">https://raw.githubusercontent.com/FreeSynergy/fs-catalog/main/examples/images/example-program-icon.png</icon>
+    <icon type="remote" fs-sha256="66afeced1934177a358042daaee8fbce2ee6502cd875c248f9ca3c1870124e37">https://raw.githubusercontent.com/FreeSynergy/Catalog/main/examples/images/example-program-icon.png</icon>
     <provides>
       <mediatype>text/markdown</mediatype>
       <mediatype>text/calendar</mediatype>
     </provides>
     <screenshots>
       <screenshot type="default">
-        <image type="source" fs-sha256="02084c5c594fff9bdfc150fc7b3a9f186e66f12c50b204157f8e442bc552f2a2" fs-license="CC0-1.0" fs-source="Generated for fs-catalog (examples/make_images.py)">https://raw.githubusercontent.com/FreeSynergy/fs-catalog/main/examples/images/example-program-screenshot.png</image>
+        <image type="source" fs-sha256="02084c5c594fff9bdfc150fc7b3a9f186e66f12c50b204157f8e442bc552f2a2" fs-license="CC0-1.0" fs-source="Generated for Catalog (examples/make_images.py)">https://raw.githubusercontent.com/FreeSynergy/Catalog/main/examples/images/example-program-screenshot.png</image>
         <caption xml:lang="en">The main window</caption>
         <caption xml:lang="de">Das Hauptfenster</caption>
       </screenshot>
@@ -62,7 +62,7 @@
     <summary>A server (kind `server`): the store shows it locked until such packages exist</summary>
     <description><p>A server package.</p></description>
     <url type="homepage">https://github.com/FreeSynergy/example-server</url>
-    <icon type="remote" fs-sha256="09c6d581fec61da89cd7db065b453cfef35b04394a317b853135a240e348d183">https://raw.githubusercontent.com/FreeSynergy/fs-catalog/main/examples/images/example-server-icon.png</icon>
+    <icon type="remote" fs-sha256="09c6d581fec61da89cd7db065b453cfef35b04394a317b853135a240e348d183">https://raw.githubusercontent.com/FreeSynergy/Catalog/main/examples/images/example-server-icon.png</icon>
     <releases>
       <release version="0.0.1" date="2026-11-12">
         <artifacts>
@@ -93,7 +93,7 @@
     <summary>An icon set (kind `icon-theme`)</summary>
     <description><p>An icon set.</p></description>
     <url type="homepage">https://github.com/FreeSynergy/example-icons</url>
-    <icon type="remote" fs-sha256="f49055b337423e25f34530936052a21de3e663131dc6e0de50cb829f70cc7c25">https://raw.githubusercontent.com/FreeSynergy/fs-catalog/main/examples/images/example-icons-icon.png</icon>
+    <icon type="remote" fs-sha256="f49055b337423e25f34530936052a21de3e663131dc6e0de50cb829f70cc7c25">https://raw.githubusercontent.com/FreeSynergy/Catalog/main/examples/images/example-icons-icon.png</icon>
     <releases>
       <release version="0.0.1" date="2026-11-12">
         <artifacts>

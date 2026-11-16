@@ -6,7 +6,7 @@
 # Usage: scripts/verify-catalog.sh [repo-url]   (default: this repo on GITHUB_SERVER_URL)
 set -euo pipefail
 PINNED=16A4A3EE563AEF51FCF0C55DED7B57C4A1904342
-url="${1:-${GITHUB_SERVER_URL:-https://github.com}/${GITHUB_REPOSITORY:-FreeSynergy/fs-catalog}}"
+url="${1:-${GITHUB_SERVER_URL:-https://github.com}/${GITHUB_REPOSITORY:-FreeSynergy/Catalog}}"
 work="$(mktemp -d)"
 trap 'rm -rf "$work"' EXIT
 git clone --quiet --depth 1 "$url" "$work/clone"

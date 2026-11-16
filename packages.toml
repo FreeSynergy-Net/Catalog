@@ -91,7 +91,7 @@ provides = ["gateway.reverse-proxy"]
 upstream = "https://github.com/zentinelproxy/zentinel"
 source_code = "https://github.com/FreeSynergy/fs-zentinel/releases/download/v26.11_3/zentinel-26.11_3-source.tar.gz"
 maker = "Zentinel project"
-icon = "https://raw.githubusercontent.com/FreeSynergy/fs-catalog/main/icons/server.png"
+icon = "https://raw.githubusercontent.com/FreeSynergy/Catalog/main/icons/server.png"
 icon_sha256 = "4d55f0d65e3e808a71fab736f8e7b659390a19b3ed7d7cb0710ef2588b09526d"
 
 [package.description]

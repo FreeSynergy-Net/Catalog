@@ -13,7 +13,7 @@ repo = "FreeSynergy/example-notes"
 tag = "v0.0.2"
 asset = "example-notes-{version}-linux-x86_64.tar.gz"
 kind = "program"
-icon = "https://raw.githubusercontent.com/FreeSynergy/fs-catalog/main/examples/images/example-program-icon.png"
+icon = "https://raw.githubusercontent.com/FreeSynergy/Catalog/main/examples/images/example-program-icon.png"
 provides = ["texts 1.0", "people.persons 1.2"]
 requires = ["store"]
 recommends = ["comments"]
@@ -39,9 +39,9 @@ requires = ["people.persons 1.0"]
 key = "export"
 
 [[package.screenshot]]
-url = "https://raw.githubusercontent.com/FreeSynergy/fs-catalog/main/examples/images/example-program-screenshot.png"
+url = "https://raw.githubusercontent.com/FreeSynergy/Catalog/main/examples/images/example-program-screenshot.png"
 license = "CC0-1.0"
-source = "Generated for fs-catalog (examples/make_images.py)"
+source = "Generated for Catalog (examples/make_images.py)"
 caption = { en = "The main window", de = "Das Hauptfenster" }
 
 [[package.history]]
@@ -62,7 +62,7 @@ repo = "FreeSynergy/example-server"
 tag = "v0.0.1"
 asset = "example-server-{version}-linux-x86_64.tar.gz"
 kind = "server"
-icon = "https://raw.githubusercontent.com/FreeSynergy/fs-catalog/main/examples/images/example-server-icon.png"
+icon = "https://raw.githubusercontent.com/FreeSynergy/Catalog/main/examples/images/example-server-icon.png"
 provides = ["identity.oidc 1.0", "identity.accounts"]
 min_store = "0.0.13"           # first store version with the fixed reader; put into the real catalog only after it is released
 
@@ -76,4 +76,4 @@ tag = "v0.0.1"
 asset = "example-icons-{version}-linux-x86_64.tar.gz"
 kind = "icon-theme"
 min_store = "0.0.13"
-icon = "https://raw.githubusercontent.com/FreeSynergy/fs-catalog/main/examples/images/example-icons-icon.png"
+icon = "https://raw.githubusercontent.com/FreeSynergy/Catalog/main/examples/images/example-icons-icon.png"

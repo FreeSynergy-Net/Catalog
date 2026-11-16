@@ -1,4 +1,4 @@
-# Design: fs-catalog
+# Design: Catalog
 
 ## Release to catalog (Q2b, 2026-11-10)
 

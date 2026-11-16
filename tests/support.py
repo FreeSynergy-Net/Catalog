@@ -21,7 +21,7 @@ def load(name):
 gen = load("gen_catalog")
 S = gen.schema
 CAPS = S.parse_capabilities(CAPS_FILE.read_text())
-RAW = "https://raw.githubusercontent.com/FreeSynergy/fs-catalog/main/"
+RAW = "https://raw.githubusercontent.com/FreeSynergy/Catalog/main/"
 
 GOOD = {
     "id": "fs-x", "name": "X", "summary": "s", "description": "d", "repo": "FreeSynergy/fs-x", "tag": "v0.0.2",

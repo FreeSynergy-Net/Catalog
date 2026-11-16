@@ -313,7 +313,7 @@
     <description xml:lang="en"><p>The Zentinel reverse proxy (Apache-2.0), mirrored and signed by FreeSynergy: TLS termination, routing by host and path, load balancing, health checks, rate limiting and reload while running. It installs as a system service that is not switched on by itself.</p></description>
     <description xml:lang="de"><p>Der Reverse-Proxy Zentinel (Apache-2.0), gespiegelt und signiert von FreeSynergy: TLS-Abschluss, Routing nach Host und Pfad, Lastverteilung, Gesundheitsprüfung, Ratenbegrenzung und Neuladen im Betrieb. Er wird als Systemdienst installiert, der nicht von selbst eingeschaltet wird.</p></description>
     <url type="homepage">https://github.com/FreeSynergy/fs-zentinel</url>
-    <icon type="remote" fs-sha256="4d55f0d65e3e808a71fab736f8e7b659390a19b3ed7d7cb0710ef2588b09526d">https://raw.githubusercontent.com/FreeSynergy/fs-catalog/main/icons/server.png</icon>
+    <icon type="remote" fs-sha256="4d55f0d65e3e808a71fab736f8e7b659390a19b3ed7d7cb0710ef2588b09526d">https://raw.githubusercontent.com/FreeSynergy/Catalog/main/icons/server.png</icon>
     <releases>
       <release version="26.11_3" date="2026-11-16">
         <description xml:lang="en"><p>Upstream 26.11_3: Hetzner DNS-01 moved to the new Cloud API (fix 42be3102); see the release notes.</p></description>
