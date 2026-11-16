@@ -59,7 +59,7 @@ Wechselt ein Upstream sein Schema, übernimmt bump die neue Version nicht; ein M
 
 Ein Paket kann Format 2 allein verlangen: `schema = 2` in seiner `[[package]]`-Tabelle macht die Regeln von Format 2 nur für dieses Paket zu Fehlern, während die
 Datei für ältere Einträge bei `schema = 1` bleibt. Ein `server` wird nur angeboten, wenn sein Release ein signiertes rpm oder deb hat (ADR 0077 Abschnitt 3); sonst überspringt ihn der Generator.
-Das neutrale Server-Icon ist `icons/server.png` (CC0, erzeugt von `icons/make_icons.py`).
+Das neutrale Server-Icon ist `icons/server.png` (MIT, eigene Gestaltung des FreeSynergy-Projekts, aus dem Set fs-icons; siehe `icons/README.md`).
 
 ## Downloads und Fehler
 Icons und Bilder werden nur über https geladen (auch nach Weiterleitungen, `--proto =https --proto-redir =https`, höchstens 3), mit Größengrenze; der ERSTE Host wird abgelehnt, wenn er auf eine Loopback- oder private Adresse aufgelöst wird (eine Weiterleitung, höchstens 3 und nur https, oder DNS-Rebinding zwischen dieser Prüfung und dem Download ist **nicht** abgedeckt: der Generator läuft auf einem GitHub-Runner ohne interne Dienste und liest nur öffentliche Bilder); der Dateityp wird an den ersten Bytes geprüft (WebP nur mit `WEBP` ab Byte 8; kein SVG, kein XML). Ein **fehlgeschlagener Download hält bump und sign nie an**: das Paket wird mit Warnung übersprungen, der Eintrag des letzten signierten Katalogs bleibt. Eine falsche Datei (kein Bild, Hash weicht ab, zu groß) ist ein Fehler. Unter `schema = 1` sind falsche Fähigkeitsnamen nur Warnungen, und die Liste wird nur von GitHub gelesen, wenn ein Paket eine Fähigkeit nennt (nicht lesbar: Warnung).

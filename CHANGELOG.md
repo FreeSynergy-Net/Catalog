@@ -10,7 +10,7 @@
 - Hardening of the tag pattern: ASCII digits only (`[0-9]`, not `\d`) and `\Z` instead of `$` (a trailing newline is refused); only lower-case `-fs` is a suffix.
 - Rule for `server`: offered only when the release has a signed rpm or deb (ADR 0077 section 3); otherwise skipped.
 - `schema = 2` can be set per package inside `[[package]]`; the file stays at `schema = 1` for the older entries.
-- New neutral server icon `icons/server.png` (CC0, made by `icons/make_icons.py`); the icon address points to `main`, so the file exists only after the merge.
+- Neutral server icon `icons/server.png` (MIT, own drawing of the FreeSynergy project from the fs-icons set, see `icons/README.md`; replaces the earlier CC0 icon); the icon address points to `main`, so the file exists only after the merge. 21 further programme and kind icons added to `icons/` (not referenced by an entry yet).
 - Docs: `docs/format.md` and `docs/format.de.md` describe the wrapper rule, ordering, per-package schema and the server rule.
 - Tests: tag table with pre-release ordering, bump test, hardening (ASCII digits, `\Z`, `v1.0-Fs2`), generator and validation tests for `zentinel`.
 

@@ -60,7 +60,7 @@ goes from a final version back to a pre-release. If an upstream changes its sche
 
 A package may ask for format 2 alone: `schema = 2` inside its `[[package]]` table makes the format-2 rules errors for that package only, while the
 file stays at `schema = 1` for the older entries. A `server` is offered only when its release has a signed rpm or deb (ADR 0077 section 3); the generator skips it otherwise.
-The neutral server icon is `icons/server.png` (CC0, made by `icons/make_icons.py`).
+The neutral server icon is `icons/server.png` (MIT, own drawing of the FreeSynergy project, from the fs-icons set; see `icons/README.md`).
 
 ## Downloads and failures
 Icons and pictures are fetched over https only (also after redirects, `--proto =https --proto-redir =https`, at most 3 redirects), with a size limit; the FIRST host is refused when it resolves to a loopback or private address (a redirect, at most 3 and https only, or DNS rebinding between that check and the download is **not** covered: the generator runs on a GitHub runner with no internal services and reads only public pictures); the file type is checked by its first bytes (WebP only with `WEBP` at offset 8; no SVG, no XML). A **failed download never stops bump or sign**: the package is skipped with a warning and the entry of the last signed catalog is kept. A wrong file (not a picture, hash differs, too large) is an error. Under `schema = 1` wrong capability names are only warnings, and the list is read from GitHub only when a package names a capability (if it cannot be read: a warning).
