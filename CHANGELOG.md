@@ -3,7 +3,8 @@
 ## Unreleased (unreviewed/catalog-groups-texts)
 
 - New entry `fs-groups` (`FreeSynergy.Groups`, tag `v0.0.2`, asset `fs-groups-0.0.2-linux-x86_64.tar.gz`, schema 1, no icon yet).
-- New entry `fs-texts` (`FreeSynergy.Texts`, tag `v0.0.13`, asset `fs-texts-0.0.13-linux-x86_64.tar.gz`, binary `fs-texts`, ADR 0087). The `fs-wiki` entry stays unchanged for now: `replaces` needs schema 2, so the Store may show both until then.
+- New entry `fs-texts` (`FreeSynergy.Texts`, tag `v0.0.13`, asset `fs-texts-0.0.13-linux-x86_64.tar.gz`, binary `fs-texts`, ADR 0087).
+- Removed the `fs-wiki` entry (renamed fs-texts, ADR 0087); an installed fs-wiki stays installed and keeps its data folder `wiki`; the switch to fs-texts comes with `replaces` in fs-packages 0.0.19.
 
 ## Unreleased (unreviewed/catalog-zentinel)
 
