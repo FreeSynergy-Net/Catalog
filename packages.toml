@@ -64,6 +64,16 @@ asset = "fs-wiki-{version}-linux-x86_64.tar.gz"
 kind = "program"
 
 [[package]]
+id = "fs-groups"
+name = "FreeSynergy.Groups"
+summary = "Groups and nesting"
+description = "Your groups: create, rename, set the kind of and delete groups in a window; nesting, members and invitations are in the program core. Works alone, no directory server needed."
+repo = "FreeSynergy/fs-groups"
+tag = "v0.0.2"
+asset = "fs-groups-{version}-linux-x86_64.tar.gz"
+kind = "program"
+
+[[package]]
 id = "fs-maps"
 name = "FreeSynergy.Maps"
 summary = "Places and maps"

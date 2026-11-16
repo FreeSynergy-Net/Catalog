@@ -1,5 +1,9 @@
 # Changelog
 
+## Unreleased (unreviewed/catalog-groups-texts)
+
+- New entry `fs-groups` (`FreeSynergy.Groups`, tag `v0.0.2`, asset `fs-groups-0.0.2-linux-x86_64.tar.gz`, schema 1, no icon yet).
+
 ## Unreleased (unreviewed/catalog-zentinel)
 
 - `fs-people` tag `v0.0.3` -> `v0.0.14` (pre-release; asset `fs-people-0.0.14-linux-x86_64.tar.gz`); description unchanged.
