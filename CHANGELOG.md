@@ -2,6 +2,7 @@
 
 ## Unreleased (unreviewed/catalog-zentinel)
 
+- `fs-people` tag `v0.0.3` -> `v0.0.14` (pre-release; asset `fs-people-0.0.14-linux-x86_64.tar.gz`); description unchanged.
 - New entry `zentinel` (`kind = "server"`, upstream Zentinel `26.11_2`, tag `v26.11_2`): tar.gz and debs for amd64/arm64 with signature and SHA-256,
   `provides gateway.reverse-proxy`, `schema = 2` for this package only. The 7 existing programs are unchanged.
 - Wrapper tags (variant B): `v<upstream version>` for the first build, `v<upstream version>-fs<N>` (N >= 2) for further builds of our packaging. A package

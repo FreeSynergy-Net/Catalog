@@ -29,7 +29,7 @@ name = "FreeSynergy.People"
 summary = "People and contacts"
 description = "Your people and contacts: cards with names, mail, phone and notes, groups of people, and vCard import and export. Everything stays in your own data folder."
 repo = "FreeSynergy/fs-people"
-tag = "v0.0.3"
+tag = "v0.0.14"
 asset = "fs-people-{version}-linux-x86_64.tar.gz"
 kind = "program"
 
