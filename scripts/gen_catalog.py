@@ -129,7 +129,7 @@ def entry(p):
     <id>{escape(p['id'])}</id>
     <name>{escape(p['name'])}</name>
     <summary>{escape(p['summary'])}</summary>{schema.description_xml(p)}
-    <url type="homepage">https://github.com/{escape(p['repo'])}</url>{icon_line}{provides_line}{schema.screenshots_xml(shots, hashes)}
+    <url type="homepage">https://github.com/{escape(p['repo'])}</url>{icon_line}{provides_line}{schema.replaces_xml(p)}{schema.screenshots_xml(shots, hashes)}
     <releases>
       <release version={q(version)}{date_attr}>{schema.release_description_xml(mine.get('changes'))}
         <artifacts>
@@ -179,6 +179,13 @@ def main():
     if "--capabilities" in sys.argv:  # --capabilities FILE: the capability list from a local file (offline)
         CTX["caps_file"] = sys.argv[sys.argv.index("--capabilities") + 1]
         args = [a for a in args if a != CTX["caps_file"]]
+    retired = None
+    if "--retired" in sys.argv:  # --retired FILE: retired-names.txt of fs-release, to check replaced and given-out names against
+        path = sys.argv[sys.argv.index("--retired") + 1]
+        with open(path, encoding="utf-8") as f:
+            retired = schema.parse_retired(f.read())
+        args = [a for a in args if a != path]
+    CTX["retired"] = retired
     with open(args[0] if args else f"{HERE}/packages.toml", "rb") as f:
         data = tomllib.load(f)
     packages = data["package"]

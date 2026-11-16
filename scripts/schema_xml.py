@@ -59,3 +59,11 @@ def custom_values(p, kind, format_, signature_url):
     if p.get("min_store"):
         vals.append(("fs:min-store", p["min_store"]))
     return "".join(f"\n      <value key={quoteattr(k)}>{escape(str(v))}</value>" for k, v in vals)
+
+
+def replaces_xml(p):
+    """AppStream `<replaces><id>old</id></replaces>`: this component takes over from the named ids (ADR 0080)."""
+    ids = p.get("replaces") or []
+    if not ids:
+        return ""
+    return "\n    <replaces>" + "".join(f"\n      <id>{escape(i)}</id>" for i in ids) + "\n    </replaces>"

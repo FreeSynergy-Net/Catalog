@@ -4,7 +4,7 @@
 (AppStream collection metadata, signed by CI). Format 2 adds the information the store shows per package. Every new field is
 optional for the reader: an old entry stays valid and the store shows "unknown" for what it does not say.
 
-Check without network (and without writing): `python3 -I scripts/gen_catalog.py --check [packages.toml] [--capabilities FILE]`.
+Check without network (and without writing): `python3 -I scripts/gen_catalog.py --check [packages.toml] [--capabilities FILE] [--retired FILE]`.
 Every finding is reported at once as `<package>: <field>: <message>`; errors stop the run, warnings do not.
 
 ## File level
@@ -34,6 +34,7 @@ Write sub-tables (`[package.x]`, `[[package.x]]`) **after** the plain keys of th
 | `maker` | `fs:maker` | name of the maker. |
 | `[package.description_wiki]` | `fs:description-wiki` (block id), `-source-rev`, optional `-lang` | ADR 0072, Nutzerentscheid: DE/EN are ONE page with language variants, so ONE block id (UUIDv7) and the variants live inside the block. `block`, `source_rev` (number, required: the rev this entry was made from, so the store can tell the wiki moved on), `lang` optional (only a wish for reading, never a second block). No `translationOf`, no block per language. The text description stays the fallback. |
 | `min_store` | `fs:min-store` | first fs-store version that reads this entry, `MAJOR.MINOR.PATCH`. It protects only from store 0.0.13 on: older stores ignore `fs:min-store` for kinds they know (program, ...); for unknown kinds they just leave the entry out (skipped), they do not fail. **Required for `server` and `icon-theme`**, which are written only with `schema = 2`. |
+| `replaces` | `<replaces><id>` | list of old ids this package takes over from (a renamed program), e.g. `["fs-wiki"]` (ADR 0080). Only with `schema = 2`. Each id once, not the package's own id, and **not also an entry of its own** (the old entry leaves the catalog); one old id has only one new entry. The store then shows the new entry as an update of the installed old one. With `--retired FILE` (`scripts/retired-names.txt` of fs-release) an id that is not on the list is a warning, and an entry whose id is on the list (given up, never given out again) is an error. |
 | `[[package.screenshot]]` | `<screenshots><screenshot><image type="source" fs-sha256 fs-license fs-source><caption xml:lang>` | `url` https, `license` clear (SPDX id; `unknown`, `none`, `proprietary`, `all rights reserved` and odd characters are refused: **no clear licence, no picture**), `source` (address or maker), `caption` (text or language table), `sha256` optional (downloaded and compared; the computed hash is written). PNG, JPEG or WebP, at most 5 MiB. The first picture is the default. |
 
 Per kind (format 2): `program` and `server` must have `provides`; `frontend` must have `requires`; `theme`, `icon-theme`, `component` need nothing extra.

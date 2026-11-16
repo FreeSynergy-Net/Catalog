@@ -18,5 +18,5 @@ for _name in ("schema_base", "schema_rules_content", "schema_rules", "schema_xml
 from schema_base import *  # noqa: E402,F401,F403
 from schema_base import (CONTROL, DATE, FEATURE_KEY, ICON_LIMIT, KINDS, NEW_KINDS, PNG_MAGIC, SCREENSHOT_LIMIT, SHA256, UUID7, VERSION,  # noqa: E402,F401
                          Issue, clear_license, format_capabilities, icon_ok, image_ok, parse_capabilities, parse_capability, uses_capabilities)
-from schema_rules import validate  # noqa: E402,F401
-from schema_xml import custom_values, description_xml, release_description_xml, screenshots_xml  # noqa: E402,F401
+from schema_rules import check_catalog, parse_retired, validate  # noqa: E402,F401
+from schema_xml import custom_values, replaces_xml, description_xml, release_description_xml, screenshots_xml  # noqa: E402,F401

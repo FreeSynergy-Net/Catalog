@@ -51,6 +51,7 @@ def check(packages):
                     sys.exit(str(why))
                 print(f"::warning title=catalog: capability names not checked::{why}")
         issues += schema.validate(p, caps, CTX["schema"])
+    issues += schema.check_catalog(packages, CTX.get("retired"))
     for i in issues:
         if not i.error:
             print(f"::warning title=catalog: {i.package}::{i.field}: {i.message}")

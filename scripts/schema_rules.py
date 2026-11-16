@@ -2,7 +2,7 @@
 import re
 from difflib import get_close_matches
 
-from schema_base import CONTROL, FEATURE_KEY, KINDS, MEDIATYPE, NEW_KINDS, SEMVER, TAG, WRAPPER_TAG, Ctx, is_str, parse_capability
+from schema_base import CONTROL, FEATURE_KEY, KINDS, MEDIATYPE, NEW_KINDS, SEMVER, TAG, WRAPPER_TAG, Ctx, Issue, is_str, parse_capability
 from schema_rules_content import (check_history, check_icon, check_origin, check_screenshots, check_text, check_wiki)
 
 
@@ -99,6 +99,7 @@ def validate(p, caps=None, schema=1):
     check_screenshots(c, p)
     check_history(c, p)
     check_kind(c, p, kind, named)
+    check_replaces(c, p)
     return c.issues
 
 
@@ -115,3 +116,69 @@ def check_kind(c, p, kind, named):
         c.need("provides", f"a {kind} says what it offers (a name of the capability list)")
     if kind == "frontend" and not named["requires"]:
         c.need("requires", "a frontend says which interface it needs")
+
+
+ID_RE = re.compile(r"^[a-z0-9][a-z0-9-]*$")
+
+
+def check_replaces(c, p):
+    """`replaces = ["old-id"]` (ADR 0080, schema 2): the ids this package took over from (a renamed program). One package alone:
+    a list of ids, each once, none the package's own id. The check against the other entries is `check_catalog`."""
+    value = p.get("replaces")
+    if value is None:
+        return
+    if c.schema < 2:
+        c.err("replaces", "is only written with `schema = 2` in packages.toml (older stores do not know it)")
+    if not isinstance(value, list) or not value:
+        c.err("replaces", 'must be a non-empty list of ids, e.g. ["fs-wiki"]')
+        return
+    seen = set()
+    for old in value:
+        if not (is_str(old) and ID_RE.match(old)):
+            c.err("replaces", f"`{old}` is not an id (lower-case letters, digits and `-`)")
+            continue
+        if old in seen:
+            c.err("replaces", f"`{old}` is listed twice")
+        elif old == p.get("id"):
+            c.err("replaces", f"`{old}` is the id of this package itself")
+        seen.add(old)
+
+
+def parse_retired(text):
+    """The names on the left of `old -> new  # reason` lines of retired-names.txt (fs-release, scripts/): given up, never given out again."""
+    names = set()
+    for line in text.splitlines():
+        line = line.split("#", 1)[0].strip()
+        if "->" in line:
+            names.add(line.split("->", 1)[0].strip())
+    return names
+
+
+def check_catalog(packages, retired=None):
+    """Findings across the entries. A name in `replaces` is an id the catalog gave up: it must not also be an entry of its own, and
+    only one entry may take it over. With the retired list (`retired` = set from parse_retired): an entry's id must not be a retired
+    name (a retired name is never given out again), and a replaced name that is not on the list is a warning (not an error: the list
+    belongs to fs-release and may lag)."""
+    issues = []
+    ids = [p["id"] for p in packages if isinstance(p, dict) and is_str(p.get("id"))]
+    for i in sorted({x for x in ids if ids.count(x) > 1}):
+        issues.append(Issue(True, i, "id", "is the id of more than one entry"))
+    taken = {}
+    for p in packages:
+        if not isinstance(p, dict) or not is_str(p.get("id")) or not isinstance(p.get("replaces"), list):
+            continue
+        for old in p["replaces"]:
+            if not is_str(old):
+                continue
+            if old in ids:
+                issues.append(Issue(True, p["id"], "replaces", f"`{old}` is also an entry of its own (a replaced name must leave the catalog)"))
+            if old in taken and taken[old] != p["id"]:
+                issues.append(Issue(True, p["id"], "replaces", f"`{old}` is already replaced by `{taken[old]}`"))
+            taken.setdefault(old, p["id"])
+            if retired is not None and old not in retired:
+                issues.append(Issue(False, p["id"], "replaces", f"`{old}` is not in retired-names.txt (fs-release); record the rename there"))
+    if retired is not None:
+        for i in ids:
+            if i in retired:
+                issues.append(Issue(True, i, "id", "is a retired name (retired-names.txt): it is never given out again"))
+    return issues
