@@ -82,14 +82,14 @@ id = "zentinel"
 name = "Zentinel"
 summary = "Reverse proxy with TLS, routing and rate limits"
 repo = "FreeSynergy/fs-zentinel"
-tag = "v26.11_2"
+tag = "v26.11_3"
 asset = "zentinel-{version}-linux-amd64.tar.gz"
 kind = "server"
 schema = 2
 min_store = "0.0.13"
 provides = ["gateway.reverse-proxy"]
 upstream = "https://github.com/zentinelproxy/zentinel"
-source_code = "https://github.com/FreeSynergy/fs-zentinel/releases/download/v26.11_2/zentinel-26.11_2-source.tar.gz"
+source_code = "https://github.com/FreeSynergy/fs-zentinel/releases/download/v26.11_3/zentinel-26.11_3-source.tar.gz"
 maker = "Zentinel project"
 icon = "https://raw.githubusercontent.com/FreeSynergy/fs-catalog/main/icons/server.png"
 icon_sha256 = "4d55f0d65e3e808a71fab736f8e7b659390a19b3ed7d7cb0710ef2588b09526d"
@@ -102,3 +102,8 @@ de = "Der Reverse-Proxy Zentinel (Apache-2.0), gespiegelt und signiert von FreeS
 version = "26.11_2"
 date = "2026-11-14"
 changes = { en = "Upstream 26.11_2: Debian packages for amd64 and arm64, signed.", de = "Upstream 26.11_2: Debian-Pakete für amd64 und arm64, signiert." }
+
+[[package.history]]
+version = "26.11_3"
+date = "2026-11-16"
+changes = { en = "Upstream 26.11_3: Hetzner DNS-01 moved to the new Cloud API (fix 42be3102); see the release notes.", de = "Upstream 26.11_3: Hetzner DNS-01 auf die neue Cloud-API umgestellt (Fix 42be3102), siehe Release-Notes." }
