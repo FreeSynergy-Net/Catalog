@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<components version="1.0" origin="freesynergy" fs-serial="1794641265" fs-expires="1797665265">
+<components version="1.0" origin="freesynergy" fs-serial="1794790775" fs-expires="1797814775">
   <component type="desktop-application">
     <id>fs-store</id>
     <name>FreeSynergy.Store</name>
@@ -304,6 +304,48 @@
       <value key="fs:kind">program</value>
       <value key="fs:format">tar.gz</value>
       <value key="fs:signature">https://github.com/FreeSynergy/fs-maps/releases/download/v0.0.2/fs-maps-0.0.2-linux-x86_64.tar.gz.asc</value>
+    </custom>
+  </component>
+  <component type="service">
+    <id>zentinel</id>
+    <name>Zentinel</name>
+    <summary>Reverse proxy with TLS, routing and rate limits</summary>
+    <description xml:lang="en"><p>The Zentinel reverse proxy (Apache-2.0), mirrored and signed by FreeSynergy: TLS termination, routing by host and path, load balancing, health checks, rate limiting and reload while running. It installs as a system service that is not switched on by itself.</p></description>
+    <description xml:lang="de"><p>Der Reverse-Proxy Zentinel (Apache-2.0), gespiegelt und signiert von FreeSynergy: TLS-Abschluss, Routing nach Host und Pfad, Lastverteilung, Gesundheitsprüfung, Ratenbegrenzung und Neuladen im Betrieb. Er wird als Systemdienst installiert, der nicht von selbst eingeschaltet wird.</p></description>
+    <url type="homepage">https://github.com/FreeSynergy/fs-zentinel</url>
+    <icon type="remote" fs-sha256="4d55f0d65e3e808a71fab736f8e7b659390a19b3ed7d7cb0710ef2588b09526d">https://raw.githubusercontent.com/FreeSynergy/fs-catalog/main/icons/server.png</icon>
+    <releases>
+      <release version="26.11_2" date="2026-11-14">
+        <description xml:lang="en"><p>Upstream 26.11_2: Debian packages for amd64 and arm64, signed.</p></description>
+        <description xml:lang="de"><p>Upstream 26.11_2: Debian-Pakete für amd64 und arm64, signiert.</p></description>
+        <artifacts>
+          <artifact type="binary" platform="x86_64-linux-gnu">
+            <location>https://github.com/FreeSynergy/fs-zentinel/releases/download/v26.11_2/zentinel-26.11_2-linux-amd64.tar.gz</location>
+            <checksum type="sha256">b35bf8bb52660b42bfd31dcd7f4a56872251be803d803dda4c581dea370ee6f2</checksum>
+            <size type="download">19468843</size>
+          </artifact>
+          <artifact type="binary" platform="x86_64-linux-gnu" fs-format="deb" fs-signature="https://github.com/FreeSynergy/fs-zentinel/releases/download/v26.11_2/zentinel_26.11.2-1_amd64.deb.asc">
+            <location>https://github.com/FreeSynergy/fs-zentinel/releases/download/v26.11_2/zentinel_26.11.2-1_amd64.deb</location>
+            <checksum type="sha256">6d27aca279b56165553c63fc552cb37faff21c2a22407d62218f77a4c2c95fa0</checksum>
+            <size type="download">8838232</size>
+          </artifact>
+          <artifact type="binary" platform="aarch64-linux-gnu" fs-format="deb" fs-signature="https://github.com/FreeSynergy/fs-zentinel/releases/download/v26.11_2/zentinel_26.11.2-1_arm64.deb.asc">
+            <location>https://github.com/FreeSynergy/fs-zentinel/releases/download/v26.11_2/zentinel_26.11.2-1_arm64.deb</location>
+            <checksum type="sha256">fa30c9e51ade7bc554fe2f1575a89cc8deee87bcf4deadf58f7ad0013874ee7c</checksum>
+            <size type="download">7439964</size>
+          </artifact>
+        </artifacts>
+      </release>
+    </releases>
+    <custom>
+      <value key="fs:kind">server</value>
+      <value key="fs:format">tar.gz</value>
+      <value key="fs:signature">https://github.com/FreeSynergy/fs-zentinel/releases/download/v26.11_2/zentinel-26.11_2-linux-amd64.tar.gz.asc</value>
+      <value key="fs:provides">gateway.reverse-proxy</value>
+      <value key="fs:upstream">https://github.com/zentinelproxy/zentinel</value>
+      <value key="fs:source-code">https://github.com/FreeSynergy/fs-zentinel/releases/download/v26.11_2/zentinel-26.11_2-source.tar.gz</value>
+      <value key="fs:maker">Zentinel project</value>
+      <value key="fs:min-store">0.0.13</value>
     </custom>
   </component>
 </components>
