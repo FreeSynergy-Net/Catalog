@@ -19,14 +19,15 @@ NEW_KINDS = ("server", "icon-theme")
 SHA256 = re.compile(r"^[0-9a-f]{64}$")
 UUID7 = re.compile(r"^[0-9a-f]{8}-[0-9a-f]{4}-7[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$")
 LANG = re.compile(r"^[a-z]{2,3}(-[A-Za-z0-9]{2,8})*$")
-# Wrapper version (docs/format.md): the upstream version unchanged (any characters of UPSTREAM_CHARS, starts with a digit, ends with a
-# letter or digit, never contains `-fs`), then optionally `-fs<N>` with N >= 2 (our 2nd and later build of that upstream version; no suffix = build 1).
-_WRAPPER_BODY = r"(\d(?:(?:(?!-fs)[0-9A-Za-z._+~-])*[0-9A-Za-z])?)(?:-fs([2-9]|[1-9]\d+))?"
-VERSION = re.compile(r"^\d+\.\d+\.\d+$|^" + _WRAPPER_BODY + "$")  # a release version: MAJOR.MINOR.PATCH, or a wrapper version
-SEMVER = re.compile(r"^\d+\.\d+\.\d+$")  # a store version (`min_store`)
-TAG = re.compile(r"^v\d+\.\d+\.\d+$")  # own programs: vMAJOR.MINOR.PATCH (ADR 0064)
+# Wrapper version (docs/format.md): the upstream version unchanged (characters `.` `_` `-` `+` `~` and ASCII letters/digits, starts with a
+# digit, ends with a letter or digit, never contains `-fs`), then optionally `-fs<N>` with N >= 2 (our 2nd and later build of that upstream
+# version; no suffix = build 1). Only the lower-case `-fs` forms the suffix. ASCII digits only ([0-9]); `\Z`, not `$` (no trailing newline).
+_WRAPPER_BODY = r"([0-9](?:(?:(?!-fs)[0-9A-Za-z._+~-])*[0-9A-Za-z])?)(?:-fs([2-9]|[1-9][0-9]+))?"
+VERSION = re.compile(r"^[0-9]+\.[0-9]+\.[0-9]+\Z|^" + _WRAPPER_BODY + r"\Z")  # a release version: MAJOR.MINOR.PATCH, or a wrapper version
+SEMVER = re.compile(r"^[0-9]+\.[0-9]+\.[0-9]+\Z")  # a store version (`min_store`)
+TAG = re.compile(r"^v[0-9]+\.[0-9]+\.[0-9]+\Z")  # own programs: vMAJOR.MINOR.PATCH (ADR 0064)
 # wrapper around a foreign program: `v<upstream version>` (build 1) or `v<upstream version>-fs<N>` (build N >= 2), docs/format.md
-WRAPPER_TAG = re.compile(r"^v" + _WRAPPER_BODY + "$")
+WRAPPER_TAG = re.compile(r"^v" + _WRAPPER_BODY + r"\Z")
 DATE = re.compile(r"^\d{4}-(0[1-9]|1[0-2])-(0[1-9]|[12]\d|3[01])$")
 MEDIATYPE = re.compile(r"^[a-z0-9][a-z0-9!#$&^_.+-]*/[a-z0-9][a-z0-9!#$&^_.+-]*$")
 FEATURE_KEY = re.compile(r"^[a-z0-9][a-z0-9-]*$")
@@ -187,8 +188,12 @@ class Ctx:
 
 
 def _upstream_key(text):
-    """Order of an upstream version: its numbers and words as tokens (`26.11_2` = 26, 11, 2; `1.12.1` = 1, 12, 1), numbers before words."""
-    return tuple((0, int(t), "") if t.isdigit() else (1, 0, t) for t in re.findall(r"\d+|[A-Za-z]+", text))
+    """Order of an upstream version, in the sense of rpm/dpkg: tokens are numbers, words (letters) and `~`.
+    `~` < word (pre-release marker: rc, alpha, beta, ...) < end of the version < number; numbers compare numerically, words as lower-case text;
+    `+build` is ignored. So `1.0~rc1` < `1.0-rc1` < `1.0` < `1.0.1`; `1.0-rc1` < `1.0-rc2`; `1.1.1a` < `1.1.1`."""
+    text = re.sub(r"\+[0-9A-Za-z.]*", "", text)
+    tokens = [(0,) if t == "~" else (3, int(t)) if t.isdigit() else (1, t.lower()) for t in re.findall(r"~|[0-9]+|[A-Za-z]+", text)]
+    return tuple(tokens) + ((2,),)
 
 
 def tag_key(tag):

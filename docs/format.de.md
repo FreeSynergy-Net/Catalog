@@ -46,12 +46,15 @@ Generator es von einem eigenen Programm):
 - jeder weitere Bau UNSERES Pakets derselben Upstream-Version: `v<Upstream-Version>-fs<N>` mit N >= 2, z. B. `v26.11_2-fs2`, `v1.12.1-fs2`.
   `-fs1` gibt es nicht (Bau 1 hat kein Suffix); `N` ohne führende Null. Eine neue Upstream-Version beginnt wieder ohne Suffix.
 
-Der Upstream-Anteil darf `.`, `_`, `-`, `+`, `~`, Buchstaben und Ziffern enthalten (beginnt mit einer Ziffer, endet mit Buchstabe oder Ziffer) und wird nie verändert oder
+Der Upstream-Anteil darf `.`, `_`, `-`, `+`, `~`, ASCII-Buchstaben und ASCII-Ziffern 0-9 enthalten (beginnt mit einer Ziffer, endet mit Buchstabe oder Ziffer) und wird nie verändert oder
 zerlegt; die Regel ist also für jeden Upstream gleich. `-fs` kommt in keiner uns bekannten Upstream-Version vor; enthielte eine `-fs`, wird sie **abgelehnt**
-(die Regel wäre nicht mehr eindeutig), ebenso ein zweites `-fs`-Suffix. Die Katalogversion ist der Tag ohne `v` (`26.11_2-fs2`).
+(die Regel wäre nicht mehr eindeutig), ebenso ein zweites `-fs`-Suffix. Nur das kleingeschriebene `-fs` bildet das Suffix: `v1.0-Fs2` ist Bau 1 der Upstream-Version `1.0-Fs2`. Ein Zeilenumbruch am Ende wird abgelehnt. Die Katalogversion ist der Tag ohne `v` (`26.11_2-fs2`).
 Paketdateien behalten die native Revision ihres Formats (`zentinel_26.11.2-1_amd64.deb`). `min_store` und `schema` bleiben `MAJOR.MINOR.PATCH`.
-Bestehende Tags werden nicht umbenannt. Reihenfolge (bump, Verlauf): zuerst nach Upstream-Version (Zahlen von links nach rechts, `_` wie `.`, `26.11_3` nach `26.11_2`),
-dann nach `N`; ein Paket mit `upstream` nimmt nur Wrapper-Tags, eines ohne nur `vMAJOR.MINOR.PATCH`; die Familien werden nie gemischt.
+Bestehende Tags werden nicht umbenannt. Reihenfolge (bump, Verlauf), wie bei rpm/dpkg: zuerst nach Upstream-Version, dann nach `N`. Zahlen werden numerisch von links nach rechts verglichen, `_` wie `.`
+(`26.11_3` nach `26.11_2`, vor `27.0`); ein Wort (rc, alpha, beta, beliebige Buchstaben) vor dem Ende der Version ist ein Vorabkennzeichen und sortiert **vor** derselben
+Version ohne es: `1.0~rc1` < `1.0-rc1` < `1.0` < `1.0.1`, `rc1` < `rc2` < `rc10`, `alpha` < `beta` < `rc` (Wörter ohne Beachtung der Groß-/Kleinschreibung); `~` sortiert vor allem,
+auch vor dem Ende; ein `+build`-Teil wird ignoriert. Preis: `1.1.1a` < `1.1.1` (Schreibweise von OpenSSL). bump geht also nie von einer finalen Version auf einen Vorabstand zurück.
+Wechselt ein Upstream sein Schema, übernimmt bump die neue Version nicht; ein Mensch setzt den Tag. dann nach `N`; ein Paket mit `upstream` nimmt nur Wrapper-Tags, eines ohne nur `vMAJOR.MINOR.PATCH`; die Familien werden nie gemischt.
 
 Ein Paket kann Format 2 allein verlangen: `schema = 2` in seiner `[[package]]`-Tabelle macht die Regeln von Format 2 nur für dieses Paket zu Fehlern, während die
 Datei für ältere Einträge bei `schema = 1` bleibt. Ein `server` wird nur angeboten, wenn sein Release ein signiertes rpm oder deb hat (ADR 0077 Abschnitt 3); sonst überspringt ihn der Generator.

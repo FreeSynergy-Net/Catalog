@@ -120,6 +120,40 @@ class BumpWrapperTest(unittest.TestCase):
         self.assertEqual(self.tag_after("v1.0-fs5", ["v1.0.1"]), "v1.0.1")  # a longer upstream version is newer whatever the build number of the shorter one
         self.assertEqual(self.tag_after("v1.12.1", ["v1.12.1-fs2", "v1.12.0-fs9"]), "v1.12.1-fs2")
 
+    def test_prerelease_order_table(self):
+        # rpm/dpkg sense: `~` < word (rc, alpha) < end of version < number; numbers numeric; +build ignored
+        key = bump.BASE.tag_key
+        chain = [["v1.0~rc1", "v1.0-rc1", "v1.0", "v1.0.1"],
+                 ["v1.0-alpha", "v1.0-beta", "v1.0-rc1", "v1.0-rc2", "v1.0-rc10", "v1.0"],
+                 ["v26.11_2", "v26.11_3", "v27.0"], ["v1.0-fs2", "v1.0-fs10"], ["v1.1.1a", "v1.1.1"]]
+        for c in chain:
+            for lo, hi in zip(c, c[1:]):
+                self.assertLess(key(lo), key(hi), (lo, hi))
+        self.assertLess(key("v1.0-rc1-fs9"), key("v1.0"))  # the upstream version decides, not the build
+        self.assertLess(key("v26.11_2-fs2"), key("v26.11_3"))
+        self.assertEqual(key("v1.0+b5"), key("v1.0"))
+        self.assertEqual(key("v1.0-rc1"), key("v1.0-RC1"))
+
+    def test_bump_never_goes_from_final_to_rc(self):
+        self.assertEqual(self.tag_after("v1.0-rc1", ["v1.0", "v1.0.1"]), "v1.0.1")
+        self.assertEqual(self.tag_after("v1.0-rc1", ["v1.0"]), "v1.0")
+        self.assertEqual(self.tag_after("v1.0", ["v1.0-rc2", "v1.0-rc1"]), "v1.0")
+        self.assertEqual(self.tag_after("v1.0", ["v1.0~rc2"]), "v1.0")
+        self.assertEqual(self.tag_after("v1.0-rc1", ["v1.0-rc2"]), "v1.0-rc2")
+        self.assertEqual(self.tag_after("v1.0.1", ["v1.0-rc1"]), "v1.0.1")
+
+    def test_only_ascii_digits_and_no_trailing_newline(self):
+        for bad in ("v\uff12" + "6.11", "v26.11_2\n", "v26.11_2-fs2\n", "v1.0-fs\uff12"):
+            self.assertIsNone(bump.BASE.WRAPPER_TAG.match(bad), bad)
+        for bad in ("v1.2.3\n", "v\uff11.2.3"):
+            self.assertIsNone(bump.BASE.TAG.match(bad), bad)
+        self.assertIsNone(bump.BASE.VERSION.match("1.2.3\n"))
+        self.assertIsNone(bump.BASE.VERSION.match("26.11_2\n"))
+        self.assertIsNone(bump.BASE.SEMVER.match("1.2.3\n"))
+        self.assertIsNotNone(bump.BASE.WRAPPER_TAG.match("v26.11_2-fs2"))  # counter-check
+        # only the lower-case `-fs` is the suffix: `-Fs2` stays part of the upstream version (build 1)
+        self.assertEqual(bump.BASE.WRAPPER_TAG.match("v1.0-Fs2").group(1, 2), ("1.0-Fs2", None))
+
     def test_families_are_not_mixed(self):
         # an own program (no `upstream`) takes only vX.Y.Z, a wrapper takes no tag of the other family's shape that is not a wrapper tag
         self.assertEqual(self.tag_after("v0.0.2", ["v0.0.3-fs2", "v26.11_9", "v0.0.3"], toml=TOML), "v0.0.3")

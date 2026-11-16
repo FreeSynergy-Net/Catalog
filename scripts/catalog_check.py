@@ -65,6 +65,6 @@ def read_settings(data):
     if isinstance(level, bool) or level not in (1, 2):
         sys.exit(f"packages.toml: schema = {level!r} is not known (1 or 2)")
     ref = data.get("capabilities_ref", DEFAULT_CAPS_REF)
-    if not isinstance(ref, str) or not re.match(r"^v\d+\.\d+\.\d+$", ref):
+    if not isinstance(ref, str) or not re.match(r"^v[0-9]+\.[0-9]+\.[0-9]+\Z", ref):
         sys.exit(f"packages.toml: capabilities_ref = {ref!r} must be a tag like v0.0.19")
     CTX["schema"], CTX["caps_ref"] = level, ref
