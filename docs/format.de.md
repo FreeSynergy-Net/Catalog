@@ -38,6 +38,17 @@ Unter-Tabellen (`[package.x]`, `[[package.x]]`) **nach** den einfachen Schlüsse
 
 Je Art (Format 2): `program` und `server` brauchen `provides`; `frontend` braucht `requires`; `theme`, `icon-theme`, `component` nichts Zusätzliches.
 
+## Wrapper: Upstream-Version + `_N`
+`vMAJOR.MINOR.PATCH` ist der Tag **eigener** Programme (ADR 0064). Ein Paket, das ein **fremdes** Programm einwickelt (Spiegel, ADR 0068, `kind = "server"`),
+trägt die Upstream-Version plus unsere Bau-Nummer: `v26.11_2` = Upstream 26.11, unser 2. Bau. `_N` zählt ab 1 und steigt mit jeder Änderung an UNSEREM
+Paketbau; eine neue Upstream-Version beginnt wieder bei `_1`. Der Tag ist `v<Upstream-Version>_<N>` (`v26.11_2`, `v1.12.1_3`), die Katalogversion ist der Tag ohne `v`
+(`26.11_2`), und der Wrapper-Eintrag muss `upstream` nennen (daran unterscheidet der Generator ihn von einem eigenen Programm). Paketdateien behalten die
+Revision ihres Formats (`zentinel_26.11.2-1_amd64.deb`). `min_store` und `schema` bleiben `MAJOR.MINOR.PATCH`. Bestehende Tags werden nicht umbenannt.
+
+Ein Paket kann Format 2 allein verlangen: `schema = 2` in seiner `[[package]]`-Tabelle macht die Regeln von Format 2 nur für dieses Paket zu Fehlern, während die
+Datei für ältere Einträge bei `schema = 1` bleibt. Ein `server` wird nur angeboten, wenn sein Release ein signiertes rpm oder deb hat (ADR 0077 Abschnitt 3); sonst überspringt ihn der Generator.
+Das neutrale Server-Icon ist `icons/server.png` (CC0, erzeugt von `icons/make_icons.py`).
+
 ## Downloads und Fehler
 Icons und Bilder werden nur über https geladen (auch nach Weiterleitungen, `--proto =https --proto-redir =https`, höchstens 3), mit Größengrenze; der ERSTE Host wird abgelehnt, wenn er auf eine Loopback- oder private Adresse aufgelöst wird (eine Weiterleitung, höchstens 3 und nur https, oder DNS-Rebinding zwischen dieser Prüfung und dem Download ist **nicht** abgedeckt: der Generator läuft auf einem GitHub-Runner ohne interne Dienste und liest nur öffentliche Bilder); der Dateityp wird an den ersten Bytes geprüft (WebP nur mit `WEBP` ab Byte 8; kein SVG, kein XML). Ein **fehlgeschlagener Download hält bump und sign nie an**: das Paket wird mit Warnung übersprungen, der Eintrag des letzten signierten Katalogs bleibt. Eine falsche Datei (kein Bild, Hash weicht ab, zu groß) ist ein Fehler. Unter `schema = 1` sind falsche Fähigkeitsnamen nur Warnungen, und die Liste wird nur von GitHub gelesen, wenn ein Paket eine Fähigkeit nennt (nicht lesbar: Warnung).
 

@@ -18,7 +18,7 @@ Write sub-tables (`[package.x]`, `[[package.x]]`) **after** the plain keys of th
 
 | Key | XML | Rule |
 |---|---|---|
-| `id`, `name`, `summary`, `repo`, `tag`, `asset` | as before | required; `id` lower-case; `tag` `vMAJOR.MINOR.PATCH` |
+| `id`, `name`, `summary`, `repo`, `tag`, `asset` | as before | required; `id` lower-case; `tag` `vMAJOR.MINOR.PATCH` (wrapper: `v<upstream>_<N>`, see below) |
 | `kind` | `fs:kind`, component `type` | `program` (default), `frontend`, `component`, `theme`, `server`, `icon-theme`. AppStream type: program and frontend `desktop-application`, component and theme `addon`, server `service`, icon-theme `icon-theme`. `server` and `icon-theme` are new. Today's stores (before 0.0.13) **drop** such an entry ("unknown fs:kind", listed as skipped; the catalog and the other packages stay fine); a locked "not supported by this store version" offer is shown only by stores from 0.0.13 on (the reader fix is in progress). So they are written only with `schema = 2` AND `min_store`, and go into the REAL catalog only AFTER a store with the fixed reader is released. |
 | `description` | `<description>` | text, or a table `{ en = "..", de = ".." }` (variants of ONE description, `xml:lang`; `en` required, written first). Blank line = new paragraph. Format 2: required (it is the fallback of the store). |
 | `icon`, `icon_sha256` | `<icon type="remote" fs-sha256>` | https address of a **PNG of at most 1 MiB** (SVG is refused, as in the store). The generator downloads it, checks the PNG signature, writes its SHA-256 (and compares with `icon_sha256` when given). Format 2: **required for every package**. |
@@ -37,6 +37,17 @@ Write sub-tables (`[package.x]`, `[[package.x]]`) **after** the plain keys of th
 | `[[package.screenshot]]` | `<screenshots><screenshot><image type="source" fs-sha256 fs-license fs-source><caption xml:lang>` | `url` https, `license` clear (SPDX id; `unknown`, `none`, `proprietary`, `all rights reserved` and odd characters are refused: **no clear licence, no picture**), `source` (address or maker), `caption` (text or language table), `sha256` optional (downloaded and compared; the computed hash is written). PNG, JPEG or WebP, at most 5 MiB. The first picture is the default. |
 
 Per kind (format 2): `program` and `server` must have `provides`; `frontend` must have `requires`; `theme`, `icon-theme`, `component` need nothing extra.
+
+## Wrapper: upstream version + `_N`
+`vMAJOR.MINOR.PATCH` is the tag of our **own** programs (ADR 0064). A package that wraps a **foreign** program (a mirror, ADR 0068, `kind = "server"`)
+carries the upstream version plus our build number: `v26.11_2` = upstream 26.11, our 2nd build. `_N` counts from 1 and rises with every change of
+OUR packaging; a new upstream version starts again at `_1`. The tag is `v<upstream version>_<N>` (`v26.11_2`, `v1.12.1_3`), the catalog version is the
+tag without `v` (`26.11_2`), and the wrapper entry must name `upstream` (that is how the generator tells it from an own program). Package files keep the
+native revision of their format (`zentinel_26.11.2-1_amd64.deb`). `min_store` and `schema` keep the plain `MAJOR.MINOR.PATCH`. Existing tags are not renamed.
+
+A package may ask for format 2 alone: `schema = 2` inside its `[[package]]` table makes the format-2 rules errors for that package only, while the
+file stays at `schema = 1` for the older entries. A `server` is offered only when its release has a signed rpm or deb (ADR 0077 section 3); the generator skips it otherwise.
+The neutral server icon is `icons/server.png` (CC0, made by `icons/make_icons.py`).
 
 ## Downloads and failures
 Icons and pictures are fetched over https only (also after redirects, `--proto =https --proto-redir =https`, at most 3 redirects), with a size limit; the FIRST host is refused when it resolves to a loopback or private address (a redirect, at most 3 and https only, or DNS rebinding between that check and the download is **not** covered: the generator runs on a GitHub runner with no internal services and reads only public pictures); the file type is checked by its first bytes (WebP only with `WEBP` at offset 8; no SVG, no XML). A **failed download never stops bump or sign**: the package is skipped with a warning and the entry of the last signed catalog is kept. A wrong file (not a picture, hash differs, too large) is an error. Under `schema = 1` wrong capability names are only warnings, and the list is read from GitHub only when a package names a capability (if it cannot be read: a warning).
