@@ -4,13 +4,13 @@
 capabilities_ref = "v0.0.21"  # fs-interfaces tag whose schema/capabilities.txt is THE capability list
 
 [[package]]
-id = "fs-store"
-name = "FreeSynergy.Store"
+id = "fs-packages"
+name = "FreeSynergy.Packages"
 summary = "Install, update and extend FreeSynergy programs"
 description = "The store of FreeSynergy: it installs the programs you choose from signed catalogs, keeps them up to date, and takes them away again. Every file is checked against the project key before anything is installed, and a failed update is rolled back."
 repo = "FreeSynergy/fs-packages"
-tag = "v0.0.17"
-asset = "fs-store-{version}-linux-x86_64.tar.gz"
+tag = "v0.0.18"
+asset = "fs-packages-{version}-linux-x86_64.tar.gz"
 kind = "program"
 
 [[package]]
