@@ -2,7 +2,7 @@
 import re
 from difflib import get_close_matches
 
-from schema_base import CONTROL, FEATURE_KEY, KINDS, MEDIATYPE, NEW_KINDS, TAG, VERSION, Ctx, is_str, parse_capability
+from schema_base import CONTROL, FEATURE_KEY, KINDS, MEDIATYPE, NEW_KINDS, SEMVER, TAG, WRAPPER_TAG, Ctx, is_str, parse_capability
 from schema_rules_content import (check_history, check_icon, check_origin, check_screenshots, check_text, check_wiki)
 
 
@@ -65,14 +65,26 @@ def check_capabilities(c, p, caps):
 def validate(p, caps=None, schema=1):
     """Every finding of one package table. `schema` 2 (set at the top of packages.toml) makes the rules of format 2 errors;
     with 1 they are warnings. `caps` is the capability list (parse_capabilities); None = names are not checked."""
+    own = p.get("schema", 1)
+    if isinstance(own, bool) or own not in (1, 2):
+        own = 1
+        bad_schema = True
+    else:
+        bad_schema = False
+    schema = max(schema, own)  # a package may ask for format 2 alone (`schema = 2` in its table): its format-2 rules are errors
     c = Ctx(p["id"] if is_str(p.get("id")) and p["id"].strip() else "?", schema)
+    if bad_schema:
+        c.err("schema", "must be 1 or 2")
     for key in ("id", "name", "summary", "repo", "tag", "asset"):
         if not is_str(p.get(key)) or not p[key].strip():
             c.err(key, "required text is missing")
     if is_str(p.get("id")) and not re.match(r"^[a-z0-9][a-z0-9-]*$", p["id"]):
         c.err("id", "must be lower-case letters, digits and `-`")
     if is_str(p.get("tag")) and not TAG.match(p["tag"]):
-        c.err("tag", f"`{p['tag']}` is not vMAJOR.MINOR.PATCH")
+        if not WRAPPER_TAG.match(p["tag"]):
+            c.err("tag", f"`{p['tag']}` is not vMAJOR.MINOR.PATCH (own program) or v<upstream version>_<N> (wrapper)")
+        elif not p.get("upstream"):
+            c.err("tag", f"`{p['tag']}` is a wrapper tag (upstream version + _N): it needs `upstream`; an own program uses vMAJOR.MINOR.PATCH")
     kind = p.get("kind", "program")
     if not (is_str(kind) and kind in KINDS):
         c.err("kind", f"must be one of: {', '.join(KINDS)}")
@@ -97,7 +109,7 @@ def check_kind(c, p, kind, named):
             c.err("kind", f"`{kind}` is only written with `schema = 2` in packages.toml (older stores do not know it)")
         if not p.get("min_store"):
             c.err("min_store", f"`{kind}` needs `min_store` (the first fs-store version that reads this kind, e.g. \"0.0.13\"); put such packages into the real catalog only AFTER that store is released")
-    if p.get("min_store") is not None and not (is_str(p["min_store"]) and VERSION.match(p["min_store"])):
+    if p.get("min_store") is not None and not (is_str(p["min_store"]) and SEMVER.match(p["min_store"])):
         c.err("min_store", "must be a version MAJOR.MINOR.PATCH")
     if kind in ("program", "server") and not named["provides"]:
         c.need("provides", f"a {kind} says what it offers (a name of the capability list)")

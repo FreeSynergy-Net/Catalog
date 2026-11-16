@@ -71,3 +71,33 @@ repo = "FreeSynergy/fs-maps"
 tag = "v0.0.2"
 asset = "fs-maps-{version}-linux-x86_64.tar.gz"
 kind = "program"
+
+# A mirrored server (ADR 0077): the upstream version plus our build number is the tag (`v26.11_2`), the package is held to format 2
+# on its own (`schema = 2`) while the other entries stay on format 1. Needs a store from 0.0.13 on (older ones skip it).
+# `gateway.reverse-proxy` is `planned` in fs-interfaces (unreviewed/planned-capabilities, not tagged yet). This entry is checked green only after
+# fs-interfaces is released with it and `capabilities_ref` (default v0.0.19) points at that tag; the real CI check is red until then, by design.
+[[package]]
+id = "zentinel"
+name = "Zentinel"
+summary = "Reverse proxy with TLS, routing and rate limits"
+repo = "FreeSynergy/fs-zentinel"
+tag = "v26.11_2"
+asset = "zentinel-{version}-linux-amd64.tar.gz"
+kind = "server"
+schema = 2
+min_store = "0.0.13"
+provides = ["gateway.reverse-proxy"]
+upstream = "https://github.com/zentinelproxy/zentinel"
+source_code = "https://github.com/FreeSynergy/fs-zentinel/releases/download/v26.11_2/zentinel-26.11_2-source.tar.gz"
+maker = "Zentinel project"
+icon = "https://raw.githubusercontent.com/FreeSynergy/fs-catalog/main/icons/server.png"
+icon_sha256 = "4d55f0d65e3e808a71fab736f8e7b659390a19b3ed7d7cb0710ef2588b09526d"
+
+[package.description]
+en = "The Zentinel reverse proxy (Apache-2.0), mirrored and signed by FreeSynergy: TLS termination, routing by host and path, load balancing, health checks, rate limiting and reload while running. It installs as a system service that is not switched on by itself."
+de = "Der Reverse-Proxy Zentinel (Apache-2.0), gespiegelt und signiert von FreeSynergy: TLS-Abschluss, Routing nach Host und Pfad, Lastverteilung, Gesundheitsprüfung, Ratenbegrenzung und Neuladen im Betrieb. Er wird als Systemdienst installiert, der nicht von selbst eingeschaltet wird."
+
+[[package.history]]
+version = "26.11_2"
+date = "2026-11-14"
+changes = { en = "Package revision 2: Debian packages for amd64 and arm64, signed.", de = "Paket-Revision 2: Debian-Pakete für amd64 und arm64, signiert." }

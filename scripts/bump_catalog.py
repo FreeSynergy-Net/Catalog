@@ -21,11 +21,14 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 FPR = "16A4A3EE563AEF51FCF0C55DED7B57C4A1904342"
 KEY_FILE = os.path.join(HERE, "..", "release-signing-key.asc")
 ORG = "FreeSynergy/"
-TAG = re.compile(r"^v(\d+)\.(\d+)\.(\d+)$")
+TAG = re.compile(r"^v(\d+)\.(\d+)\.(\d+)$|^v(\d+(?:\.\d+)+)_([1-9]\d*)$")  # vX.Y.Z, or wrapper v<upstream>_<N>
 
 
 def ver(tag):
-    return tuple(int(x) for x in TAG.match(tag).groups())
+    m = TAG.match(tag)
+    if m.group(4):  # wrapper: upstream numbers, then the build number
+        return tuple(int(x) for x in m.group(4).split(".")) + (int(m.group(5)),)
+    return tuple(int(x) for x in m.groups()[:3])
 
 
 def gh(path):

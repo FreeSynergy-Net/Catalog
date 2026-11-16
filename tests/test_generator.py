@@ -67,6 +67,24 @@ class Generator(unittest.TestCase):
             self.assertEqual(ET.fromstring(x).get("type"), typ)
             self.assertEqual(ET.fromstring(x).findtext("custom/value"), kind)
 
+    def test_wrapper_server_entry_with_deb(self):
+        p = with_(id="zentinel", kind="server", tag="v26.11_2", asset="zentinel-{version}-linux-amd64.tar.gz", min_store="0.0.13",
+                  upstream="https://u.org/z", source_code="https://u.org/z.tgz", maker="Z", schema=2)
+        root = ET.fromstring(build(p, schema=1))
+        self.assertEqual((root.get("type"), root.find("releases/release").get("version")), ("service", "26.11_2"))
+        self.assertEqual([a.get("fs-format") for a in root.findall("releases/release/artifacts/artifact") if a.get("fs-format")], ["deb"])
+
+    def test_server_without_rpm_or_deb_is_not_offered(self):  # ADR 0077 section 3, Gegenprobe
+        p = with_(kind="server", min_store="0.0.13")
+        rel = release_for(p)
+        rel["assets"] = [a for a in rel["assets"] if "deb" not in a["name"]]
+        gen.CTX.update(schema=2, caps=CAPS, caps_file=None)
+        with mock.patch.object(gen, "gh", lambda _p: rel), mock.patch.object(gen, "sums", lambda r: {a["name"]: "ab" * 32 for a in r["assets"]}), \
+                mock.patch.object(gen, "fetch", local_fetch):
+            with self.assertRaises(gen.Skip) as r:
+                gen.entry(p)
+        self.assertIn("rpm or deb", str(r.exception))
+
     def test_picture_hash_is_computed_and_checked(self):
         url = RAW + "examples/images/example-program-screenshot.png"
         shot = {"url": url, "license": "CC0-1.0", "source": "own", "caption": "c"}

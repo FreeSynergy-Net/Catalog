@@ -71,6 +71,11 @@
             <checksum type="sha256">abababababababababababababababababababababababababababababababab</checksum>
             <size type="download">123456</size>
           </artifact>
+          <artifact type="binary" platform="x86_64-linux-gnu" fs-format="deb" fs-signature="https://x/example-server/example-server_0.0.1-1_amd64.deb.asc">
+            <location>https://x/example-server/example-server_0.0.1-1_amd64.deb</location>
+            <checksum type="sha256">abababababababababababababababababababababababababababababababab</checksum>
+            <size type="download">10</size>
+          </artifact>
         </artifacts>
       </release>
     </releases>

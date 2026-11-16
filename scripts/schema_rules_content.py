@@ -81,7 +81,7 @@ def check_history(c, p):
     for i, h in enumerate(hist):
         where = f"history[{i}]"
         if not isinstance(h, dict) or not (is_str(h.get("version")) and VERSION.match(h["version"])):
-            c.err(where, "needs `version` as MAJOR.MINOR.PATCH")
+            c.err(where, "needs `version` as MAJOR.MINOR.PATCH (wrapper: upstream version + _N)")
             continue
         if h["version"] in versions:
             c.err(where, f"version {h['version']} is listed twice")

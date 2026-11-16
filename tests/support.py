@@ -48,6 +48,8 @@ def release_for(p):
     version = p["tag"].lstrip("v")
     name = p["asset"].format(version=version)
     names = [name, name + ".asc", "SHA256SUMS.txt"]
+    if p.get("kind") == "server":  # a server is offered only with a signed native package (ADR 0077 section 3)
+        names += [f"{p['id']}_{version}-1_amd64.deb", f"{p['id']}_{version}-1_amd64.deb.asc"]
     assets = [{"name": n, "browser_download_url": f"https://x/{p['id']}/{n}", "size": 123456 if n == name else 10} for n in names]
     return {"tag_name": p["tag"], "draft": False, "published_at": "2026-11-12T08:00:00Z", "assets": assets}
 

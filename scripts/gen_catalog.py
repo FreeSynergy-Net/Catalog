@@ -111,6 +111,8 @@ def entry(p):
             <location>{escape(a['browser_download_url'])}</location>
             <checksum type="sha256">{sha_by_name[n]}</checksum>{size_line(a.get('size'), 'download')}
           </artifact>"""
+    if kind == "server" and not native_lines:  # ADR 0077 section 3: a server enters the catalog only with a signed rpm or deb
+        raise Skip(f"{p['repo']} {p['tag']}: a server needs a signed rpm or deb in the release (none with .asc and a line in SHA256SUMS.txt)")
     # releases: the current one (date from GitHub, change text from `history`), then the older ones named in `history`
     history = {h["version"]: h for h in p.get("history", [])}
     mine = history.get(version, {})
@@ -118,7 +120,7 @@ def entry(p):
     date_attr = f" date={q(date)}" if schema.DATE.match(date) else ""
     installed = (p.get("installed_size") or {}).get(version)
     older = ""
-    for v in sorted((v for v in history if v != version), key=lambda v: tuple(int(x) for x in v.split(".")), reverse=True):
+    for v in sorted((v for v in history if v != version), key=lambda v: tuple(int(x) for x in v.replace("_", ".").split(".")), reverse=True):
         h = history[v]
         older += f"""
       <release version={q(v)} date={q(h['date'])}>{schema.release_description_xml(h['changes'])}

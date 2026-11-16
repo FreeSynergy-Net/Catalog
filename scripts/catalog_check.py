@@ -47,7 +47,7 @@ def check(packages):
                 caps = capabilities()
             except CapabilityListError as why:
                 # format 2 must check the names; for format 1 a failing read (no token, network) is a warning, never a stopped run
-                if CTX["schema"] >= 2:
+                if max(CTX["schema"], p.get("schema", 1) if isinstance(p.get("schema"), int) else 1) >= 2:
                     sys.exit(str(why))
                 print(f"::warning title=catalog: capability names not checked::{why}")
         issues += schema.validate(p, caps, CTX["schema"])
