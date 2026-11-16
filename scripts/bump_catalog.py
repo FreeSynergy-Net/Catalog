@@ -6,6 +6,7 @@ Drafts (invisible to the API without write rights anyway), incomplete releases a
 ::warning:: - this script never fails a run for them. Never lowers a tag; unchanged state writes nothing.
 Exit 0 always; prints `changed` when packages.toml was edited. Read only, via `gh api` (token only lifts the rate limit).
 """
+import importlib.util
 import json
 import os
 import re
@@ -21,14 +22,23 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 FPR = "16A4A3EE563AEF51FCF0C55DED7B57C4A1904342"
 KEY_FILE = os.path.join(HERE, "..", "release-signing-key.asc")
 ORG = "FreeSynergy/"
-TAG = re.compile(r"^v(\d+)\.(\d+)\.(\d+)$|^v(\d+(?:\.\d+)+)_([1-9]\d*)$")  # vX.Y.Z, or wrapper v<upstream>_<N>
 
 
-def ver(tag):
-    m = TAG.match(tag)
-    if m.group(4):  # wrapper: upstream numbers, then the build number
-        return tuple(int(x) for x in m.group(4).split(".")) + (int(m.group(5)),)
-    return tuple(int(x) for x in m.groups()[:3])
+def _load_base():  # by path (`python3 -I` has no scripts/ on the module path)
+    spec = importlib.util.spec_from_file_location("schema_base", os.path.join(HERE, "schema_base.py"))
+    mod = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(mod)
+    return mod
+
+
+BASE = _load_base()
+OWN_TAG = BASE.TAG  # own program: vMAJOR.MINOR.PATCH
+WRAPPER_TAG = BASE.WRAPPER_TAG  # wrapper: v<upstream> or v<upstream>-fs<N>
+
+
+def family(p):
+    """The tag family of a package: a package with `upstream` is a wrapper, any other is an own program. Families are never mixed."""
+    return WRAPPER_TAG if p.get("upstream") else OWN_TAG
 
 
 def gh(path):
@@ -93,10 +103,13 @@ def complete(p, release):
 def newest(p):
     if not p["repo"].startswith(ORG):
         raise RuntimeError(f"{p['repo']} is not under {ORG} - ignored")
-    current = ver(p["tag"])
+    fam = family(p)
+    if not fam.match(p["tag"]):
+        raise RuntimeError(f"tag {p['tag']} does not fit the tag family of {p['id']}")
+    current = BASE.tag_key(p["tag"])
     releases = gh(f"repos/{p['repo']}/releases?per_page=30")
-    cands = sorted((r for r in releases if not r.get("draft") and TAG.match(r["tag_name"]) and ver(r["tag_name"]) > current),
-                   key=lambda r: ver(r["tag_name"]), reverse=True)
+    cands = sorted((r for r in releases if not r.get("draft") and fam.match(r["tag_name"]) and BASE.tag_key(r["tag_name"]) > current),
+                   key=lambda r: BASE.tag_key(r["tag_name"]), reverse=True)
     for r in cands:
         why = complete(p, r)
         if why is None:

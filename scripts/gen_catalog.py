@@ -120,7 +120,7 @@ def entry(p):
     date_attr = f" date={q(date)}" if schema.DATE.match(date) else ""
     installed = (p.get("installed_size") or {}).get(version)
     older = ""
-    for v in sorted((v for v in history if v != version), key=lambda v: tuple(int(x) for x in v.replace("_", ".").split(".")), reverse=True):
+    for v in sorted((v for v in history if v != version), key=schema.tag_key, reverse=True):
         h = history[v]
         older += f"""
       <release version={q(v)} date={q(h['date'])}>{schema.release_description_xml(h['changes'])}

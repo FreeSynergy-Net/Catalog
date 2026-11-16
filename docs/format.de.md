@@ -38,12 +38,20 @@ Unter-Tabellen (`[package.x]`, `[[package.x]]`) **nach** den einfachen Schlüsse
 
 Je Art (Format 2): `program` und `server` brauchen `provides`; `frontend` braucht `requires`; `theme`, `icon-theme`, `component` nichts Zusätzliches.
 
-## Wrapper: Upstream-Version + `_N`
-`vMAJOR.MINOR.PATCH` ist der Tag **eigener** Programme (ADR 0064). Ein Paket, das ein **fremdes** Programm einwickelt (Spiegel, ADR 0068, `kind = "server"`),
-trägt die Upstream-Version plus unsere Bau-Nummer: `v26.11_2` = Upstream 26.11, unser 2. Bau. `_N` zählt ab 1 und steigt mit jeder Änderung an UNSEREM
-Paketbau; eine neue Upstream-Version beginnt wieder bei `_1`. Der Tag ist `v<Upstream-Version>_<N>` (`v26.11_2`, `v1.12.1_3`), die Katalogversion ist der Tag ohne `v`
-(`26.11_2`), und der Wrapper-Eintrag muss `upstream` nennen (daran unterscheidet der Generator ihn von einem eigenen Programm). Paketdateien behalten die
-Revision ihres Formats (`zentinel_26.11.2-1_amd64.deb`). `min_store` und `schema` bleiben `MAJOR.MINOR.PATCH`. Bestehende Tags werden nicht umbenannt.
+## Wrapper: `v<Upstream-Version>` und `-fs<N>`
+`vMAJOR.MINOR.PATCH` ist der Tag **eigener** Programme (ADR 0064). Ein Paket, das ein **fremdes** Programm einwickelt (Spiegel, ADR 0068; bisher `kind = "server"`,
+die Regel hängt aber nicht von der Art ab), übernimmt die Upstream-Version **unverändert** in seinen Tag und muss `upstream` nennen (daran unterscheidet der
+Generator es von einem eigenen Programm):
+- erster Bau einer Upstream-Version: `v<Upstream-Version>`, z. B. `v26.11_2` (Upstream Zentinel `26.11_2`), `v1.12.1` (Upstream Kanidm `1.12.1`);
+- jeder weitere Bau UNSERES Pakets derselben Upstream-Version: `v<Upstream-Version>-fs<N>` mit N >= 2, z. B. `v26.11_2-fs2`, `v1.12.1-fs2`.
+  `-fs1` gibt es nicht (Bau 1 hat kein Suffix); `N` ohne führende Null. Eine neue Upstream-Version beginnt wieder ohne Suffix.
+
+Der Upstream-Anteil darf `.`, `_`, `-`, `+`, `~`, Buchstaben und Ziffern enthalten (beginnt mit einer Ziffer, endet mit Buchstabe oder Ziffer) und wird nie verändert oder
+zerlegt; die Regel ist also für jeden Upstream gleich. `-fs` kommt in keiner uns bekannten Upstream-Version vor; enthielte eine `-fs`, wird sie **abgelehnt**
+(die Regel wäre nicht mehr eindeutig), ebenso ein zweites `-fs`-Suffix. Die Katalogversion ist der Tag ohne `v` (`26.11_2-fs2`).
+Paketdateien behalten die native Revision ihres Formats (`zentinel_26.11.2-1_amd64.deb`). `min_store` und `schema` bleiben `MAJOR.MINOR.PATCH`.
+Bestehende Tags werden nicht umbenannt. Reihenfolge (bump, Verlauf): zuerst nach Upstream-Version (Zahlen von links nach rechts, `_` wie `.`, `26.11_3` nach `26.11_2`),
+dann nach `N`; ein Paket mit `upstream` nimmt nur Wrapper-Tags, eines ohne nur `vMAJOR.MINOR.PATCH`; die Familien werden nie gemischt.
 
 Ein Paket kann Format 2 allein verlangen: `schema = 2` in seiner `[[package]]`-Tabelle macht die Regeln von Format 2 nur für dieses Paket zu Fehlern, während die
 Datei für ältere Einträge bei `schema = 1` bleibt. Ein `server` wird nur angeboten, wenn sein Release ein signiertes rpm oder deb hat (ADR 0077 Abschnitt 3); sonst überspringt ihn der Generator.

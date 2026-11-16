@@ -2,6 +2,7 @@
 import importlib.util
 import os
 import pathlib
+import re
 import shutil
 import subprocess
 import tempfile
@@ -92,6 +93,40 @@ class BumpTest(unittest.TestCase):
         evil = TOML.replace("FreeSynergy/fs-x", "someone/fs-x")
         text, _ = self.run_bump([release("v0.0.9")], toml=evil)
         self.assertEqual(text, evil)
+
+
+WRAPPER_TOML = TOML.replace('tag = "v0.0.2"', 'tag = "v26.11_2"\nupstream = "https://u.org/x"')
+
+
+class BumpWrapperTest(unittest.TestCase):
+    run_bump = BumpTest.run_bump
+
+    def tag_after(self, current, tags, toml=None):
+        base = toml or WRAPPER_TOML
+        text, _ = self.run_bump([release(t) for t in tags], toml=base.replace("v26.11_2", current))
+        return re.search(r'(?m)^tag = "([^"]*)"', text).group(1)
+
+    def test_wrapper_takes_next_own_build_and_next_upstream(self):
+        self.assertEqual(self.tag_after("v26.11_2", ["v26.11_2", "v26.11_2-fs2"]), "v26.11_2-fs2")
+        self.assertEqual(self.tag_after("v26.11_2", ["v26.11_2-fs2", "v26.11_2-fs10", "v26.11_2-fs3"]), "v26.11_2-fs10")  # numeric, not text
+        self.assertEqual(self.tag_after("v26.11_2-fs3", ["v26.11_3", "v26.11_2-fs4"]), "v26.11_3")  # newer upstream beats a later build
+        self.assertEqual(self.tag_after("v26.11_2-fs3", ["v26.11_2", "v26.11_2-fs2"]), "v26.11_2-fs3")  # never lowered
+
+    def test_upstream_order_is_numeric_token_by_token(self):
+        # the upstream version is compared as it is (numbers left to right, `_` like `.`); the build number only breaks a tie
+        self.assertEqual(self.tag_after("v26.11_2", ["v26.11_3"]), "v26.11_3")
+        self.assertEqual(self.tag_after("v26.11_3", ["v26.11.1_1"]), "v26.11_3")  # 26.11.1_1 is older than 26.11_3 by upstream's own numbers
+        self.assertEqual(self.tag_after("v1.9.0-fs5", ["v1.10.0"]), "v1.10.0")  # 10 > 9, not text order; a new upstream version beats any build
+        self.assertEqual(self.tag_after("v1.12.1", ["v1.12.1-fs2", "v1.12.0-fs9"]), "v1.12.1-fs2")
+
+    def test_families_are_not_mixed(self):
+        # an own program (no `upstream`) takes only vX.Y.Z, a wrapper takes no tag of the other family's shape that is not a wrapper tag
+        self.assertEqual(self.tag_after("v0.0.2", ["v0.0.3-fs2", "v26.11_9", "v0.0.3"], toml=TOML), "v0.0.3")
+        self.assertEqual(self.tag_after("v0.0.2", ["v26.11_9"], toml=TOML), "v0.0.2")
+        self.assertEqual(self.tag_after("v26.11_2", ["v26.12", "v26.11_2-fs0", "v26.11_2-fs1", "vx"]), "v26.12")
+
+    def test_current_tag_of_the_wrong_family_is_skipped_with_a_warning(self):
+        self.assertEqual(self.tag_after("v0.0.2", ["v0.0.5"], toml=TOML.replace('tag = "v0.0.2"', 'tag = "v0.0.2-fs2"')), "v0.0.2-fs2")
 
 
 @unittest.skipUnless(shutil.which("gpg"), "gpg missing")

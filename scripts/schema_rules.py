@@ -82,9 +82,9 @@ def validate(p, caps=None, schema=1):
         c.err("id", "must be lower-case letters, digits and `-`")
     if is_str(p.get("tag")) and not TAG.match(p["tag"]):
         if not WRAPPER_TAG.match(p["tag"]):
-            c.err("tag", f"`{p['tag']}` is not vMAJOR.MINOR.PATCH (own program) or v<upstream version>_<N> (wrapper)")
+            c.err("tag", f"`{p['tag']}` is not vMAJOR.MINOR.PATCH (own program) or v<upstream version>[-fs<N>] (wrapper, N >= 2)")
         elif not p.get("upstream"):
-            c.err("tag", f"`{p['tag']}` is a wrapper tag (upstream version + _N): it needs `upstream`; an own program uses vMAJOR.MINOR.PATCH")
+            c.err("tag", f"`{p['tag']}` is a wrapper tag (upstream version, optional -fs<N>): it needs `upstream`; an own program uses vMAJOR.MINOR.PATCH")
     kind = p.get("kind", "program")
     if not (is_str(kind) and kind in KINDS):
         c.err("kind", f"must be one of: {', '.join(KINDS)}")

@@ -19,11 +19,14 @@ NEW_KINDS = ("server", "icon-theme")
 SHA256 = re.compile(r"^[0-9a-f]{64}$")
 UUID7 = re.compile(r"^[0-9a-f]{8}-[0-9a-f]{4}-7[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$")
 LANG = re.compile(r"^[a-z]{2,3}(-[A-Za-z0-9]{2,8})*$")
-VERSION = re.compile(r"^\d+\.\d+\.\d+$|^\d+(?:\.\d+)+_[1-9]\d*$")  # a release version: MAJOR.MINOR.PATCH, or a wrapper version (upstream + _N)
+# Wrapper version (docs/format.md): the upstream version unchanged (any characters of UPSTREAM_CHARS, starts with a digit, ends with a
+# letter or digit, never contains `-fs`), then optionally `-fs<N>` with N >= 2 (our 2nd and later build of that upstream version; no suffix = build 1).
+_WRAPPER_BODY = r"(\d(?:(?:(?!-fs)[0-9A-Za-z._+~-])*[0-9A-Za-z])?)(?:-fs([2-9]|[1-9]\d+))?"
+VERSION = re.compile(r"^\d+\.\d+\.\d+$|^" + _WRAPPER_BODY + "$")  # a release version: MAJOR.MINOR.PATCH, or a wrapper version
 SEMVER = re.compile(r"^\d+\.\d+\.\d+$")  # a store version (`min_store`)
 TAG = re.compile(r"^v\d+\.\d+\.\d+$")  # own programs: vMAJOR.MINOR.PATCH (ADR 0064)
-# wrapper around a foreign program: upstream version + our build number, `v26.11_2` (docs/format.md, "Wrapper: upstream version + _N")
-WRAPPER_TAG = re.compile(r"^v\d+(?:\.\d+)+_[1-9]\d*$")
+# wrapper around a foreign program: `v<upstream version>` (build 1) or `v<upstream version>-fs<N>` (build N >= 2), docs/format.md
+WRAPPER_TAG = re.compile(r"^v" + _WRAPPER_BODY + "$")
 DATE = re.compile(r"^\d{4}-(0[1-9]|1[0-2])-(0[1-9]|[12]\d|3[01])$")
 MEDIATYPE = re.compile(r"^[a-z0-9][a-z0-9!#$&^_.+-]*/[a-z0-9][a-z0-9!#$&^_.+-]*$")
 FEATURE_KEY = re.compile(r"^[a-z0-9][a-z0-9-]*$")
@@ -181,3 +184,15 @@ class Ctx:
 
     def warn(self, field, msg):
         self.issues.append(Issue(False, self.package, field, msg))
+
+
+def _upstream_key(text):
+    """Order of an upstream version: its numbers and words as tokens (`26.11_2` = 26, 11, 2; `1.12.1` = 1, 12, 1), numbers before words."""
+    return tuple((0, int(t), "") if t.isdigit() else (1, 0, t) for t in re.findall(r"\d+|[A-Za-z]+", text))
+
+
+def tag_key(tag):
+    """Sort key of a tag or release version of one family: (upstream version, build number): the upstream version decides, the
+    build number only breaks a tie. None when it is neither vMAJOR.MINOR.PATCH nor a wrapper tag."""
+    m = WRAPPER_TAG.match(tag if tag.startswith("v") else "v" + tag)
+    return None if m is None else (_upstream_key(m.group(1)), int(m.group(2) or 1))

@@ -106,6 +106,16 @@ class Hardening(unittest.TestCase):
             gen.CTX.update(schema=1, caps=None)
             gen.check([{k: GOOD[k] for k in ("id", "name", "summary", "repo", "tag", "asset")}])
 
+    def test_package_schema_2_makes_an_unreadable_capability_list_an_error_even_in_a_schema_1_file(self):
+        gen.CTX.update(caps=None, caps_file=None, checked=False, schema=1)
+        bad = mock.Mock(returncode=1, stdout="", stderr="no token")
+        with mock.patch.object(gen.subprocess, "run", lambda *a, **k: bad), mock.patch.dict(gen.os.environ, {}, clear=False):
+            gen.os.environ.pop("FS_CAPABILITIES_FILE", None)
+            with self.assertRaises(SystemExit):
+                gen.check([with_(provides=["tasks"], schema=2)])
+            gen.CTX.update(caps=None, checked=False)
+            gen.check([with_(provides=["tasks"])])  # counter-check: without the package's `schema = 2` it stays a warning
+
     def test_warnings_are_printed_once(self):
         import io, contextlib
         old = {k: GOOD[k] for k in ("id", "name", "summary", "repo", "tag", "asset")}

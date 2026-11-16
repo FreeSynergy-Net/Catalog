@@ -139,7 +139,7 @@ class Validation(unittest.TestCase):
         self.assertIn("date", messages(with_(history=[{"version": "0.0.1", "date": "01.11.2026", "changes": "x"}])))
         self.assertIn("`en`", messages(with_(history=[{"version": "0.0.2", "changes": {"de": "b"}}])))
         self.assertIn("changes", messages(with_(history=[{"version": "0.0.2"}])))
-        self.assertIn("version", messages(with_(history=[{"version": "2", "changes": "x"}])))
+        self.assertIn("version", messages(with_(history=[{"version": "abc", "changes": "x"}])))
 
     def test_missing_change_text_never_stops_a_run(self):  # bump raises the tag without knowing a text
         issues = S.validate(GOOD, CAPS, 2)
@@ -157,15 +157,22 @@ class Validation(unittest.TestCase):
         self.assertIn("tag", messages(with_(tag="0.0.2")))
         self.assertIn("id", messages(with_(id="Fs_X")))
 
-    def test_wrapper_tag_upstream_version_plus_build_number(self):
-        wrapper = with_(tag="v26.11_2", upstream="https://u.org/x", source_code="https://u.org/s.tgz")
-        self.assertEqual(problems(wrapper), [])
-        self.assertEqual(problems(with_(tag="v1.12.1_3", upstream="https://u.org/x", source_code="https://u.org/s.tgz")), [])
+    def test_wrapper_tag_upstream_version_plus_fs_build(self):
+        up = dict(upstream="https://u.org/x", source_code="https://u.org/s.tgz")
+        # build 1 = v + upstream version unchanged; build N >= 2 = `-fs<N>`; the upstream part may use `_`, `.`, `-` freely
+        for ok in ("v26.11_2", "v1.12.1", "v26.11_2-fs2", "v1.12.1-fs3", "v2.0-rc1", "v2.0-rc1-fs12", "v1.2.3_4.5"):
+            self.assertEqual(problems(with_(tag=ok, **up)), [], ok)
         self.assertIn("needs `upstream`", messages(with_(tag="v26.11_2")))  # an own program never uses it
-        for bad in ("v26.11_0", "v26.11_", "26.11_2", "v26_2", "v26.11_2a", "v26.11-2", "v1.2.3_x"):
-            self.assertIn("tag", messages(with_(tag=bad, upstream="https://u.org/x")), bad)
-        self.assertEqual(problems(with_(tag="v26.11_2", upstream="https://u.org/x", source_code="https://u.org/s.tgz", history=[{"version": "26.11_2", "changes": "x"}])), [])
+        self.assertIn("needs `upstream`", messages(with_(tag="v26.11_2-fs2")))
+        # empty upstream, no digit start, build 0 and 1 (build 1 has no suffix), leading zero, doubled or embedded `-fs` (not unique), no `v`
+        for bad in ("v", "v-fs2", "vx1", "26.11_2", "v26.11_", "v26.11_2-fs", "v26.11_2-fs0", "v26.11_2-fs1", "v26.11_2-fs02",
+                    "v26.11_2-fs2-fs3", "v1-fs2x-fs3", "v1.2-fsx", "v1.2.3-fs1", "v26.11 2", "v26.11_2-fs2 "):
+            self.assertIn("tag", messages(with_(tag=bad, **up)), bad)
+        self.assertEqual(problems(with_(tag="v26.11_2-fs2", history=[{"version": "26.11_2-fs2", "changes": "x"},
+                                                                   {"version": "26.11_2", "date": "2026-11-14", "changes": "x"}], **up)), [])
+        self.assertIn("version", messages(with_(tag="v26.11_2", history=[{"version": "26.11_2-fs1", "date": "2026-11-14", "changes": "x"}], **up)))
         self.assertIn("min_store", messages(with_(min_store="26.11_2")))  # a store version stays MAJOR.MINOR.PATCH
+        self.assertIn("min_store", messages(with_(min_store="1.2.3-fs2")))
 
     def test_a_package_can_ask_for_format_2_alone(self):
         old = {k: GOOD[k] for k in ("id", "name", "summary", "repo", "tag", "asset")}
