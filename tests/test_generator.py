@@ -180,7 +180,7 @@ class Examples(unittest.TestCase):
 
 
 class ReaderContract(unittest.TestCase):
-    """A small copy of what the store reads (fs-store-catalog details.rs), applied to the generated XML: if this breaks, the
+    """A small copy of what the store reads (fs-packages-catalog details.rs), applied to the generated XML: if this breaks, the
     store would read the catalog differently."""
 
     def test_store_would_find_everything(self):
