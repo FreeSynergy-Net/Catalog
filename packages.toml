@@ -73,6 +73,19 @@ tag = "v0.0.2"
 asset = "fs-maps-{version}-linux-x86_64.tar.gz"
 kind = "program"
 
+[[package]]
+id = "fs-activity"
+name = "FreeSynergy.History"
+summary = "What you did, as a timeline of your own work"
+description = "A timeline of your own work, without anyone watching you: it keeps a short line for each event across your programs, never the content. You can scroll and filter it, collapse a busy hour into one line, and forget parts of it. It stays local to you."
+repo = "FreeSynergy/fs-activity"
+tag = "v0.0.1"
+asset = "fs-activity-{version}-linux-x86_64.tar.gz"
+kind = "program"
+schema = 2
+provides = ["history"]
+replaces = ["fs-history"]
+
 # A mirrored server (ADR 0077): the upstream version is the tag (`v26.11_2` = upstream 26.11_2, our build 1; a later build of it would be
 # `v26.11_2-fs2`), the package is held to format 2
 # on its own (`schema = 2`) while the other entries stay on format 1. Needs a store from 0.0.13 on (older ones skip it).
