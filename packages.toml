@@ -4,15 +4,13 @@
 capabilities_ref = "v0.0.21"  # fs-interfaces tag whose schema/capabilities.txt is THE capability list
 
 [[package]]
-id = "fs-packages"
-replaces = ["fs-store"]
-schema = 2
-name = "FreeSynergy Packages"
+id = "fs-store"
+name = "FreeSynergy.Store"
 summary = "Install, update and extend FreeSynergy programs"
 description = "The store of FreeSynergy: it installs the programs you choose from signed catalogs, keeps them up to date, and takes them away again. Every file is checked against the project key before anything is installed, and a failed update is rolled back."
 repo = "FreeSynergy/fs-packages"
 tag = "v0.0.16"
-asset = "fs-packages-{version}-linux-x86_64.tar.gz"
+asset = "fs-store-{version}-linux-x86_64.tar.gz"
 kind = "program"
 
 [[package]]
@@ -36,15 +34,13 @@ asset = "fs-people-{version}-linux-x86_64.tar.gz"
 kind = "program"
 
 [[package]]
-id = "fs-calendars"
-replaces = ["fs-calendar"]
-schema = 2
-name = "FreeSynergy.Calendars"
+id = "fs-calendar"
+name = "FreeSynergy.Calendar"
 summary = "Calendar and events"
 description = "Plan your days: events with times and zones, repeating events, a month, week and day view, and import and export as iCalendar. Your events stay in your own data folder."
 repo = "FreeSynergy/fs-calendars"
 tag = "v0.0.2"
-asset = "fs-calendars-{version}-linux-x86_64.tar.gz"
+asset = "fs-calendar-{version}-linux-x86_64.tar.gz"
 kind = "program"
 
 [[package]]
@@ -58,15 +54,13 @@ asset = "fs-files-{version}-linux-x86_64.tar.gz"
 kind = "program"
 
 [[package]]
-id = "fs-texts"
-replaces = ["fs-wiki"]
-schema = 2
-name = "FreeSynergy.Texts"
+id = "fs-wiki"
+name = "FreeSynergy.Wiki"
 summary = "Notes that belong together"
 description = "Notes that belong together: pages with blocks, a tree of pages, each page in German and English as one page with a language switch, and read-only access to the project documentation. Your pages stay in your own data folder."
 repo = "FreeSynergy/fs-texts"
 tag = "v0.0.12"
-asset = "fs-texts-{version}-linux-x86_64.tar.gz"
+asset = "fs-wiki-{version}-linux-x86_64.tar.gz"
 kind = "program"
 
 [[package]]
