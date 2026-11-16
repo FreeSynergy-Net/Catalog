@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<components version="1.0" origin="freesynergy" fs-serial="1794872164" fs-expires="1797896164">
+<components version="1.0" origin="freesynergy" fs-serial="1794872420" fs-expires="1797896420">
   <component type="desktop-application">
     <id>fs-packages</id>
     <name>FreeSynergy.Packages</name>
@@ -94,32 +94,32 @@
     <description><p>Your people and contacts: cards with names, mail, phone and notes, groups of people, and vCard import and export. Everything stays in your own data folder.</p></description>
     <url type="homepage">https://github.com/FreeSynergy/fs-people</url>
     <releases>
-      <release version="0.0.3" date="2026-11-08">
+      <release version="0.0.14" date="2026-11-16">
         <artifacts>
           <artifact type="binary" platform="x86_64-linux-gnu">
-            <location>https://github.com/FreeSynergy/fs-people/releases/download/v0.0.3/fs-people-0.0.3-linux-x86_64.tar.gz</location>
-            <checksum type="sha256">d18c9073014b65856adaddeca241ae5d3ca211e8981df0487021962fbd283c5e</checksum>
-            <size type="download">18947382</size>
+            <location>https://github.com/FreeSynergy/fs-people/releases/download/v0.0.14/fs-people-0.0.14-linux-x86_64.tar.gz</location>
+            <checksum type="sha256">257ce6bb14096838b5e4962f11cf26ae8dc75fb05887d90754597b93b88bd77b</checksum>
+            <size type="download">19852036</size>
           </artifact>
-          <artifact type="binary" platform="aarch64-linux-gnu" fs-format="rpm" fs-signature="https://github.com/FreeSynergy/fs-people/releases/download/v0.0.3/fs-people-0.0.3-1.aarch64.rpm.asc">
-            <location>https://github.com/FreeSynergy/fs-people/releases/download/v0.0.3/fs-people-0.0.3-1.aarch64.rpm</location>
-            <checksum type="sha256">89c74f1d3befc8a6d9b8502399750271eb02dc5f99ad5d69127739b26444d1b8</checksum>
-            <size type="download">12806432</size>
+          <artifact type="binary" platform="aarch64-linux-gnu" fs-format="rpm" fs-signature="https://github.com/FreeSynergy/fs-people/releases/download/v0.0.14/fs-people-0.0.14-1.aarch64.rpm.asc">
+            <location>https://github.com/FreeSynergy/fs-people/releases/download/v0.0.14/fs-people-0.0.14-1.aarch64.rpm</location>
+            <checksum type="sha256">280eb6185809731d832f06f2eb38cbde9d6db209113c71262a0a85a8c152f8c6</checksum>
+            <size type="download">13351350</size>
           </artifact>
-          <artifact type="binary" platform="x86_64-linux-gnu" fs-format="rpm" fs-signature="https://github.com/FreeSynergy/fs-people/releases/download/v0.0.3/fs-people-0.0.3-1.x86_64.rpm.asc">
-            <location>https://github.com/FreeSynergy/fs-people/releases/download/v0.0.3/fs-people-0.0.3-1.x86_64.rpm</location>
-            <checksum type="sha256">0410186d2081800dd1dbd38a6c2a1f62c30473f1c9fa7c7a5d1c712492ac6c01</checksum>
-            <size type="download">13534192</size>
+          <artifact type="binary" platform="x86_64-linux-gnu" fs-format="rpm" fs-signature="https://github.com/FreeSynergy/fs-people/releases/download/v0.0.14/fs-people-0.0.14-1.x86_64.rpm.asc">
+            <location>https://github.com/FreeSynergy/fs-people/releases/download/v0.0.14/fs-people-0.0.14-1.x86_64.rpm</location>
+            <checksum type="sha256">09b08a0b927f9d4910bc4871a4f18641bfd7d7f8539802c5fe6135e6b4e16507</checksum>
+            <size type="download">14076018</size>
           </artifact>
-          <artifact type="binary" platform="x86_64-linux-gnu" fs-format="deb" fs-signature="https://github.com/FreeSynergy/fs-people/releases/download/v0.0.3/fs-people_0.0.3-1_amd64.deb.asc">
-            <location>https://github.com/FreeSynergy/fs-people/releases/download/v0.0.3/fs-people_0.0.3-1_amd64.deb</location>
-            <checksum type="sha256">d19e142840f95e46991196596d877469d0bf441698d6e8dad120056b074f04b7</checksum>
-            <size type="download">12477952</size>
+          <artifact type="binary" platform="x86_64-linux-gnu" fs-format="deb" fs-signature="https://github.com/FreeSynergy/fs-people/releases/download/v0.0.14/fs-people_0.0.14-1_amd64.deb.asc">
+            <location>https://github.com/FreeSynergy/fs-people/releases/download/v0.0.14/fs-people_0.0.14-1_amd64.deb</location>
+            <checksum type="sha256">807c1b5b9ae16e328372f40621cf72eb37890a302a162ed8405ccd7cb4870112</checksum>
+            <size type="download">13008036</size>
           </artifact>
-          <artifact type="binary" platform="aarch64-linux-gnu" fs-format="deb" fs-signature="https://github.com/FreeSynergy/fs-people/releases/download/v0.0.3/fs-people_0.0.3-1_arm64.deb.asc">
-            <location>https://github.com/FreeSynergy/fs-people/releases/download/v0.0.3/fs-people_0.0.3-1_arm64.deb</location>
-            <checksum type="sha256">dfdb1a34ef2cd3ba28e759b98b32d5817344eb38a30f09e86f46c7a301dcbdec</checksum>
-            <size type="download">11021496</size>
+          <artifact type="binary" platform="aarch64-linux-gnu" fs-format="deb" fs-signature="https://github.com/FreeSynergy/fs-people/releases/download/v0.0.14/fs-people_0.0.14-1_arm64.deb.asc">
+            <location>https://github.com/FreeSynergy/fs-people/releases/download/v0.0.14/fs-people_0.0.14-1_arm64.deb</location>
+            <checksum type="sha256">0343336ed8d451120c9abc2a09d24b5e9decac351e77c7266248abbe417257a8</checksum>
+            <size type="download">11497840</size>
           </artifact>
         </artifacts>
       </release>
@@ -127,7 +127,7 @@
     <custom>
       <value key="fs:kind">program</value>
       <value key="fs:format">tar.gz</value>
-      <value key="fs:signature">https://github.com/FreeSynergy/fs-people/releases/download/v0.0.3/fs-people-0.0.3-linux-x86_64.tar.gz.asc</value>
+      <value key="fs:signature">https://github.com/FreeSynergy/fs-people/releases/download/v0.0.14/fs-people-0.0.14-linux-x86_64.tar.gz.asc</value>
     </custom>
   </component>
   <component type="desktop-application">
