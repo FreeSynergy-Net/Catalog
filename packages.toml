@@ -103,6 +103,28 @@ tag = "v0.0.3"
 asset = "fs-messages-{version}-linux-x86_64.tar.gz"
 kind = "program"
 
+[[package]]
+id = "fs-forms"
+name = "FreeSynergy.Forms"
+summary = "Surveys where an anonymous answer really is anonymous"
+description = "Ask questions, collect answers and read the result: named or anonymous, where anonymous answers are kept in a separate box with no log and no time, and results appear only for a minimum group size. This first version is a window with its server that says plainly what works today and what comes; the core (surveys, ballots, results, counting methods, CSV export) is not connected to the window yet, so no survey can be made there. What is not built yet is shown and says so. Contract: draft."
+repo = "FreeSynergy/fs-forms"
+tag = "v0.0.2"
+asset = "fs-forms-{version}-linux-x86_64.tar.gz"
+kind = "program"
+requires = []
+
+[[package]]
+id = "fs-resources"
+name = "FreeSynergy.Resources"
+summary = "Things, rooms, material and time: what we have and need"
+description = "Know what a group has and needs: things, rooms and material, and who may use them when. This first version is a window with its server that says plainly what works today and what comes; the core (reservations that cannot overbook, free time, needs and offers, your own capacity) is not connected to the window yet, so nothing can be managed in it. What is not built yet is shown and says so. Contract: draft."
+repo = "FreeSynergy/fs-resources"
+tag = "v0.0.2"
+asset = "fs-resources-{version}-linux-x86_64.tar.gz"
+kind = "program"
+requires = []
+
 # A mirrored server (ADR 0077): the upstream version is the tag (`v26.11_2` = upstream 26.11_2, our build 1; a later build of it would be
 # `v26.11_2-fs2`), the package is held to format 2
 # on its own (`schema = 2`) while the other entries stay on format 1. Needs a store from 0.0.13 on (older ones skip it).

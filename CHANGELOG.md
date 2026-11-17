@@ -1,5 +1,10 @@
 # Changelog
 
+## Unreleased (unreviewed/catalog-forms-resources)
+
+- New entry `fs-forms` (`FreeSynergy.Forms`, tag `v0.0.2`, asset `fs-forms-0.0.2-linux-x86_64.tar.gz`, schema 1, no icon and no `provides` yet, "Contract: draft"; the tarball holds `fs-forms` and `fs-forms-simple`).
+- New entry `fs-resources` (`FreeSynergy.Resources`, tag `v0.0.2`, asset `fs-resources-0.0.2-linux-x86_64.tar.gz`, schema 1, no icon and no `provides` yet, "Contract: draft"; the tarball holds `fs-resources` and `fs-resources-simple`).
+
 ## Unreleased (unreviewed/catalog-draw-messages-packages)
 
 - `fs-packages` tag `v0.0.18` -> `v0.0.19` (pre-release; asset `fs-packages-0.0.19-linux-x86_64.tar.gz`; other fields unchanged).
