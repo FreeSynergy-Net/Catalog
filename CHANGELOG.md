@@ -1,5 +1,11 @@
 # Changelog
 
+## Unreleased (unreviewed/catalog-draw-messages-packages)
+
+- `fs-packages` tag `v0.0.18` -> `v0.0.19` (pre-release; asset `fs-packages-0.0.19-linux-x86_64.tar.gz`; other fields unchanged).
+- New entry `fs-draw` (`FreeSynergy.Draw`, tag `v0.0.2`, asset `fs-draw-0.0.2-linux-x86_64.tar.gz`, schema 1, no icon and no `provides` yet, "Contract: draft").
+- New entry `fs-messages` (`FreeSynergy.Messages`, tag `v0.0.3`, asset `fs-messages-0.0.3-linux-x86_64.tar.gz`, schema 1, no icon and no `provides` yet, "Contract: draft").
+
 ## Unreleased (unreviewed/catalog-make-icons-weg)
 
 - Removed `icons/make_icons.py`; icons come from the fs-icons set (it would have overwritten `server.png` with the old CC0 drawing). `icons/README.md` shortened accordingly.

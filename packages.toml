@@ -9,7 +9,7 @@ name = "FreeSynergy.Packages"
 summary = "Install, update and remove FreeSynergy programs, frontends, components and themes"
 description = { en = "FreeSynergy Packages: install, update and remove FreeSynergy programs, frontends, components and themes. Everything comes from signed catalogs and is checked against the project key before it is installed; a failed update is rolled back.", de = "FreeSynergy Packages: Programme, Frontends, Komponenten und Themes von FreeSynergy installieren, aktualisieren und entfernen. Alles stammt aus signierten Katalogen und wird vor der Installation gegen den Projektschlüssel geprüft; ein fehlgeschlagenes Update wird zurückgerollt." }
 repo = "FreeSynergy/fs-packages"
-tag = "v0.0.18"
+tag = "v0.0.19"
 asset = "fs-packages-{version}-linux-x86_64.tar.gz"
 kind = "program"
 
@@ -81,6 +81,26 @@ description = "Your places as lists and sheets. A first version: there is no map
 repo = "FreeSynergy/fs-maps"
 tag = "v0.0.4"
 asset = "fs-maps-{version}-linux-x86_64.tar.gz"
+kind = "program"
+
+[[package]]
+id = "fs-draw"
+name = "FreeSynergy.Draw"
+summary = "An endless board for ideas, drawings and diagrams"
+description = "An endless board for ideas: shapes, text, arrows and drawings that several people can change at once without a referee. This first version is a window with its server that says plainly what works today and what comes; the engine behind it (boards, pages, merging, undo, SVG export) is not wired to the window yet, so nothing can be drawn there. What is not built yet is shown and says so. Contract: draft."
+repo = "FreeSynergy/fs-draw"
+tag = "v0.0.2"
+asset = "fs-draw-{version}-linux-x86_64.tar.gz"
+kind = "program"
+
+[[package]]
+id = "fs-messages"
+name = "FreeSynergy.Messages"
+summary = "Mail, chat and AI agents in one place, encrypted only"
+description = "Say something to someone: mail, chat and AI agents in one program, and a message is only sent if it can be sent encrypted. This first version is a window with its server that says plainly what works today and what comes; the core (message model, encrypted-only sending, mail and Matrix connectors, AI guard) is not wired to the window yet. What is not built yet is shown and says so. Contract: draft."
+repo = "FreeSynergy/fs-messages"
+tag = "v0.0.3"
+asset = "fs-messages-{version}-linux-x86_64.tar.gz"
 kind = "program"
 
 # A mirrored server (ADR 0077): the upstream version is the tag (`v26.11_2` = upstream 26.11_2, our build 1; a later build of it would be
