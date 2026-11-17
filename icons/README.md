@@ -5,7 +5,7 @@ FreeSynergy project, MIT), rendered with `inkscape <svg> -w 256 -h 256 -o icons/
 far below the 1 MiB limit. A catalog entry names a file with `icon` and its SHA-256 as `icon_sha256`; the hash below is the one to use.
 Most files are not referenced by an entry yet (entries follow after the release of their programme).
 
-- `server.png`: server icon (slate tile, white rack); replaces the earlier CC0 icon written by `make_icons.py` (`make_icons.py` is obsolete: running it would overwrite this file with the old drawing).
+- `server.png`: server icon (slate tile, white rack); like all icons here it comes from the fs-icons set (MIT) and is copied from there.
 - `fs-font.png`, `fs-theme.png`: neutral icons for the kinds font and theme (no programme).
 - all other `fs-<name>.png`: programme icon of `<name>`.
 

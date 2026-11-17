@@ -1,5 +1,9 @@
 # Changelog
 
+## Unreleased (unreviewed/catalog-make-icons-weg)
+
+- Removed `icons/make_icons.py`; icons come from the fs-icons set (it would have overwritten `server.png` with the old CC0 drawing). `icons/README.md` shortened accordingly.
+
 ## Unreleased (unreviewed/catalog-groups-texts)
 
 - New entry `fs-groups` (`FreeSynergy.Groups`, tag `v0.0.2`, asset `fs-groups-0.0.2-linux-x86_64.tar.gz`, schema 1, no icon yet).
