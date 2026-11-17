@@ -136,6 +136,17 @@ asset = "fs-resources-{version}-linux-x86_64.tar.gz"
 kind = "program"
 requires = []
 
+[[package]]
+id = "fs-broadcast"
+name = "FreeSynergy.Broadcast"
+summary = "Go live: one stream to several places"
+description = "Send one live stream to several places at once. This first version is a window with its server that says plainly what works today and what comes; the core (streams, targets, forwarding) is not wired to the window yet, so no real stream is shown and nothing in it can be used yet. What is not built yet is shown and says so. Contract: draft."
+repo = "FreeSynergy/fs-broadcast"
+tag = "v0.0.2"
+asset = "fs-broadcast-{version}-linux-x86_64.tar.gz"
+kind = "program"
+requires = []
+
 # A mirrored server (ADR 0077): the upstream version is the tag (`v26.11_2` = upstream 26.11_2, our build 1; a later build of it would be
 # `v26.11_2-fs2`), the package is held to format 2
 # on its own (`schema = 2`) while the other entries stay on format 1. Needs a store from 0.0.13 on (older ones skip it).

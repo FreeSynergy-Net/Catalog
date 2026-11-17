@@ -3,6 +3,7 @@
 ## Unreleased (unreviewed/catalog-packages-0022)
 
 - `fs-packages` tag `v0.0.21` -> `v0.0.22` (asset `fs-packages-0.0.22-linux-x86_64.tar.gz`; other fields unchanged).
+- New entry `fs-broadcast` (`FreeSynergy.Broadcast`, tag `v0.0.2`, asset `fs-broadcast-0.0.2-linux-x86_64.tar.gz`, schema 1, no `provides` yet, "Contract: draft"; preview; the tarball holds `fs-broadcast` and `fs-broadcast-simple`).
 
 ## Unreleased (unreviewed/catalog-calendars)
 
