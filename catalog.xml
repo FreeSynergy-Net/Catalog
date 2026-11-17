@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<components version="1.0" origin="freesynergy" fs-serial="1794893761" fs-expires="1797917761">
+<components version="1.0" origin="freesynergy" fs-serial="1794917446" fs-expires="1797941446">
   <component type="desktop-application">
     <id>fs-packages</id>
     <name>FreeSynergy.Packages</name>
@@ -131,38 +131,58 @@
     </custom>
   </component>
   <component type="desktop-application">
-    <id>fs-calendar</id>
-    <name>FreeSynergy.Calendar</name>
-    <summary>Calendar and events</summary>
-    <description><p>Plan your days: events with times and zones, repeating events, a month, week and day view, and import and export as iCalendar. Your events stay in your own data folder.</p></description>
-    <url type="homepage">https://github.com/FreeSynergy/fs-calendar</url>
+    <id>fs-calendars</id>
+    <name>FreeSynergy.Calendars</name>
+    <summary>Calendars and events</summary>
+    <description><p>Plan your days: a window with month, week, day and an overview of events, shown in this preview with example data. The core (events with times and zones, repeating events, import and export as iCalendar) is not wired to the window yet. What is not built yet is shown and says so. Contract: draft.</p></description>
+    <url type="homepage">https://github.com/FreeSynergy/fs-calendars</url>
     <releases>
-      <release version="0.0.4" date="2026-11-16">
+      <release version="0.0.5" date="2026-11-17">
         <artifacts>
           <artifact type="binary" platform="x86_64-linux-gnu">
-            <location>https://github.com/FreeSynergy/fs-calendars/releases/download/v0.0.4/fs-calendar-0.0.4-linux-x86_64.tar.gz</location>
-            <checksum type="sha256">70a731863c10c52ccc03b0d46620dac9ade26ae8ddd0588ab6bc0b8e66bfc325</checksum>
-            <size type="download">19428919</size>
+            <location>https://github.com/FreeSynergy/fs-calendars/releases/download/v0.0.5/fs-calendars-0.0.5-linux-x86_64.tar.gz</location>
+            <checksum type="sha256">7ee3d859399bdc87389e826842810a4dd1f75c063390712cb37f3337fe3fcc71</checksum>
+            <size type="download">20651687</size>
           </artifact>
-          <artifact type="binary" platform="aarch64-linux-gnu" fs-format="rpm" fs-signature="https://github.com/FreeSynergy/fs-calendars/releases/download/v0.0.4/fs-calendar-0.0.4-1.aarch64.rpm.asc">
-            <location>https://github.com/FreeSynergy/fs-calendars/releases/download/v0.0.4/fs-calendar-0.0.4-1.aarch64.rpm</location>
-            <checksum type="sha256">a9c0d92003baf1d081c7420c3b2a3cb6f00a46df07dc85bf2786e06f9c2defc0</checksum>
-            <size type="download">13032394</size>
+          <artifact type="binary" platform="aarch64-linux-gnu" fs-format="rpm" fs-signature="https://github.com/FreeSynergy/fs-calendars/releases/download/v0.0.5/fs-calendars-0.0.5-1.aarch64.rpm.asc">
+            <location>https://github.com/FreeSynergy/fs-calendars/releases/download/v0.0.5/fs-calendars-0.0.5-1.aarch64.rpm</location>
+            <checksum type="sha256">710eacf1bdb983cd14cf8bb49e0301249eb04c2b71c5b19e7d2e079f8c7e8582</checksum>
+            <size type="download">6658298</size>
           </artifact>
-          <artifact type="binary" platform="x86_64-linux-gnu" fs-format="rpm" fs-signature="https://github.com/FreeSynergy/fs-calendars/releases/download/v0.0.4/fs-calendar-0.0.4-1.x86_64.rpm.asc">
-            <location>https://github.com/FreeSynergy/fs-calendars/releases/download/v0.0.4/fs-calendar-0.0.4-1.x86_64.rpm</location>
-            <checksum type="sha256">f3cf1f3d3c86c5dcb00d1c5d36ca4c3a4cfeffa4dc8f46c13ae1611fb7bd402b</checksum>
-            <size type="download">13758262</size>
+          <artifact type="binary" platform="x86_64-linux-gnu" fs-format="rpm" fs-signature="https://github.com/FreeSynergy/fs-calendars/releases/download/v0.0.5/fs-calendars-0.0.5-1.x86_64.rpm.asc">
+            <location>https://github.com/FreeSynergy/fs-calendars/releases/download/v0.0.5/fs-calendars-0.0.5-1.x86_64.rpm</location>
+            <checksum type="sha256">316c6230721242ca1f7cc33ece3b6185e966176e091b1ffba7bedfc028af8299</checksum>
+            <size type="download">7098532</size>
           </artifact>
-          <artifact type="binary" platform="x86_64-linux-gnu" fs-format="deb" fs-signature="https://github.com/FreeSynergy/fs-calendars/releases/download/v0.0.4/fs-calendar_0.0.4-1_amd64.deb.asc">
-            <location>https://github.com/FreeSynergy/fs-calendars/releases/download/v0.0.4/fs-calendar_0.0.4-1_amd64.deb</location>
-            <checksum type="sha256">a07bfa6750715b808dd94d1c646182270bc8ebe95f2cc092e50518e2110825fc</checksum>
-            <size type="download">12788960</size>
+          <artifact type="binary" platform="aarch64-linux-gnu" fs-format="rpm" fs-signature="https://github.com/FreeSynergy/fs-calendars/releases/download/v0.0.5/fs-calendars-simple-0.0.5-1.aarch64.rpm.asc">
+            <location>https://github.com/FreeSynergy/fs-calendars/releases/download/v0.0.5/fs-calendars-simple-0.0.5-1.aarch64.rpm</location>
+            <checksum type="sha256">be8b3cadbd8181aaf28ba96b2f71493e69b6272de9350cd4347f1669fcb9c7f0</checksum>
+            <size type="download">7506359</size>
           </artifact>
-          <artifact type="binary" platform="aarch64-linux-gnu" fs-format="deb" fs-signature="https://github.com/FreeSynergy/fs-calendars/releases/download/v0.0.4/fs-calendar_0.0.4-1_arm64.deb.asc">
-            <location>https://github.com/FreeSynergy/fs-calendars/releases/download/v0.0.4/fs-calendar_0.0.4-1_arm64.deb</location>
-            <checksum type="sha256">b2a8fdb913c60ad511e9719e33841ae7410fbfd7055f08ecece2cf6114771fe5</checksum>
-            <size type="download">11240304</size>
+          <artifact type="binary" platform="x86_64-linux-gnu" fs-format="rpm" fs-signature="https://github.com/FreeSynergy/fs-calendars/releases/download/v0.0.5/fs-calendars-simple-0.0.5-1.x86_64.rpm.asc">
+            <location>https://github.com/FreeSynergy/fs-calendars/releases/download/v0.0.5/fs-calendars-simple-0.0.5-1.x86_64.rpm</location>
+            <checksum type="sha256">7a34afb2601f266296f1bd3f5500634d28d59e58022c8cab9e007617caa0a817</checksum>
+            <size type="download">7809487</size>
+          </artifact>
+          <artifact type="binary" platform="x86_64-linux-gnu" fs-format="deb" fs-signature="https://github.com/FreeSynergy/fs-calendars/releases/download/v0.0.5/fs-calendars-simple_0.0.5-1_amd64.deb.asc">
+            <location>https://github.com/FreeSynergy/fs-calendars/releases/download/v0.0.5/fs-calendars-simple_0.0.5-1_amd64.deb</location>
+            <checksum type="sha256">f75ec28017de0cf8712ed13ff72f49272c3864a8b7e4b4c6e5fc1c3dbc835339</checksum>
+            <size type="download">7292292</size>
+          </artifact>
+          <artifact type="binary" platform="aarch64-linux-gnu" fs-format="deb" fs-signature="https://github.com/FreeSynergy/fs-calendars/releases/download/v0.0.5/fs-calendars-simple_0.0.5-1_arm64.deb.asc">
+            <location>https://github.com/FreeSynergy/fs-calendars/releases/download/v0.0.5/fs-calendars-simple_0.0.5-1_arm64.deb</location>
+            <checksum type="sha256">bd8270800c94e46f06268a4bc42eb4519721af886d898a5756f82f9a77c15a53</checksum>
+            <size type="download">6533472</size>
+          </artifact>
+          <artifact type="binary" platform="x86_64-linux-gnu" fs-format="deb" fs-signature="https://github.com/FreeSynergy/fs-calendars/releases/download/v0.0.5/fs-calendars_0.0.5-1_amd64.deb.asc">
+            <location>https://github.com/FreeSynergy/fs-calendars/releases/download/v0.0.5/fs-calendars_0.0.5-1_amd64.deb</location>
+            <checksum type="sha256">60383a5add3cac33737832675f524945dfb2206e5cf79107daa084ed36a80b88</checksum>
+            <size type="download">6474052</size>
+          </artifact>
+          <artifact type="binary" platform="aarch64-linux-gnu" fs-format="deb" fs-signature="https://github.com/FreeSynergy/fs-calendars/releases/download/v0.0.5/fs-calendars_0.0.5-1_arm64.deb.asc">
+            <location>https://github.com/FreeSynergy/fs-calendars/releases/download/v0.0.5/fs-calendars_0.0.5-1_arm64.deb</location>
+            <checksum type="sha256">e9b8a21a15be912bbfa8aa244478ab3237f4fdeffa2be3f4d2592e941da438cd</checksum>
+            <size type="download">5654348</size>
           </artifact>
         </artifacts>
       </release>
@@ -170,7 +190,7 @@
     <custom>
       <value key="fs:kind">program</value>
       <value key="fs:format">tar.gz</value>
-      <value key="fs:signature">https://github.com/FreeSynergy/fs-calendars/releases/download/v0.0.4/fs-calendar-0.0.4-linux-x86_64.tar.gz.asc</value>
+      <value key="fs:signature">https://github.com/FreeSynergy/fs-calendars/releases/download/v0.0.5/fs-calendars-0.0.5-linux-x86_64.tar.gz.asc</value>
     </custom>
   </component>
   <component type="desktop-application">
