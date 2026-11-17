@@ -1,5 +1,9 @@
 # Changelog
 
+## Unreleased (unreviewed/catalog-packages-0022)
+
+- `fs-packages` tag `v0.0.21` -> `v0.0.22` (asset `fs-packages-0.0.22-linux-x86_64.tar.gz`; other fields unchanged).
+
 ## Unreleased (unreviewed/catalog-calendars)
 
 - Entry `fs-calendar` (`FreeSynergy.Calendar`, tag `v0.0.4`) replaced by `fs-calendars` (`FreeSynergy.Calendars`, tag `v0.0.5`, asset `fs-calendars-0.0.5-linux-x86_64.tar.gz`, schema 1, no `provides`, "Contract: draft"; preview with example data; the tarball holds `fs-calendars` and `fs-calendars-simple`). NOTE: whoever has fs-calendar installed gets no `replaces` with Store 0.0.21 yet (needs schema 2); the installed program stays installed, the switch comes with `replaces` as with wiki -> texts.

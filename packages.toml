@@ -9,7 +9,7 @@ name = "FreeSynergy.Packages"
 summary = "Install, update and remove FreeSynergy programs, frontends, components and themes"
 description = { en = "FreeSynergy Packages: install, update and remove FreeSynergy programs, frontends, components and themes. Everything comes from signed catalogs and is checked against the project key before it is installed; a failed update is rolled back.", de = "FreeSynergy Packages: Programme, Frontends, Komponenten und Themes von FreeSynergy installieren, aktualisieren und entfernen. Alles stammt aus signierten Katalogen und wird vor der Installation gegen den Projektschlüssel geprüft; ein fehlgeschlagenes Update wird zurückgerollt." }
 repo = "FreeSynergy/fs-packages"
-tag = "v0.0.21"
+tag = "v0.0.22"
 asset = "fs-packages-{version}-linux-x86_64.tar.gz"
 kind = "program"
 
