@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<components version="1.0" origin="freesynergy" fs-serial="1794917446" fs-expires="1797941446">
+<components version="1.0" origin="freesynergy" fs-serial="1794923154" fs-expires="1797947154">
   <component type="desktop-application">
     <id>fs-packages</id>
     <name>FreeSynergy.Packages</name>
@@ -8,32 +8,32 @@
     <description xml:lang="de"><p>FreeSynergy Packages: Programme, Frontends, Komponenten und Themes von FreeSynergy installieren, aktualisieren und entfernen. Alles stammt aus signierten Katalogen und wird vor der Installation gegen den Projektschlüssel geprüft; ein fehlgeschlagenes Update wird zurückgerollt.</p></description>
     <url type="homepage">https://github.com/FreeSynergy/fs-packages</url>
     <releases>
-      <release version="0.0.21" date="2026-11-17">
+      <release version="0.0.22" date="2026-11-17">
         <artifacts>
           <artifact type="binary" platform="x86_64-linux-gnu">
-            <location>https://github.com/FreeSynergy/fs-packages/releases/download/v0.0.21/fs-packages-0.0.21-linux-x86_64.tar.gz</location>
-            <checksum type="sha256">46f0c01dd7b739a33a03faa4b1412b62b18825030a9ef788b4aee438c8f178a3</checksum>
-            <size type="download">17253689</size>
+            <location>https://github.com/FreeSynergy/fs-packages/releases/download/v0.0.22/fs-packages-0.0.22-linux-x86_64.tar.gz</location>
+            <checksum type="sha256">fadef4b08f16a056e2eac74ceae26baa04ed7f197a5dc6b8f52cbeca844d2fe7</checksum>
+            <size type="download">17260494</size>
           </artifact>
-          <artifact type="binary" platform="aarch64-linux-gnu" fs-format="rpm" fs-signature="https://github.com/FreeSynergy/fs-packages/releases/download/v0.0.21/fs-packages-0.0.21-1.aarch64.rpm.asc">
-            <location>https://github.com/FreeSynergy/fs-packages/releases/download/v0.0.21/fs-packages-0.0.21-1.aarch64.rpm</location>
-            <checksum type="sha256">309d2aba1a25288ecc3f4f9ea2fc57daefee81f0cd9cb66ed5e70ccc8aa62826</checksum>
-            <size type="download">11340157</size>
+          <artifact type="binary" platform="aarch64-linux-gnu" fs-format="rpm" fs-signature="https://github.com/FreeSynergy/fs-packages/releases/download/v0.0.22/fs-packages-0.0.22-1.aarch64.rpm.asc">
+            <location>https://github.com/FreeSynergy/fs-packages/releases/download/v0.0.22/fs-packages-0.0.22-1.aarch64.rpm</location>
+            <checksum type="sha256">a002e4cd54288701a5125874576e832b392e7fad5b5e835e6f27aa87aea9d3c9</checksum>
+            <size type="download">11329162</size>
           </artifact>
-          <artifact type="binary" platform="x86_64-linux-gnu" fs-format="rpm" fs-signature="https://github.com/FreeSynergy/fs-packages/releases/download/v0.0.21/fs-packages-0.0.21-1.x86_64.rpm.asc">
-            <location>https://github.com/FreeSynergy/fs-packages/releases/download/v0.0.21/fs-packages-0.0.21-1.x86_64.rpm</location>
-            <checksum type="sha256">71b5797f7cd6905fb306a4b869f2af131c60d246cf8fd75ac3cae1d5a4075238</checksum>
-            <size type="download">12376669</size>
+          <artifact type="binary" platform="x86_64-linux-gnu" fs-format="rpm" fs-signature="https://github.com/FreeSynergy/fs-packages/releases/download/v0.0.22/fs-packages-0.0.22-1.x86_64.rpm.asc">
+            <location>https://github.com/FreeSynergy/fs-packages/releases/download/v0.0.22/fs-packages-0.0.22-1.x86_64.rpm</location>
+            <checksum type="sha256">f86887e074783836466bd6b3fcc64000f44e4cc3a9d899a7907a904855ee9e95</checksum>
+            <size type="download">12383585</size>
           </artifact>
-          <artifact type="binary" platform="x86_64-linux-gnu" fs-format="deb" fs-signature="https://github.com/FreeSynergy/fs-packages/releases/download/v0.0.21/fs-packages_0.0.21-1_amd64.deb.asc">
-            <location>https://github.com/FreeSynergy/fs-packages/releases/download/v0.0.21/fs-packages_0.0.21-1_amd64.deb</location>
-            <checksum type="sha256">49cc20addb60a6d0f143a2027d9be2a83a38cebccc2e64c6d31fc6f664214eb4</checksum>
-            <size type="download">11493780</size>
+          <artifact type="binary" platform="x86_64-linux-gnu" fs-format="deb" fs-signature="https://github.com/FreeSynergy/fs-packages/releases/download/v0.0.22/fs-packages_0.0.22-1_amd64.deb.asc">
+            <location>https://github.com/FreeSynergy/fs-packages/releases/download/v0.0.22/fs-packages_0.0.22-1_amd64.deb</location>
+            <checksum type="sha256">eac73c3e4ae85047f7a87d682e3c84737913259aa2ee76b6a795d6a61d94cc82</checksum>
+            <size type="download">11496088</size>
           </artifact>
-          <artifact type="binary" platform="aarch64-linux-gnu" fs-format="deb" fs-signature="https://github.com/FreeSynergy/fs-packages/releases/download/v0.0.21/fs-packages_0.0.21-1_arm64.deb.asc">
-            <location>https://github.com/FreeSynergy/fs-packages/releases/download/v0.0.21/fs-packages_0.0.21-1_arm64.deb</location>
-            <checksum type="sha256">0ad04564ca90fc96ab6083a678fda615bc1c51971664b1672a384ebf5c347201</checksum>
-            <size type="download">9795780</size>
+          <artifact type="binary" platform="aarch64-linux-gnu" fs-format="deb" fs-signature="https://github.com/FreeSynergy/fs-packages/releases/download/v0.0.22/fs-packages_0.0.22-1_arm64.deb.asc">
+            <location>https://github.com/FreeSynergy/fs-packages/releases/download/v0.0.22/fs-packages_0.0.22-1_arm64.deb</location>
+            <checksum type="sha256">05a8d5f9c248db240d020516b8f9852825ab6e9444251d65f5c7c327f37bc3fb</checksum>
+            <size type="download">9802616</size>
           </artifact>
         </artifacts>
       </release>
@@ -41,7 +41,7 @@
     <custom>
       <value key="fs:kind">program</value>
       <value key="fs:format">tar.gz</value>
-      <value key="fs:signature">https://github.com/FreeSynergy/fs-packages/releases/download/v0.0.21/fs-packages-0.0.21-linux-x86_64.tar.gz.asc</value>
+      <value key="fs:signature">https://github.com/FreeSynergy/fs-packages/releases/download/v0.0.22/fs-packages-0.0.22-linux-x86_64.tar.gz.asc</value>
     </custom>
   </component>
   <component type="desktop-application">
@@ -683,6 +683,69 @@
       <value key="fs:kind">program</value>
       <value key="fs:format">tar.gz</value>
       <value key="fs:signature">https://github.com/FreeSynergy/fs-resources/releases/download/v0.0.2/fs-resources-0.0.2-linux-x86_64.tar.gz.asc</value>
+    </custom>
+  </component>
+  <component type="desktop-application">
+    <id>fs-broadcast</id>
+    <name>FreeSynergy.Broadcast</name>
+    <summary>Go live: one stream to several places</summary>
+    <description><p>Send one live stream to several places at once. This first version is a window with its server that says plainly what works today and what comes; the core (streams, targets, forwarding) is not wired to the window yet, so no real stream is shown and nothing in it can be used yet. What is not built yet is shown and says so. Contract: draft.</p></description>
+    <url type="homepage">https://github.com/FreeSynergy/fs-broadcast</url>
+    <releases>
+      <release version="0.0.2" date="2026-11-17">
+        <artifacts>
+          <artifact type="binary" platform="x86_64-linux-gnu">
+            <location>https://github.com/FreeSynergy/fs-broadcast/releases/download/v0.0.2/fs-broadcast-0.0.2-linux-x86_64.tar.gz</location>
+            <checksum type="sha256">4f751489bba925d17997e2178a329ddb0adeea99877d2c14ce0874f82c32609b</checksum>
+            <size type="download">12581499</size>
+          </artifact>
+          <artifact type="binary" platform="aarch64-linux-gnu" fs-format="rpm" fs-signature="https://github.com/FreeSynergy/fs-broadcast/releases/download/v0.0.2/fs-broadcast-0.0.2-1.aarch64.rpm.asc">
+            <location>https://github.com/FreeSynergy/fs-broadcast/releases/download/v0.0.2/fs-broadcast-0.0.2-1.aarch64.rpm</location>
+            <checksum type="sha256">a4ac6a93f41b2aa4875a7897b41b1646a392cb9b74dca8f27341d86648962307</checksum>
+            <size type="download">600229</size>
+          </artifact>
+          <artifact type="binary" platform="x86_64-linux-gnu" fs-format="rpm" fs-signature="https://github.com/FreeSynergy/fs-broadcast/releases/download/v0.0.2/fs-broadcast-0.0.2-1.x86_64.rpm.asc">
+            <location>https://github.com/FreeSynergy/fs-broadcast/releases/download/v0.0.2/fs-broadcast-0.0.2-1.x86_64.rpm</location>
+            <checksum type="sha256">debeba64c52bf4cf0c24da1d28b53b7ddb579af0da6dbc16859ed13bf75809cc</checksum>
+            <size type="download">912092</size>
+          </artifact>
+          <artifact type="binary" platform="aarch64-linux-gnu" fs-format="rpm" fs-signature="https://github.com/FreeSynergy/fs-broadcast/releases/download/v0.0.2/fs-broadcast-simple-0.0.2-1.aarch64.rpm.asc">
+            <location>https://github.com/FreeSynergy/fs-broadcast/releases/download/v0.0.2/fs-broadcast-simple-0.0.2-1.aarch64.rpm</location>
+            <checksum type="sha256">80567530f95e0a4cc11e0f2e500eda9371451569c2175d175a755e083933f13e</checksum>
+            <size type="download">7625616</size>
+          </artifact>
+          <artifact type="binary" platform="x86_64-linux-gnu" fs-format="rpm" fs-signature="https://github.com/FreeSynergy/fs-broadcast/releases/download/v0.0.2/fs-broadcast-simple-0.0.2-1.x86_64.rpm.asc">
+            <location>https://github.com/FreeSynergy/fs-broadcast/releases/download/v0.0.2/fs-broadcast-simple-0.0.2-1.x86_64.rpm</location>
+            <checksum type="sha256">5eae2a5ca713c434cbee5eddeb79daf9591c57e3c6dfefb4b9a45633e5a42c4e</checksum>
+            <size type="download">8221033</size>
+          </artifact>
+          <artifact type="binary" platform="x86_64-linux-gnu" fs-format="deb" fs-signature="https://github.com/FreeSynergy/fs-broadcast/releases/download/v0.0.2/fs-broadcast-simple_0.0.2-1_amd64.deb.asc">
+            <location>https://github.com/FreeSynergy/fs-broadcast/releases/download/v0.0.2/fs-broadcast-simple_0.0.2-1_amd64.deb</location>
+            <checksum type="sha256">31fe79b1d42cb9c9a5a79157a3e4a19e06d26f5ae4535592287f1fa64a679028</checksum>
+            <size type="download">7661168</size>
+          </artifact>
+          <artifact type="binary" platform="aarch64-linux-gnu" fs-format="deb" fs-signature="https://github.com/FreeSynergy/fs-broadcast/releases/download/v0.0.2/fs-broadcast-simple_0.0.2-1_arm64.deb.asc">
+            <location>https://github.com/FreeSynergy/fs-broadcast/releases/download/v0.0.2/fs-broadcast-simple_0.0.2-1_arm64.deb</location>
+            <checksum type="sha256">2fb5f01fa3f463bd5a0ff92480e6797810fe9db8367cfd956d9afaf85a0d19cd</checksum>
+            <size type="download">6648652</size>
+          </artifact>
+          <artifact type="binary" platform="x86_64-linux-gnu" fs-format="deb" fs-signature="https://github.com/FreeSynergy/fs-broadcast/releases/download/v0.0.2/fs-broadcast_0.0.2-1_amd64.deb.asc">
+            <location>https://github.com/FreeSynergy/fs-broadcast/releases/download/v0.0.2/fs-broadcast_0.0.2-1_amd64.deb</location>
+            <checksum type="sha256">40fc192aa59f819e2b6e6f90e0589612f9bb7c0c26b7b7a686bcb04b24727ced</checksum>
+            <size type="download">818144</size>
+          </artifact>
+          <artifact type="binary" platform="aarch64-linux-gnu" fs-format="deb" fs-signature="https://github.com/FreeSynergy/fs-broadcast/releases/download/v0.0.2/fs-broadcast_0.0.2-1_arm64.deb.asc">
+            <location>https://github.com/FreeSynergy/fs-broadcast/releases/download/v0.0.2/fs-broadcast_0.0.2-1_arm64.deb</location>
+            <checksum type="sha256">3483012cf75d6795dfd44b3f0ecdcea7fe2dc6b72fdb9242d8f0d8dd554809fa</checksum>
+            <size type="download">510992</size>
+          </artifact>
+        </artifacts>
+      </release>
+    </releases>
+    <custom>
+      <value key="fs:kind">program</value>
+      <value key="fs:format">tar.gz</value>
+      <value key="fs:signature">https://github.com/FreeSynergy/fs-broadcast/releases/download/v0.0.2/fs-broadcast-0.0.2-linux-x86_64.tar.gz.asc</value>
     </custom>
   </component>
   <component type="service">
