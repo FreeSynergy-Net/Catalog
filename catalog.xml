@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<components version="1.0" origin="freesynergy" fs-serial="1794887102" fs-expires="1797911102">
+<components version="1.0" origin="freesynergy" fs-serial="1794889600" fs-expires="1797913600">
   <component type="desktop-application">
     <id>fs-packages</id>
     <name>FreeSynergy.Packages</name>
@@ -8,32 +8,32 @@
     <description xml:lang="de"><p>FreeSynergy Packages: Programme, Frontends, Komponenten und Themes von FreeSynergy installieren, aktualisieren und entfernen. Alles stammt aus signierten Katalogen und wird vor der Installation gegen den Projektschlüssel geprüft; ein fehlgeschlagenes Update wird zurückgerollt.</p></description>
     <url type="homepage">https://github.com/FreeSynergy/fs-packages</url>
     <releases>
-      <release version="0.0.20" date="2026-11-17">
+      <release version="0.0.21" date="2026-11-17">
         <artifacts>
           <artifact type="binary" platform="x86_64-linux-gnu">
-            <location>https://github.com/FreeSynergy/fs-packages/releases/download/v0.0.20/fs-packages-0.0.20-linux-x86_64.tar.gz</location>
-            <checksum type="sha256">3a16ac2956326d94eb3d371f8c7e37ba575ae2fc33a17255495870fe51137d6d</checksum>
-            <size type="download">17219787</size>
+            <location>https://github.com/FreeSynergy/fs-packages/releases/download/v0.0.21/fs-packages-0.0.21-linux-x86_64.tar.gz</location>
+            <checksum type="sha256">46f0c01dd7b739a33a03faa4b1412b62b18825030a9ef788b4aee438c8f178a3</checksum>
+            <size type="download">17253689</size>
           </artifact>
-          <artifact type="binary" platform="aarch64-linux-gnu" fs-format="rpm" fs-signature="https://github.com/FreeSynergy/fs-packages/releases/download/v0.0.20/fs-packages-0.0.20-1.aarch64.rpm.asc">
-            <location>https://github.com/FreeSynergy/fs-packages/releases/download/v0.0.20/fs-packages-0.0.20-1.aarch64.rpm</location>
-            <checksum type="sha256">5c4285ff57c0967517b2d7b6af2000f4adb9e0718471902bcc441454827fd088</checksum>
-            <size type="download">11303461</size>
+          <artifact type="binary" platform="aarch64-linux-gnu" fs-format="rpm" fs-signature="https://github.com/FreeSynergy/fs-packages/releases/download/v0.0.21/fs-packages-0.0.21-1.aarch64.rpm.asc">
+            <location>https://github.com/FreeSynergy/fs-packages/releases/download/v0.0.21/fs-packages-0.0.21-1.aarch64.rpm</location>
+            <checksum type="sha256">309d2aba1a25288ecc3f4f9ea2fc57daefee81f0cd9cb66ed5e70ccc8aa62826</checksum>
+            <size type="download">11340157</size>
           </artifact>
-          <artifact type="binary" platform="x86_64-linux-gnu" fs-format="rpm" fs-signature="https://github.com/FreeSynergy/fs-packages/releases/download/v0.0.20/fs-packages-0.0.20-1.x86_64.rpm.asc">
-            <location>https://github.com/FreeSynergy/fs-packages/releases/download/v0.0.20/fs-packages-0.0.20-1.x86_64.rpm</location>
-            <checksum type="sha256">c1ce8ed9171874cbcdf7842844246dff772e06abc55af4527f02ae918127b7f1</checksum>
-            <size type="download">12371991</size>
+          <artifact type="binary" platform="x86_64-linux-gnu" fs-format="rpm" fs-signature="https://github.com/FreeSynergy/fs-packages/releases/download/v0.0.21/fs-packages-0.0.21-1.x86_64.rpm.asc">
+            <location>https://github.com/FreeSynergy/fs-packages/releases/download/v0.0.21/fs-packages-0.0.21-1.x86_64.rpm</location>
+            <checksum type="sha256">71b5797f7cd6905fb306a4b869f2af131c60d246cf8fd75ac3cae1d5a4075238</checksum>
+            <size type="download">12376669</size>
           </artifact>
-          <artifact type="binary" platform="x86_64-linux-gnu" fs-format="deb" fs-signature="https://github.com/FreeSynergy/fs-packages/releases/download/v0.0.20/fs-packages_0.0.20-1_amd64.deb.asc">
-            <location>https://github.com/FreeSynergy/fs-packages/releases/download/v0.0.20/fs-packages_0.0.20-1_amd64.deb</location>
-            <checksum type="sha256">5dc3b5446266ce35cd67a23f44f5a777563889a6b09d0e609a9a72a9c084a0d5</checksum>
-            <size type="download">11473220</size>
+          <artifact type="binary" platform="x86_64-linux-gnu" fs-format="deb" fs-signature="https://github.com/FreeSynergy/fs-packages/releases/download/v0.0.21/fs-packages_0.0.21-1_amd64.deb.asc">
+            <location>https://github.com/FreeSynergy/fs-packages/releases/download/v0.0.21/fs-packages_0.0.21-1_amd64.deb</location>
+            <checksum type="sha256">49cc20addb60a6d0f143a2027d9be2a83a38cebccc2e64c6d31fc6f664214eb4</checksum>
+            <size type="download">11493780</size>
           </artifact>
-          <artifact type="binary" platform="aarch64-linux-gnu" fs-format="deb" fs-signature="https://github.com/FreeSynergy/fs-packages/releases/download/v0.0.20/fs-packages_0.0.20-1_arm64.deb.asc">
-            <location>https://github.com/FreeSynergy/fs-packages/releases/download/v0.0.20/fs-packages_0.0.20-1_arm64.deb</location>
-            <checksum type="sha256">506849574c36240c42e95983b7b08d9ba2279bf2b1bb3f5e9e20bf5a9e7753e5</checksum>
-            <size type="download">9779756</size>
+          <artifact type="binary" platform="aarch64-linux-gnu" fs-format="deb" fs-signature="https://github.com/FreeSynergy/fs-packages/releases/download/v0.0.21/fs-packages_0.0.21-1_arm64.deb.asc">
+            <location>https://github.com/FreeSynergy/fs-packages/releases/download/v0.0.21/fs-packages_0.0.21-1_arm64.deb</location>
+            <checksum type="sha256">0ad04564ca90fc96ab6083a678fda615bc1c51971664b1672a384ebf5c347201</checksum>
+            <size type="download">9795780</size>
           </artifact>
         </artifacts>
       </release>
@@ -41,7 +41,7 @@
     <custom>
       <value key="fs:kind">program</value>
       <value key="fs:format">tar.gz</value>
-      <value key="fs:signature">https://github.com/FreeSynergy/fs-packages/releases/download/v0.0.20/fs-packages-0.0.20-linux-x86_64.tar.gz.asc</value>
+      <value key="fs:signature">https://github.com/FreeSynergy/fs-packages/releases/download/v0.0.21/fs-packages-0.0.21-linux-x86_64.tar.gz.asc</value>
     </custom>
   </component>
   <component type="desktop-application">
