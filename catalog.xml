@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<components version="1.0" origin="freesynergy" fs-serial="1794878105" fs-expires="1797902105">
+<components version="1.0" origin="freesynergy" fs-serial="1794880088" fs-expires="1797904088">
   <component type="desktop-application">
     <id>fs-packages</id>
     <name>FreeSynergy.Packages</name>
@@ -474,6 +474,132 @@
       <value key="fs:kind">program</value>
       <value key="fs:format">tar.gz</value>
       <value key="fs:signature">https://github.com/FreeSynergy/fs-messages/releases/download/v0.0.3/fs-messages-0.0.3-linux-x86_64.tar.gz.asc</value>
+    </custom>
+  </component>
+  <component type="desktop-application">
+    <id>fs-forms</id>
+    <name>FreeSynergy.Forms</name>
+    <summary>Surveys where an anonymous answer really is anonymous</summary>
+    <description><p>Ask questions, collect answers and read the result: named or anonymous, where anonymous answers are kept in a separate box with no log and no time, and results appear only for a minimum group size. This first version is a window with its server that says plainly what works today and what comes; the core (surveys, ballots, results, counting methods, CSV export) is not connected to the window yet, so no survey can be made there. What is not built yet is shown and says so. Contract: draft.</p></description>
+    <url type="homepage">https://github.com/FreeSynergy/fs-forms</url>
+    <releases>
+      <release version="0.0.2" date="2026-11-17">
+        <artifacts>
+          <artifact type="binary" platform="x86_64-linux-gnu">
+            <location>https://github.com/FreeSynergy/fs-forms/releases/download/v0.0.2/fs-forms-0.0.2-linux-x86_64.tar.gz</location>
+            <checksum type="sha256">76e58bf5ab1ef3a4b288aaa2f322f4c12d3c6f5841c1a8bd1ffa24285f4f4c37</checksum>
+            <size type="download">12530555</size>
+          </artifact>
+          <artifact type="binary" platform="aarch64-linux-gnu" fs-format="rpm" fs-signature="https://github.com/FreeSynergy/fs-forms/releases/download/v0.0.2/fs-forms-0.0.2-1.aarch64.rpm.asc">
+            <location>https://github.com/FreeSynergy/fs-forms/releases/download/v0.0.2/fs-forms-0.0.2-1.aarch64.rpm</location>
+            <checksum type="sha256">8e03d8decfd7463a72619ae63cb3c6e6f55e48f843a5d6b582dbaa16df5c8e7a</checksum>
+            <size type="download">602216</size>
+          </artifact>
+          <artifact type="binary" platform="x86_64-linux-gnu" fs-format="rpm" fs-signature="https://github.com/FreeSynergy/fs-forms/releases/download/v0.0.2/fs-forms-0.0.2-1.x86_64.rpm.asc">
+            <location>https://github.com/FreeSynergy/fs-forms/releases/download/v0.0.2/fs-forms-0.0.2-1.x86_64.rpm</location>
+            <checksum type="sha256">4a8432a1576493743758ca357b816b23c33f9b01e7ad453c7228d07f25e9b63d</checksum>
+            <size type="download">910215</size>
+          </artifact>
+          <artifact type="binary" platform="aarch64-linux-gnu" fs-format="rpm" fs-signature="https://github.com/FreeSynergy/fs-forms/releases/download/v0.0.2/fs-forms-simple-0.0.2-1.aarch64.rpm.asc">
+            <location>https://github.com/FreeSynergy/fs-forms/releases/download/v0.0.2/fs-forms-simple-0.0.2-1.aarch64.rpm</location>
+            <checksum type="sha256">cf4af48fa23ab49bdd30962a5a231b8ae3bfe23eee4f91267a638f46f2d9de0e</checksum>
+            <size type="download">7583100</size>
+          </artifact>
+          <artifact type="binary" platform="x86_64-linux-gnu" fs-format="rpm" fs-signature="https://github.com/FreeSynergy/fs-forms/releases/download/v0.0.2/fs-forms-simple-0.0.2-1.x86_64.rpm.asc">
+            <location>https://github.com/FreeSynergy/fs-forms/releases/download/v0.0.2/fs-forms-simple-0.0.2-1.x86_64.rpm</location>
+            <checksum type="sha256">58e33fdc924965f6580c2f2dfc0fa7d7d57aa73188c9bde83a338ff19c7226ec</checksum>
+            <size type="download">8182652</size>
+          </artifact>
+          <artifact type="binary" platform="x86_64-linux-gnu" fs-format="deb" fs-signature="https://github.com/FreeSynergy/fs-forms/releases/download/v0.0.2/fs-forms-simple_0.0.2-1_amd64.deb.asc">
+            <location>https://github.com/FreeSynergy/fs-forms/releases/download/v0.0.2/fs-forms-simple_0.0.2-1_amd64.deb</location>
+            <checksum type="sha256">9311da7c773c91e018aff7e2d6c9a410389ea33289f801bc8c7737115725187f</checksum>
+            <size type="download">7643296</size>
+          </artifact>
+          <artifact type="binary" platform="aarch64-linux-gnu" fs-format="deb" fs-signature="https://github.com/FreeSynergy/fs-forms/releases/download/v0.0.2/fs-forms-simple_0.0.2-1_arm64.deb.asc">
+            <location>https://github.com/FreeSynergy/fs-forms/releases/download/v0.0.2/fs-forms-simple_0.0.2-1_arm64.deb</location>
+            <checksum type="sha256">f599b08661a514f0e2237352c52b89d2f6c906bb5b865128e7bd45de89c7b5fb</checksum>
+            <size type="download">6606908</size>
+          </artifact>
+          <artifact type="binary" platform="x86_64-linux-gnu" fs-format="deb" fs-signature="https://github.com/FreeSynergy/fs-forms/releases/download/v0.0.2/fs-forms_0.0.2-1_amd64.deb.asc">
+            <location>https://github.com/FreeSynergy/fs-forms/releases/download/v0.0.2/fs-forms_0.0.2-1_amd64.deb</location>
+            <checksum type="sha256">a6e9b8e3c70ce9408213faf5b76746659362be81c1db16878ef29cfb3a24ebb9</checksum>
+            <size type="download">816452</size>
+          </artifact>
+          <artifact type="binary" platform="aarch64-linux-gnu" fs-format="deb" fs-signature="https://github.com/FreeSynergy/fs-forms/releases/download/v0.0.2/fs-forms_0.0.2-1_arm64.deb.asc">
+            <location>https://github.com/FreeSynergy/fs-forms/releases/download/v0.0.2/fs-forms_0.0.2-1_arm64.deb</location>
+            <checksum type="sha256">5a47564a59fa47e10e08b4a7128dec7f9fc534d4e203d9291819d06d2629b434</checksum>
+            <size type="download">513404</size>
+          </artifact>
+        </artifacts>
+      </release>
+    </releases>
+    <custom>
+      <value key="fs:kind">program</value>
+      <value key="fs:format">tar.gz</value>
+      <value key="fs:signature">https://github.com/FreeSynergy/fs-forms/releases/download/v0.0.2/fs-forms-0.0.2-linux-x86_64.tar.gz.asc</value>
+    </custom>
+  </component>
+  <component type="desktop-application">
+    <id>fs-resources</id>
+    <name>FreeSynergy.Resources</name>
+    <summary>Things, rooms, material and time: what we have and need</summary>
+    <description><p>Know what a group has and needs: things, rooms and material, and who may use them when. This first version is a window with its server that says plainly what works today and what comes; the core (reservations that cannot overbook, free time, needs and offers, your own capacity) is not connected to the window yet, so nothing can be managed in it. What is not built yet is shown and says so. Contract: draft.</p></description>
+    <url type="homepage">https://github.com/FreeSynergy/fs-resources</url>
+    <releases>
+      <release version="0.0.2" date="2026-11-17">
+        <artifacts>
+          <artifact type="binary" platform="x86_64-linux-gnu">
+            <location>https://github.com/FreeSynergy/fs-resources/releases/download/v0.0.2/fs-resources-0.0.2-linux-x86_64.tar.gz</location>
+            <checksum type="sha256">0adf7473f62fd88f9f5acfd3b6b42efee748e8c3b36465276470b58d649119d6</checksum>
+            <size type="download">12543980</size>
+          </artifact>
+          <artifact type="binary" platform="aarch64-linux-gnu" fs-format="rpm" fs-signature="https://github.com/FreeSynergy/fs-resources/releases/download/v0.0.2/fs-resources-0.0.2-1.aarch64.rpm.asc">
+            <location>https://github.com/FreeSynergy/fs-resources/releases/download/v0.0.2/fs-resources-0.0.2-1.aarch64.rpm</location>
+            <checksum type="sha256">80cd1665de148f7d7661c3cb3f92aedeafe9c5b9fb49d43d1f90204263b73415</checksum>
+            <size type="download">600978</size>
+          </artifact>
+          <artifact type="binary" platform="x86_64-linux-gnu" fs-format="rpm" fs-signature="https://github.com/FreeSynergy/fs-resources/releases/download/v0.0.2/fs-resources-0.0.2-1.x86_64.rpm.asc">
+            <location>https://github.com/FreeSynergy/fs-resources/releases/download/v0.0.2/fs-resources-0.0.2-1.x86_64.rpm</location>
+            <checksum type="sha256">7281f115fd53f093d4a292f8b29adff510238fef630915b469ce2218bb28d4fb</checksum>
+            <size type="download">910817</size>
+          </artifact>
+          <artifact type="binary" platform="aarch64-linux-gnu" fs-format="rpm" fs-signature="https://github.com/FreeSynergy/fs-resources/releases/download/v0.0.2/fs-resources-simple-0.0.2-1.aarch64.rpm.asc">
+            <location>https://github.com/FreeSynergy/fs-resources/releases/download/v0.0.2/fs-resources-simple-0.0.2-1.aarch64.rpm</location>
+            <checksum type="sha256">3e1e5a343f4736515921e9d8c7eee2d2dd44bc16aa7a3f23200012303eccd1c9</checksum>
+            <size type="download">7599111</size>
+          </artifact>
+          <artifact type="binary" platform="x86_64-linux-gnu" fs-format="rpm" fs-signature="https://github.com/FreeSynergy/fs-resources/releases/download/v0.0.2/fs-resources-simple-0.0.2-1.x86_64.rpm.asc">
+            <location>https://github.com/FreeSynergy/fs-resources/releases/download/v0.0.2/fs-resources-simple-0.0.2-1.x86_64.rpm</location>
+            <checksum type="sha256">c67d26617ed47622fa21861b00c5388cb3d57a367e3036acdfa7ca1e1bb42d0f</checksum>
+            <size type="download">8202780</size>
+          </artifact>
+          <artifact type="binary" platform="x86_64-linux-gnu" fs-format="deb" fs-signature="https://github.com/FreeSynergy/fs-resources/releases/download/v0.0.2/fs-resources-simple_0.0.2-1_amd64.deb.asc">
+            <location>https://github.com/FreeSynergy/fs-resources/releases/download/v0.0.2/fs-resources-simple_0.0.2-1_amd64.deb</location>
+            <checksum type="sha256">8951ff1de6f8dd490a105bf56d0b99f4a99cf6e442deb33eb83bd44b222d24a5</checksum>
+            <size type="download">7642420</size>
+          </artifact>
+          <artifact type="binary" platform="aarch64-linux-gnu" fs-format="deb" fs-signature="https://github.com/FreeSynergy/fs-resources/releases/download/v0.0.2/fs-resources-simple_0.0.2-1_arm64.deb.asc">
+            <location>https://github.com/FreeSynergy/fs-resources/releases/download/v0.0.2/fs-resources-simple_0.0.2-1_arm64.deb</location>
+            <checksum type="sha256">f5cf9a0775408ac54e4dcf53530a8e69aa3748ef8a617e7cc44bdd12bf7f2afa</checksum>
+            <size type="download">6618276</size>
+          </artifact>
+          <artifact type="binary" platform="x86_64-linux-gnu" fs-format="deb" fs-signature="https://github.com/FreeSynergy/fs-resources/releases/download/v0.0.2/fs-resources_0.0.2-1_amd64.deb.asc">
+            <location>https://github.com/FreeSynergy/fs-resources/releases/download/v0.0.2/fs-resources_0.0.2-1_amd64.deb</location>
+            <checksum type="sha256">37d74b5dcc2471e5ee93ba8e271cb2190b291593bc83ac3378c6b69bb132c07a</checksum>
+            <size type="download">817108</size>
+          </artifact>
+          <artifact type="binary" platform="aarch64-linux-gnu" fs-format="deb" fs-signature="https://github.com/FreeSynergy/fs-resources/releases/download/v0.0.2/fs-resources_0.0.2-1_arm64.deb.asc">
+            <location>https://github.com/FreeSynergy/fs-resources/releases/download/v0.0.2/fs-resources_0.0.2-1_arm64.deb</location>
+            <checksum type="sha256">6070e3ed256c39173652ef0eec197ca6d6f1076295fd2c79b17f67775ad8e7f3</checksum>
+            <size type="download">512848</size>
+          </artifact>
+        </artifacts>
+      </release>
+    </releases>
+    <custom>
+      <value key="fs:kind">program</value>
+      <value key="fs:format">tar.gz</value>
+      <value key="fs:signature">https://github.com/FreeSynergy/fs-resources/releases/download/v0.0.2/fs-resources-0.0.2-linux-x86_64.tar.gz.asc</value>
     </custom>
   </component>
   <component type="service">
