@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<components version="1.0" origin="freesynergy" fs-serial="1794873541" fs-expires="1797897541">
+<components version="1.0" origin="freesynergy" fs-serial="1794878105" fs-expires="1797902105">
   <component type="desktop-application">
     <id>fs-packages</id>
     <name>FreeSynergy.Packages</name>
@@ -8,32 +8,32 @@
     <description xml:lang="de"><p>FreeSynergy Packages: Programme, Frontends, Komponenten und Themes von FreeSynergy installieren, aktualisieren und entfernen. Alles stammt aus signierten Katalogen und wird vor der Installation gegen den Projektschlüssel geprüft; ein fehlgeschlagenes Update wird zurückgerollt.</p></description>
     <url type="homepage">https://github.com/FreeSynergy/fs-packages</url>
     <releases>
-      <release version="0.0.18" date="2026-11-16">
+      <release version="0.0.19" date="2026-11-17">
         <artifacts>
           <artifact type="binary" platform="x86_64-linux-gnu">
-            <location>https://github.com/FreeSynergy/fs-packages/releases/download/v0.0.18/fs-packages-0.0.18-linux-x86_64.tar.gz</location>
-            <checksum type="sha256">612cc182684a53c5b5cf33431d84dd87b2834714b3b28918996f88e5ea229212</checksum>
-            <size type="download">17183264</size>
+            <location>https://github.com/FreeSynergy/fs-packages/releases/download/v0.0.19/fs-packages-0.0.19-linux-x86_64.tar.gz</location>
+            <checksum type="sha256">e6897c97a733163040a14864fb8d6fa31477c3fce7799a43af0a402ff75fbc7d</checksum>
+            <size type="download">17207809</size>
           </artifact>
-          <artifact type="binary" platform="aarch64-linux-gnu" fs-format="rpm" fs-signature="https://github.com/FreeSynergy/fs-packages/releases/download/v0.0.18/fs-packages-0.0.18-1.aarch64.rpm.asc">
-            <location>https://github.com/FreeSynergy/fs-packages/releases/download/v0.0.18/fs-packages-0.0.18-1.aarch64.rpm</location>
-            <checksum type="sha256">6d8a341fc44d17cd0b2efb33d4641f9fef8440c43427cd53f51476b03bb20322</checksum>
-            <size type="download">11280588</size>
+          <artifact type="binary" platform="aarch64-linux-gnu" fs-format="rpm" fs-signature="https://github.com/FreeSynergy/fs-packages/releases/download/v0.0.19/fs-packages-0.0.19-1.aarch64.rpm.asc">
+            <location>https://github.com/FreeSynergy/fs-packages/releases/download/v0.0.19/fs-packages-0.0.19-1.aarch64.rpm</location>
+            <checksum type="sha256">8ec1076e1c6167c8e2df8df1f618957d879c15188463eb95317ffc900746383c</checksum>
+            <size type="download">11291038</size>
           </artifact>
-          <artifact type="binary" platform="x86_64-linux-gnu" fs-format="rpm" fs-signature="https://github.com/FreeSynergy/fs-packages/releases/download/v0.0.18/fs-packages-0.0.18-1.x86_64.rpm.asc">
-            <location>https://github.com/FreeSynergy/fs-packages/releases/download/v0.0.18/fs-packages-0.0.18-1.x86_64.rpm</location>
-            <checksum type="sha256">0c943cf7b09bc54caeb6ae4e5cec921a0f586b58dd909efe3c80f7a323654fad</checksum>
-            <size type="download">12330065</size>
+          <artifact type="binary" platform="x86_64-linux-gnu" fs-format="rpm" fs-signature="https://github.com/FreeSynergy/fs-packages/releases/download/v0.0.19/fs-packages-0.0.19-1.x86_64.rpm.asc">
+            <location>https://github.com/FreeSynergy/fs-packages/releases/download/v0.0.19/fs-packages-0.0.19-1.x86_64.rpm</location>
+            <checksum type="sha256">02825da71ffc12b6baded04c534bc9a31f87f8d09a02ff6572da8dc60ffcd169</checksum>
+            <size type="download">12343314</size>
           </artifact>
-          <artifact type="binary" platform="x86_64-linux-gnu" fs-format="deb" fs-signature="https://github.com/FreeSynergy/fs-packages/releases/download/v0.0.18/fs-packages_0.0.18-1_amd64.deb.asc">
-            <location>https://github.com/FreeSynergy/fs-packages/releases/download/v0.0.18/fs-packages_0.0.18-1_amd64.deb</location>
-            <checksum type="sha256">e0f970856bc8a2dddbe1bea4ff5ef7aebb451f14f4600410d667e649292d6eab</checksum>
-            <size type="download">11451136</size>
+          <artifact type="binary" platform="x86_64-linux-gnu" fs-format="deb" fs-signature="https://github.com/FreeSynergy/fs-packages/releases/download/v0.0.19/fs-packages_0.0.19-1_amd64.deb.asc">
+            <location>https://github.com/FreeSynergy/fs-packages/releases/download/v0.0.19/fs-packages_0.0.19-1_amd64.deb</location>
+            <checksum type="sha256">bbf845a7638a3c51a91fc7f553ea0d811ffdee72081c08e1a4c0f575dbbcd4ea</checksum>
+            <size type="download">11466548</size>
           </artifact>
-          <artifact type="binary" platform="aarch64-linux-gnu" fs-format="deb" fs-signature="https://github.com/FreeSynergy/fs-packages/releases/download/v0.0.18/fs-packages_0.0.18-1_arm64.deb.asc">
-            <location>https://github.com/FreeSynergy/fs-packages/releases/download/v0.0.18/fs-packages_0.0.18-1_arm64.deb</location>
-            <checksum type="sha256">d826cfbfa3c8c9d7bbb74c417e39e1eadde119f2dbc1a0eb4dda7f6de41a6e10</checksum>
-            <size type="download">9758648</size>
+          <artifact type="binary" platform="aarch64-linux-gnu" fs-format="deb" fs-signature="https://github.com/FreeSynergy/fs-packages/releases/download/v0.0.19/fs-packages_0.0.19-1_arm64.deb.asc">
+            <location>https://github.com/FreeSynergy/fs-packages/releases/download/v0.0.19/fs-packages_0.0.19-1_arm64.deb</location>
+            <checksum type="sha256">716ff72704bcd57629b7c6ea5166828b223361832a0ba4f1f8b0d50ac797da86</checksum>
+            <size type="download">9766304</size>
           </artifact>
         </artifacts>
       </release>
@@ -41,7 +41,7 @@
     <custom>
       <value key="fs:kind">program</value>
       <value key="fs:format">tar.gz</value>
-      <value key="fs:signature">https://github.com/FreeSynergy/fs-packages/releases/download/v0.0.18/fs-packages-0.0.18-linux-x86_64.tar.gz.asc</value>
+      <value key="fs:signature">https://github.com/FreeSynergy/fs-packages/releases/download/v0.0.19/fs-packages-0.0.19-linux-x86_64.tar.gz.asc</value>
     </custom>
   </component>
   <component type="desktop-application">
@@ -348,6 +348,132 @@
       <value key="fs:kind">program</value>
       <value key="fs:format">tar.gz</value>
       <value key="fs:signature">https://github.com/FreeSynergy/fs-maps/releases/download/v0.0.4/fs-maps-0.0.4-linux-x86_64.tar.gz.asc</value>
+    </custom>
+  </component>
+  <component type="desktop-application">
+    <id>fs-draw</id>
+    <name>FreeSynergy.Draw</name>
+    <summary>An endless board for ideas, drawings and diagrams</summary>
+    <description><p>An endless board for ideas: shapes, text, arrows and drawings that several people can change at once without a referee. This first version is a window with its server that says plainly what works today and what comes; the engine behind it (boards, pages, merging, undo, SVG export) is not wired to the window yet, so nothing can be drawn there. What is not built yet is shown and says so. Contract: draft.</p></description>
+    <url type="homepage">https://github.com/FreeSynergy/fs-draw</url>
+    <releases>
+      <release version="0.0.2" date="2026-11-17">
+        <artifacts>
+          <artifact type="binary" platform="x86_64-linux-gnu">
+            <location>https://github.com/FreeSynergy/fs-draw/releases/download/v0.0.2/fs-draw-0.0.2-linux-x86_64.tar.gz</location>
+            <checksum type="sha256">37dca39ed4c48f2c873cb528503cc2e46dabe0f332e551c76716ad4a7d177dbc</checksum>
+            <size type="download">18376639</size>
+          </artifact>
+          <artifact type="binary" platform="aarch64-linux-gnu" fs-format="rpm" fs-signature="https://github.com/FreeSynergy/fs-draw/releases/download/v0.0.2/fs-draw-0.0.2-1.aarch64.rpm.asc">
+            <location>https://github.com/FreeSynergy/fs-draw/releases/download/v0.0.2/fs-draw-0.0.2-1.aarch64.rpm</location>
+            <checksum type="sha256">9e9bca889656641ec993f4be53b76464573f54e27a62dd41fbce8ced24c1484c</checksum>
+            <size type="download">6077928</size>
+          </artifact>
+          <artifact type="binary" platform="x86_64-linux-gnu" fs-format="rpm" fs-signature="https://github.com/FreeSynergy/fs-draw/releases/download/v0.0.2/fs-draw-0.0.2-1.x86_64.rpm.asc">
+            <location>https://github.com/FreeSynergy/fs-draw/releases/download/v0.0.2/fs-draw-0.0.2-1.x86_64.rpm</location>
+            <checksum type="sha256">238b5ffd6287847fc75553acd53e80e1812ef1679279e5eb57c73f5e6fde8ad2</checksum>
+            <size type="download">6496840</size>
+          </artifact>
+          <artifact type="binary" platform="aarch64-linux-gnu" fs-format="rpm" fs-signature="https://github.com/FreeSynergy/fs-draw/releases/download/v0.0.2/fs-draw-simple-0.0.2-1.aarch64.rpm.asc">
+            <location>https://github.com/FreeSynergy/fs-draw/releases/download/v0.0.2/fs-draw-simple-0.0.2-1.aarch64.rpm</location>
+            <checksum type="sha256">ff3e83bc642c897c1f9258fb692d7cc227902de7f3ae20cedb77754721638549</checksum>
+            <size type="download">6271983</size>
+          </artifact>
+          <artifact type="binary" platform="x86_64-linux-gnu" fs-format="rpm" fs-signature="https://github.com/FreeSynergy/fs-draw/releases/download/v0.0.2/fs-draw-simple-0.0.2-1.x86_64.rpm.asc">
+            <location>https://github.com/FreeSynergy/fs-draw/releases/download/v0.0.2/fs-draw-simple-0.0.2-1.x86_64.rpm</location>
+            <checksum type="sha256">3e50f7b48773752f9f81df5c740cd280e17862ee89487caf0c0b34590c18b55f</checksum>
+            <size type="download">6843388</size>
+          </artifact>
+          <artifact type="binary" platform="x86_64-linux-gnu" fs-format="deb" fs-signature="https://github.com/FreeSynergy/fs-draw/releases/download/v0.0.2/fs-draw-simple_0.0.2-1_amd64.deb.asc">
+            <location>https://github.com/FreeSynergy/fs-draw/releases/download/v0.0.2/fs-draw-simple_0.0.2-1_amd64.deb</location>
+            <checksum type="sha256">7a609c020c88a2feaff79b748caf238ba8ce577318832619b04455be7e348d85</checksum>
+            <size type="download">6275444</size>
+          </artifact>
+          <artifact type="binary" platform="aarch64-linux-gnu" fs-format="deb" fs-signature="https://github.com/FreeSynergy/fs-draw/releases/download/v0.0.2/fs-draw-simple_0.0.2-1_arm64.deb.asc">
+            <location>https://github.com/FreeSynergy/fs-draw/releases/download/v0.0.2/fs-draw-simple_0.0.2-1_arm64.deb</location>
+            <checksum type="sha256">96b83b8544f409cb2a87726d2043cfe6d3d4f598a127154e1784cc571b98019f</checksum>
+            <size type="download">5377140</size>
+          </artifact>
+          <artifact type="binary" platform="x86_64-linux-gnu" fs-format="deb" fs-signature="https://github.com/FreeSynergy/fs-draw/releases/download/v0.0.2/fs-draw_0.0.2-1_amd64.deb.asc">
+            <location>https://github.com/FreeSynergy/fs-draw/releases/download/v0.0.2/fs-draw_0.0.2-1_amd64.deb</location>
+            <checksum type="sha256">7b880d0f3b0ec3c43f955aa66121cdb00af5df42c958f390d513a3e2361620e1</checksum>
+            <size type="download">5941300</size>
+          </artifact>
+          <artifact type="binary" platform="aarch64-linux-gnu" fs-format="deb" fs-signature="https://github.com/FreeSynergy/fs-draw/releases/download/v0.0.2/fs-draw_0.0.2-1_arm64.deb.asc">
+            <location>https://github.com/FreeSynergy/fs-draw/releases/download/v0.0.2/fs-draw_0.0.2-1_arm64.deb</location>
+            <checksum type="sha256">a63e47944595906ee47a7cdce5e5586e779ce518008ac4e7f275eb6a3c274e16</checksum>
+            <size type="download">5164808</size>
+          </artifact>
+        </artifacts>
+      </release>
+    </releases>
+    <custom>
+      <value key="fs:kind">program</value>
+      <value key="fs:format">tar.gz</value>
+      <value key="fs:signature">https://github.com/FreeSynergy/fs-draw/releases/download/v0.0.2/fs-draw-0.0.2-linux-x86_64.tar.gz.asc</value>
+    </custom>
+  </component>
+  <component type="desktop-application">
+    <id>fs-messages</id>
+    <name>FreeSynergy.Messages</name>
+    <summary>Mail, chat and AI agents in one place, encrypted only</summary>
+    <description><p>Say something to someone: mail, chat and AI agents in one program, and a message is only sent if it can be sent encrypted. This first version is a window with its server that says plainly what works today and what comes; the core (message model, encrypted-only sending, mail and Matrix connectors, AI guard) is not wired to the window yet. What is not built yet is shown and says so. Contract: draft.</p></description>
+    <url type="homepage">https://github.com/FreeSynergy/fs-messages</url>
+    <releases>
+      <release version="0.0.3" date="2026-11-17">
+        <artifacts>
+          <artifact type="binary" platform="x86_64-linux-gnu">
+            <location>https://github.com/FreeSynergy/fs-messages/releases/download/v0.0.3/fs-messages-0.0.3-linux-x86_64.tar.gz</location>
+            <checksum type="sha256">8d8fbc5d8d19d43e8fe2411aebc4e837e4c7beba93c57f19e72b5b74f75ff3ec</checksum>
+            <size type="download">12525941</size>
+          </artifact>
+          <artifact type="binary" platform="aarch64-linux-gnu" fs-format="rpm" fs-signature="https://github.com/FreeSynergy/fs-messages/releases/download/v0.0.3/fs-messages-0.0.3-1.aarch64.rpm.asc">
+            <location>https://github.com/FreeSynergy/fs-messages/releases/download/v0.0.3/fs-messages-0.0.3-1.aarch64.rpm</location>
+            <checksum type="sha256">f4df14bd4107fd77416b24be55c2956e3092f76f0ee68358ec3244c70f81d02c</checksum>
+            <size type="download">601162</size>
+          </artifact>
+          <artifact type="binary" platform="x86_64-linux-gnu" fs-format="rpm" fs-signature="https://github.com/FreeSynergy/fs-messages/releases/download/v0.0.3/fs-messages-0.0.3-1.x86_64.rpm.asc">
+            <location>https://github.com/FreeSynergy/fs-messages/releases/download/v0.0.3/fs-messages-0.0.3-1.x86_64.rpm</location>
+            <checksum type="sha256">56c93f52798142166cfb2f8da930c58f8e5c1c796f1d5706cd5a305256bc401a</checksum>
+            <size type="download">910838</size>
+          </artifact>
+          <artifact type="binary" platform="aarch64-linux-gnu" fs-format="rpm" fs-signature="https://github.com/FreeSynergy/fs-messages/releases/download/v0.0.3/fs-messages-simple-0.0.3-1.aarch64.rpm.asc">
+            <location>https://github.com/FreeSynergy/fs-messages/releases/download/v0.0.3/fs-messages-simple-0.0.3-1.aarch64.rpm</location>
+            <checksum type="sha256">fd0559d9ccc18133560055e4b3d2006b8cb255714b5498d36cd36f6d844ea906</checksum>
+            <size type="download">7589596</size>
+          </artifact>
+          <artifact type="binary" platform="x86_64-linux-gnu" fs-format="rpm" fs-signature="https://github.com/FreeSynergy/fs-messages/releases/download/v0.0.3/fs-messages-simple-0.0.3-1.x86_64.rpm.asc">
+            <location>https://github.com/FreeSynergy/fs-messages/releases/download/v0.0.3/fs-messages-simple-0.0.3-1.x86_64.rpm</location>
+            <checksum type="sha256">755671af8d4fb1aa737a54bf40223631c0b3b8a7062648612259d9821ad9f0ed</checksum>
+            <size type="download">8174500</size>
+          </artifact>
+          <artifact type="binary" platform="x86_64-linux-gnu" fs-format="deb" fs-signature="https://github.com/FreeSynergy/fs-messages/releases/download/v0.0.3/fs-messages-simple_0.0.3-1_amd64.deb.asc">
+            <location>https://github.com/FreeSynergy/fs-messages/releases/download/v0.0.3/fs-messages-simple_0.0.3-1_amd64.deb</location>
+            <checksum type="sha256">dbbeff4e6c73fe58619432c75be300cbceb071444386a645820869c1270333f7</checksum>
+            <size type="download">7641884</size>
+          </artifact>
+          <artifact type="binary" platform="aarch64-linux-gnu" fs-format="deb" fs-signature="https://github.com/FreeSynergy/fs-messages/releases/download/v0.0.3/fs-messages-simple_0.0.3-1_arm64.deb.asc">
+            <location>https://github.com/FreeSynergy/fs-messages/releases/download/v0.0.3/fs-messages-simple_0.0.3-1_arm64.deb</location>
+            <checksum type="sha256">9ae251dde3cde5ac7e3c79aac91f2e12c3c6f692da94d4561fbc5af9a9440d18</checksum>
+            <size type="download">6607508</size>
+          </artifact>
+          <artifact type="binary" platform="x86_64-linux-gnu" fs-format="deb" fs-signature="https://github.com/FreeSynergy/fs-messages/releases/download/v0.0.3/fs-messages_0.0.3-1_amd64.deb.asc">
+            <location>https://github.com/FreeSynergy/fs-messages/releases/download/v0.0.3/fs-messages_0.0.3-1_amd64.deb</location>
+            <checksum type="sha256">040ad09d2c364d15f81f6bb98719cfc20851a76aa5aa83b19bdb952682b86026</checksum>
+            <size type="download">816552</size>
+          </artifact>
+          <artifact type="binary" platform="aarch64-linux-gnu" fs-format="deb" fs-signature="https://github.com/FreeSynergy/fs-messages/releases/download/v0.0.3/fs-messages_0.0.3-1_arm64.deb.asc">
+            <location>https://github.com/FreeSynergy/fs-messages/releases/download/v0.0.3/fs-messages_0.0.3-1_arm64.deb</location>
+            <checksum type="sha256">c86c176910d69b2474896dfdb9013664791404d53c12cf014addf7fdf5c2c69b</checksum>
+            <size type="download">511324</size>
+          </artifact>
+        </artifacts>
+      </release>
+    </releases>
+    <custom>
+      <value key="fs:kind">program</value>
+      <value key="fs:format">tar.gz</value>
+      <value key="fs:signature">https://github.com/FreeSynergy/fs-messages/releases/download/v0.0.3/fs-messages-0.0.3-linux-x86_64.tar.gz.asc</value>
     </custom>
   </component>
   <component type="service">
