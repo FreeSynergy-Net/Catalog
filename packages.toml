@@ -115,6 +115,17 @@ kind = "program"
 requires = []
 
 [[package]]
+id = "fs-activities"
+name = "FreeSynergy.Activities"
+summary = "What happened in your programs: one local timeline, newest first"
+description = "See what happened in your programs: a timeline of activities as short summaries, never the content, kept local and yours. This first version is a window with its server that says plainly what works today and what comes; the core (timeline, filters, summaries, forgetting) is not wired to the window yet. What is not built yet is shown and says so. Contract: draft."
+repo = "FreeSynergy/fs-activities"
+tag = "v0.0.2"
+asset = "fs-activities-{version}-linux-x86_64.tar.gz"
+kind = "program"
+requires = []
+
+[[package]]
 id = "fs-resources"
 name = "FreeSynergy.Resources"
 summary = "Things, rooms, material and time: what we have and need"

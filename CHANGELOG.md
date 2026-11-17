@@ -1,5 +1,9 @@
 # Changelog
 
+## Unreleased (unreviewed/catalog-activities)
+
+- New entry `fs-activities` (`FreeSynergy.Activities`, capability key `history`, tag `v0.0.2`, asset `fs-activities-0.0.2-linux-x86_64.tar.gz`, schema 1, no `provides` yet (comes with schema 2), "Contract: draft"; the tarball holds `fs-activities` and `fs-activities-simple`).
+
 ## Unreleased (unreviewed/catalog-packages-0021)
 
 - `fs-packages` tag `v0.0.20` -> `v0.0.21` (asset `fs-packages-0.0.21-linux-x86_64.tar.gz`; other fields unchanged).
