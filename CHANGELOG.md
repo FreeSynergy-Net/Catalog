@@ -1,5 +1,9 @@
 # Changelog
 
+## Unreleased (unreviewed/catalog-packages-0021)
+
+- `fs-packages` tag `v0.0.20` -> `v0.0.21` (asset `fs-packages-0.0.21-linux-x86_64.tar.gz`; other fields unchanged).
+
 ## Unreleased (unreviewed/catalog-tasks-009)
 
 - `fs-tasks` tag `v0.0.8` -> `v0.0.9` (asset `fs-tasks-0.0.9-linux-x86_64.tar.gz`; other fields unchanged).
