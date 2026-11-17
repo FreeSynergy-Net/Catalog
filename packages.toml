@@ -34,13 +34,13 @@ asset = "fs-people-{version}-linux-x86_64.tar.gz"
 kind = "program"
 
 [[package]]
-id = "fs-calendar"
-name = "FreeSynergy.Calendar"
-summary = "Calendar and events"
-description = "Plan your days: events with times and zones, repeating events, a month, week and day view, and import and export as iCalendar. Your events stay in your own data folder."
-repo = "FreeSynergy/fs-calendar"
-tag = "v0.0.4"
-asset = "fs-calendar-{version}-linux-x86_64.tar.gz"
+id = "fs-calendars"
+name = "FreeSynergy.Calendars"
+summary = "Calendars and events"
+description = "Plan your days: a window with month, week, day and an overview of events, shown in this preview with example data. The core (events with times and zones, repeating events, import and export as iCalendar) is not wired to the window yet. What is not built yet is shown and says so. Contract: draft."
+repo = "FreeSynergy/fs-calendars"
+tag = "v0.0.5"
+asset = "fs-calendars-{version}-linux-x86_64.tar.gz"
 kind = "program"
 
 [[package]]
