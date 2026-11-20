@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<components version="1.0" origin="freesynergy" fs-serial="1795131404" fs-expires="1798155404">
+<components version="1.0" origin="freesynergy" fs-serial="1795148079" fs-expires="1798172079">
   <component type="desktop-application">
     <id>fs-packages</id>
     <name>FreeSynergy.Packages</name>
@@ -503,52 +503,52 @@
     <description><p>Ask questions, collect answers and read the result: named or anonymous, where anonymous answers are kept in a separate box with no log and no time, and results appear only for a minimum group size. This first version is a window with its server that says plainly what works today and what comes; the core (surveys, ballots, results, counting methods, CSV export) is not connected to the window yet, so no survey can be made there. What is not built yet is shown and says so. Contract: draft.</p></description>
     <url type="homepage">https://github.com/FreeSynergy/fs-forms</url>
     <releases>
-      <release version="0.0.4" date="2026-11-19">
+      <release version="0.0.5" date="2026-11-20">
         <artifacts>
           <artifact type="binary" platform="x86_64-linux-gnu">
-            <location>https://github.com/FreeSynergy/fs-forms/releases/download/v0.0.4/fs-forms-0.0.4-linux-x86_64.tar.gz</location>
-            <checksum type="sha256">5394d40e350add28460d13a5043d7b532bd65dc03cdad1fc23228396c0685d59</checksum>
-            <size type="download">12706703</size>
+            <location>https://github.com/FreeSynergy/fs-forms/releases/download/v0.0.5/fs-forms-0.0.5-linux-x86_64.tar.gz</location>
+            <checksum type="sha256">ddde7162119253f4ba63982d994520081640ab8c2dbba762299db4606c97714e</checksum>
+            <size type="download">12705331</size>
           </artifact>
-          <artifact type="binary" platform="aarch64-linux-gnu" fs-format="rpm" fs-signature="https://github.com/FreeSynergy/fs-forms/releases/download/v0.0.4/fs-forms-0.0.4-1.aarch64.rpm.asc">
-            <location>https://github.com/FreeSynergy/fs-forms/releases/download/v0.0.4/fs-forms-0.0.4-1.aarch64.rpm</location>
-            <checksum type="sha256">baa82e9bd884541fc99d814be1f7a7ff6c6231d1f8139d4783c496d4bc006b3f</checksum>
-            <size type="download">695484</size>
+          <artifact type="binary" platform="aarch64-linux-gnu" fs-format="rpm" fs-signature="https://github.com/FreeSynergy/fs-forms/releases/download/v0.0.5/fs-forms-0.0.5-1.aarch64.rpm.asc">
+            <location>https://github.com/FreeSynergy/fs-forms/releases/download/v0.0.5/fs-forms-0.0.5-1.aarch64.rpm</location>
+            <checksum type="sha256">f3d234dd8e20ef75680dd8a8ee6efdc8e618853b1ee23e9e8676fc4ed3b0abcb</checksum>
+            <size type="download">695391</size>
           </artifact>
-          <artifact type="binary" platform="x86_64-linux-gnu" fs-format="rpm" fs-signature="https://github.com/FreeSynergy/fs-forms/releases/download/v0.0.4/fs-forms-0.0.4-1.x86_64.rpm.asc">
-            <location>https://github.com/FreeSynergy/fs-forms/releases/download/v0.0.4/fs-forms-0.0.4-1.x86_64.rpm</location>
-            <checksum type="sha256">36f695950d0254c5d3786b68c84c3fc934f923a2225a3b19405d8e6f09878fa6</checksum>
-            <size type="download">1017519</size>
+          <artifact type="binary" platform="x86_64-linux-gnu" fs-format="rpm" fs-signature="https://github.com/FreeSynergy/fs-forms/releases/download/v0.0.5/fs-forms-0.0.5-1.x86_64.rpm.asc">
+            <location>https://github.com/FreeSynergy/fs-forms/releases/download/v0.0.5/fs-forms-0.0.5-1.x86_64.rpm</location>
+            <checksum type="sha256">14fc03e2510cba8c76e21b10658699c83fc9eb00bdc29d6dd9f1f3753bb99bd0</checksum>
+            <size type="download">1017279</size>
           </artifact>
-          <artifact type="binary" platform="aarch64-linux-gnu" fs-format="rpm" fs-signature="https://github.com/FreeSynergy/fs-forms/releases/download/v0.0.4/fs-forms-simple-0.0.4-1.aarch64.rpm.asc">
-            <location>https://github.com/FreeSynergy/fs-forms/releases/download/v0.0.4/fs-forms-simple-0.0.4-1.aarch64.rpm</location>
-            <checksum type="sha256">6267fc61dbead54f1b4d89b38336741667523cc25153d721348a14b6275484f6</checksum>
-            <size type="download">7627681</size>
+          <artifact type="binary" platform="aarch64-linux-gnu" fs-format="rpm" fs-signature="https://github.com/FreeSynergy/fs-forms/releases/download/v0.0.5/fs-forms-simple-0.0.5-1.aarch64.rpm.asc">
+            <location>https://github.com/FreeSynergy/fs-forms/releases/download/v0.0.5/fs-forms-simple-0.0.5-1.aarch64.rpm</location>
+            <checksum type="sha256">6862002fce351233baa65d0358b2b49fb5dc855e3980ed29848ca4f6ec7f6d85</checksum>
+            <size type="download">7627402</size>
           </artifact>
-          <artifact type="binary" platform="x86_64-linux-gnu" fs-format="rpm" fs-signature="https://github.com/FreeSynergy/fs-forms/releases/download/v0.0.4/fs-forms-simple-0.0.4-1.x86_64.rpm.asc">
-            <location>https://github.com/FreeSynergy/fs-forms/releases/download/v0.0.4/fs-forms-simple-0.0.4-1.x86_64.rpm</location>
-            <checksum type="sha256">80bd323a2aba6d27658a749ac6b8bda78fa77c1267aab570f9ae14b9104ef4c5</checksum>
-            <size type="download">8228869</size>
+          <artifact type="binary" platform="x86_64-linux-gnu" fs-format="rpm" fs-signature="https://github.com/FreeSynergy/fs-forms/releases/download/v0.0.5/fs-forms-simple-0.0.5-1.x86_64.rpm.asc">
+            <location>https://github.com/FreeSynergy/fs-forms/releases/download/v0.0.5/fs-forms-simple-0.0.5-1.x86_64.rpm</location>
+            <checksum type="sha256">78903777ffae7e30d1da98e47663591b13d360c9b238157f1776b8f4ee293df3</checksum>
+            <size type="download">8228486</size>
           </artifact>
-          <artifact type="binary" platform="x86_64-linux-gnu" fs-format="deb" fs-signature="https://github.com/FreeSynergy/fs-forms/releases/download/v0.0.4/fs-forms-simple_0.0.4-1_amd64.deb.asc">
-            <location>https://github.com/FreeSynergy/fs-forms/releases/download/v0.0.4/fs-forms-simple_0.0.4-1_amd64.deb</location>
-            <checksum type="sha256">128b3347c6fdffd6690fe3a332b327f3a6e6afdafbf475e9b2086778caca02f3</checksum>
-            <size type="download">7654456</size>
+          <artifact type="binary" platform="x86_64-linux-gnu" fs-format="deb" fs-signature="https://github.com/FreeSynergy/fs-forms/releases/download/v0.0.5/fs-forms-simple_0.0.5-1_amd64.deb.asc">
+            <location>https://github.com/FreeSynergy/fs-forms/releases/download/v0.0.5/fs-forms-simple_0.0.5-1_amd64.deb</location>
+            <checksum type="sha256">58da7431ad2b679fbec403d278cd3e8b7b1961ab411d0d7036d394d55db03427</checksum>
+            <size type="download">7654924</size>
           </artifact>
-          <artifact type="binary" platform="aarch64-linux-gnu" fs-format="deb" fs-signature="https://github.com/FreeSynergy/fs-forms/releases/download/v0.0.4/fs-forms-simple_0.0.4-1_arm64.deb.asc">
-            <location>https://github.com/FreeSynergy/fs-forms/releases/download/v0.0.4/fs-forms-simple_0.0.4-1_arm64.deb</location>
-            <checksum type="sha256">477bf871e0d9df2284b48dbf4357202cf39935856888d4b88a9049fe14eee8f1</checksum>
-            <size type="download">6646408</size>
+          <artifact type="binary" platform="aarch64-linux-gnu" fs-format="deb" fs-signature="https://github.com/FreeSynergy/fs-forms/releases/download/v0.0.5/fs-forms-simple_0.0.5-1_arm64.deb.asc">
+            <location>https://github.com/FreeSynergy/fs-forms/releases/download/v0.0.5/fs-forms-simple_0.0.5-1_arm64.deb</location>
+            <checksum type="sha256">b2e2383d2b1e3f4b480b7da4bf26b49d65774b3059cef114e5a07fc0f5056958</checksum>
+            <size type="download">6647020</size>
           </artifact>
-          <artifact type="binary" platform="x86_64-linux-gnu" fs-format="deb" fs-signature="https://github.com/FreeSynergy/fs-forms/releases/download/v0.0.4/fs-forms_0.0.4-1_amd64.deb.asc">
-            <location>https://github.com/FreeSynergy/fs-forms/releases/download/v0.0.4/fs-forms_0.0.4-1_amd64.deb</location>
-            <checksum type="sha256">50deaf13765c2314c52b1a0da2f22db781e6299f653697da2c85f933e26128d8</checksum>
-            <size type="download">914824</size>
+          <artifact type="binary" platform="x86_64-linux-gnu" fs-format="deb" fs-signature="https://github.com/FreeSynergy/fs-forms/releases/download/v0.0.5/fs-forms_0.0.5-1_amd64.deb.asc">
+            <location>https://github.com/FreeSynergy/fs-forms/releases/download/v0.0.5/fs-forms_0.0.5-1_amd64.deb</location>
+            <checksum type="sha256">57c5250578be4766ba3db5ec1b3c0271be5c48cbd9022d3c55207eb4b5f7f498</checksum>
+            <size type="download">915456</size>
           </artifact>
-          <artifact type="binary" platform="aarch64-linux-gnu" fs-format="deb" fs-signature="https://github.com/FreeSynergy/fs-forms/releases/download/v0.0.4/fs-forms_0.0.4-1_arm64.deb.asc">
-            <location>https://github.com/FreeSynergy/fs-forms/releases/download/v0.0.4/fs-forms_0.0.4-1_arm64.deb</location>
-            <checksum type="sha256">6f8a121b4092314f9a1e7aea382abd9daa72e93ab55d2fefbdf210ba2ec7983a</checksum>
-            <size type="download">593820</size>
+          <artifact type="binary" platform="aarch64-linux-gnu" fs-format="deb" fs-signature="https://github.com/FreeSynergy/fs-forms/releases/download/v0.0.5/fs-forms_0.0.5-1_arm64.deb.asc">
+            <location>https://github.com/FreeSynergy/fs-forms/releases/download/v0.0.5/fs-forms_0.0.5-1_arm64.deb</location>
+            <checksum type="sha256">856a61685238ada64fb4915676bb54e0bc316bc08300888323894abe13b27cc3</checksum>
+            <size type="download">593912</size>
           </artifact>
         </artifacts>
       </release>
@@ -556,7 +556,7 @@
     <custom>
       <value key="fs:kind">program</value>
       <value key="fs:format">tar.gz</value>
-      <value key="fs:signature">https://github.com/FreeSynergy/fs-forms/releases/download/v0.0.4/fs-forms-0.0.4-linux-x86_64.tar.gz.asc</value>
+      <value key="fs:signature">https://github.com/FreeSynergy/fs-forms/releases/download/v0.0.5/fs-forms-0.0.5-linux-x86_64.tar.gz.asc</value>
     </custom>
   </component>
   <component type="desktop-application">
