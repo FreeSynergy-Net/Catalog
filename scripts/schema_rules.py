@@ -88,6 +88,11 @@ def validate(p, caps=None, schema=1):
     kind = p.get("kind", "program")
     if not (is_str(kind) and kind in KINDS):
         c.err("kind", f"must be one of: {', '.join(KINDS)}")
+    fmt = p.get("format", "tar.gz")
+    if fmt not in ("tar.gz", "rpm"):
+        c.err("format", "must be `tar.gz` (default) or `rpm`")
+    elif fmt == "rpm" and not (is_str(p.get("asset")) and p["asset"].endswith(".noarch.rpm")):
+        c.err("format", "`rpm` as main file needs `asset` ending in `.noarch.rpm` (per-machine rpm files come by themselves next to a tar.gz)")
     for key in ("name", "summary"):
         if is_str(p.get(key)) and CONTROL.search(p[key]):
             c.err(key, "contains a character that XML does not allow")

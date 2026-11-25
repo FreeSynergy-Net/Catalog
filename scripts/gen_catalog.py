@@ -84,6 +84,8 @@ def entry(p):
         raise Skip(f"{wanted}: not in SHA256SUMS.txt")
     q = quoteattr
     kind = p.get("kind", "program")
+    main_format = p.get("format", "tar.gz")  # main file: tar.gz (default) or one noarch rpm (the store reads `fs:format`, no `platform` = any machine)
+    platform_attr = "" if main_format == "rpm" else ' platform="x86_64-linux-gnu"'
     # optional PNG icon: `icon = "https://..."` in packages.toml; its SHA-256 goes into the signed catalog
     icon_line = ""
     if p.get("icon"):
@@ -133,14 +135,14 @@ def entry(p):
     <releases>
       <release version={q(version)}{date_attr}>{schema.release_description_xml(mine.get('changes'))}
         <artifacts>
-          <artifact type="binary" platform="x86_64-linux-gnu">
+          <artifact type="binary"{platform_attr}>
             <location>{escape(asset['browser_download_url'])}</location>
             <checksum type="sha256">{sha}</checksum>{size_line(asset.get('size'), 'download')}{size_line(installed, 'installed')}
           </artifact>{native_lines}
         </artifacts>
       </release>{older}
     </releases>
-    <custom>{schema.custom_values(p, kind, 'tar.gz', sig['browser_download_url'])}
+    <custom>{schema.custom_values(p, kind, main_format, sig['browser_download_url'])}
     </custom>
   </component>"""
     try:

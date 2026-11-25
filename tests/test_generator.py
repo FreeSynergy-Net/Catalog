@@ -206,3 +206,27 @@ class ReaderContract(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+
+class NoarchRpmMain(unittest.TestCase):
+    """INST-8: a data package (fs-tasks) is delivered as ONE noarch rpm: `fs:format` rpm, no `platform` (= any machine)."""
+    P = dict(GOOD, asset="fs-x-{version}-1.noarch.rpm", format="rpm")
+
+    def test_rpm_main_file(self):
+        root = ET.fromstring(build(dict(self.P)))
+        art = root.find("releases/release/artifacts/artifact")
+        self.assertIsNone(art.get("platform"))
+        self.assertTrue(art.findtext("location").endswith("fs-x-0.0.2-1.noarch.rpm"))
+        c = {v.get("key"): v.text for v in root.findall("custom/value")}
+        self.assertEqual(c["fs:format"], "rpm")
+        self.assertTrue(c["fs:signature"].endswith("fs-x-0.0.2-1.noarch.rpm.asc"))
+
+    def test_default_stays_tar_gz(self):
+        root = ET.fromstring(build(dict(GOOD)))
+        self.assertEqual(root.find("releases/release/artifacts/artifact").get("platform"), "x86_64-linux-gnu")
+        self.assertEqual({v.get("key"): v.text for v in root.findall("custom/value")}["fs:format"], "tar.gz")
+
+    def test_format_is_checked(self):
+        self.assertEqual(problems(dict(self.P)), [])
+        self.assertIn("noarch", messages(dict(GOOD, format="rpm")))
+        self.assertIn("format", messages(dict(GOOD, format="zip")))
