@@ -84,7 +84,7 @@ def entry(p):
         raise Skip(f"{wanted}: not in SHA256SUMS.txt")
     q = quoteattr
     kind = p.get("kind", "program")
-    main_format = p.get("format", "tar.gz")  # main file: tar.gz (default) or one noarch rpm (the store reads `fs:format`, no `platform` = any machine)
+    main_format = p.get("format", "tar.gz")  # main file: tar.gz (default) or one noarch rpm (the store reads `fs:format`, no `platform` = selection: fits any machine; installing needs an rpm system)
     platform_attr = "" if main_format == "rpm" else ' platform="x86_64-linux-gnu"'
     # optional PNG icon: `icon = "https://..."` in packages.toml; its SHA-256 goes into the signed catalog
     icon_line = ""

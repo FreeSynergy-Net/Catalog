@@ -203,13 +203,8 @@ class ReaderContract(unittest.TestCase):
         self.assertTrue(S.UUID7.match(custom["fs:description-wiki"]))
 
 
-
-if __name__ == "__main__":
-    unittest.main()
-
-
 class NoarchRpmMain(unittest.TestCase):
-    """INST-8: a data package (fs-tasks) is delivered as ONE noarch rpm: `fs:format` rpm, no `platform` (= any machine)."""
+    """INST-8: a data package (fs-tasks) is delivered as ONE noarch rpm: `fs:format` rpm, no `platform` (selection: fits any machine; installing needs an rpm system)."""
     P = dict(GOOD, asset="fs-x-{version}-1.noarch.rpm", format="rpm")
 
     def test_rpm_main_file(self):
@@ -230,3 +225,7 @@ class NoarchRpmMain(unittest.TestCase):
         self.assertEqual(problems(dict(self.P)), [])
         self.assertIn("noarch", messages(dict(GOOD, format="rpm")))
         self.assertIn("format", messages(dict(GOOD, format="zip")))
+
+
+if __name__ == "__main__":
+    unittest.main()
