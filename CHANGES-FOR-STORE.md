@@ -21,3 +21,4 @@ Reference: docs/format.md. Example: examples/catalog.example.xml. Everything bel
 7. `<provides><mediatype>` (AppStream): not read; no capnp field.
 8. `Details.origin.source` stays set by the store (the mirror); the catalog does not write it.
 9. Root attribute `fs-schema="2"` on `<components>` when packages.toml says `schema = 2`; the reader ignores it.
+10. `fs:format` = `rpm` (INST-8, fs-tasks 0.0.11): the main artifact is ONE noarch rpm and has no `platform`, so `fits_this_machine` selects it on every machine. The store installs it with `dnf`; on a system without dnf (Debian/Ubuntu, Windows) it fails only at installation. The counterpart to the deb lock (`fs-packages` `prepare.rs:122`, "deb main file only for a deb store") is still missing: card for fs-packages (offer or install an rpm main file only when the system is rpm, otherwise `Unsupported(Rpm)` before downloading). Documented in docs/format.md (`format`).

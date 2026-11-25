@@ -1,5 +1,10 @@
 # Changelog
 
+## Unreleased (unreviewed/inst-8-docs)
+
+- Docs for the optional key `format` (`tar.gz` default | `rpm`) in `docs/format.md` and `docs/format.de.md`; `rpm` = one noarch rpm as main file, no `platform` (selection: fits any machine; installing needs an rpm system).
+- Comments "any machine" made precise (`scripts/gen_catalog.py`, `tests/test_generator.py`); class `NoarchRpmMain` moved before the `__main__` block, so a direct run executes all 19 tests.
+
 ## Unreleased (unreviewed/catalog-packages-0022)
 
 - `fs-packages` tag `v0.0.21` -> `v0.0.22` (asset `fs-packages-0.0.22-linux-x86_64.tar.gz`; other fields unchanged).
