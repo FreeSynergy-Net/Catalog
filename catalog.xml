@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<components version="1.0" origin="freesynergy" fs-serial="1795649786" fs-expires="1798673786">
+<components version="1.0" origin="freesynergy" fs-serial="1795718494" fs-expires="1798742494">
   <component type="desktop-application">
     <id>fs-packages</id>
     <name>FreeSynergy.Packages</name>
@@ -52,12 +52,12 @@
     <description xml:lang="de"><p>Arbeitsversion. Plane, was zu tun ist: Listen, Status- und Kanban-Ansichten, Fälligkeiten und Beziehungen zwischen Aufgaben. Die Daten liegen im Modul planning, das mit dem Paket kommt. Deine Aufgaben bleiben in deinem eigenen Datenordner.</p></description>
     <url type="homepage">https://github.com/FreeSynergy/fs-tasks</url>
     <releases>
-      <release version="0.0.11" date="2026-11-25">
+      <release version="0.0.12" date="2026-11-26">
         <artifacts>
           <artifact type="binary">
-            <location>https://github.com/FreeSynergy-Net/fs-tasks/releases/download/v0.0.11/fs-tasks-0.0.11-1.noarch.rpm</location>
-            <checksum type="sha256">27011c4c77b1a9b9a1cf445b0665d89821733b6ae7717825f573e8f41c9d6f42</checksum>
-            <size type="download">27103</size>
+            <location>https://github.com/FreeSynergy-Net/fs-tasks/releases/download/v0.0.12/fs-tasks-0.0.12-1.noarch.rpm</location>
+            <checksum type="sha256">b80a1c394143b5ab472e711ad28228772ac0f0968080f8dfe74ab8db8e79e273</checksum>
+            <size type="download">27197</size>
           </artifact>
         </artifacts>
       </release>
@@ -65,7 +65,7 @@
     <custom>
       <value key="fs:kind">program</value>
       <value key="fs:format">rpm</value>
-      <value key="fs:signature">https://github.com/FreeSynergy-Net/fs-tasks/releases/download/v0.0.11/fs-tasks-0.0.11-1.noarch.rpm.asc</value>
+      <value key="fs:signature">https://github.com/FreeSynergy-Net/fs-tasks/releases/download/v0.0.12/fs-tasks-0.0.12-1.noarch.rpm.asc</value>
     </custom>
   </component>
   <component type="desktop-application">
@@ -738,26 +738,28 @@
     <url type="homepage">https://github.com/FreeSynergy/fs-zentinel</url>
     <icon type="remote" fs-sha256="091ec5ec61ff26d35b1e2fa1ad720126583e3464bc660e98b846f4eab1344aac">https://raw.githubusercontent.com/FreeSynergy/Catalog/main/icons/server.png</icon>
     <releases>
+      <release version="26.11_6" date="2026-11-23">
+        <artifacts>
+          <artifact type="binary" platform="x86_64-linux-gnu">
+            <location>https://github.com/FreeSynergy-Net/fs-zentinel/releases/download/v26.11_6/zentinel-26.11_6-linux-amd64.tar.gz</location>
+            <checksum type="sha256">4c1b1011cb856fe884fbf5c5f9e3a3b1997addb4f37791914494cfffae85668f</checksum>
+            <size type="download">20550668</size>
+          </artifact>
+          <artifact type="binary" platform="x86_64-linux-gnu" fs-format="deb" fs-signature="https://github.com/FreeSynergy-Net/fs-zentinel/releases/download/v26.11_6/zentinel_26.11.6-1_amd64.deb.asc">
+            <location>https://github.com/FreeSynergy-Net/fs-zentinel/releases/download/v26.11_6/zentinel_26.11.6-1_amd64.deb</location>
+            <checksum type="sha256">b182e2ef956611b176a494294d34ee0f98387f47401c2a77fb29866cfac393ca</checksum>
+            <size type="download">9045740</size>
+          </artifact>
+          <artifact type="binary" platform="aarch64-linux-gnu" fs-format="deb" fs-signature="https://github.com/FreeSynergy-Net/fs-zentinel/releases/download/v26.11_6/zentinel_26.11.6-1_arm64.deb.asc">
+            <location>https://github.com/FreeSynergy-Net/fs-zentinel/releases/download/v26.11_6/zentinel_26.11.6-1_arm64.deb</location>
+            <checksum type="sha256">a25fd7679de89b5fa8fc9e54a785b11ca8047d69ee6a30d413143fc60453d1e3</checksum>
+            <size type="download">7611240</size>
+          </artifact>
+        </artifacts>
+      </release>
       <release version="26.11_3" date="2026-11-16">
         <description xml:lang="en"><p>Upstream 26.11_3: Hetzner DNS-01 moved to the new Cloud API (fix 42be3102); see the release notes.</p></description>
         <description xml:lang="de"><p>Upstream 26.11_3: Hetzner DNS-01 auf die neue Cloud-API umgestellt (Fix 42be3102), siehe Release-Notes.</p></description>
-        <artifacts>
-          <artifact type="binary" platform="x86_64-linux-gnu">
-            <location>https://github.com/FreeSynergy-Net/fs-zentinel/releases/download/v26.11_3/zentinel-26.11_3-linux-amd64.tar.gz</location>
-            <checksum type="sha256">9ffbbfb16be641fe71a447c746f5bd61c31e73084d9ef5c137a831118ba5c277</checksum>
-            <size type="download">20314361</size>
-          </artifact>
-          <artifact type="binary" platform="x86_64-linux-gnu" fs-format="deb" fs-signature="https://github.com/FreeSynergy-Net/fs-zentinel/releases/download/v26.11_3/zentinel_26.11.3-1_amd64.deb.asc">
-            <location>https://github.com/FreeSynergy-Net/fs-zentinel/releases/download/v26.11_3/zentinel_26.11.3-1_amd64.deb</location>
-            <checksum type="sha256">2d51c35206f9f12995247d7904edc3c67f06fae674d08950428535efa4e969e8</checksum>
-            <size type="download">8887740</size>
-          </artifact>
-          <artifact type="binary" platform="aarch64-linux-gnu" fs-format="deb" fs-signature="https://github.com/FreeSynergy-Net/fs-zentinel/releases/download/v26.11_3/zentinel_26.11.3-1_arm64.deb.asc">
-            <location>https://github.com/FreeSynergy-Net/fs-zentinel/releases/download/v26.11_3/zentinel_26.11.3-1_arm64.deb</location>
-            <checksum type="sha256">99dfa7439178762215ec010ddd6f26017e5f2d985c58f946fd6e8b0105e661dd</checksum>
-            <size type="download">7503488</size>
-          </artifact>
-        </artifacts>
       </release>
       <release version="26.11_2" date="2026-11-14">
         <description xml:lang="en"><p>Upstream 26.11_2: Debian packages for amd64 and arm64, signed.</p></description>
@@ -767,7 +769,7 @@
     <custom>
       <value key="fs:kind">server</value>
       <value key="fs:format">tar.gz</value>
-      <value key="fs:signature">https://github.com/FreeSynergy-Net/fs-zentinel/releases/download/v26.11_3/zentinel-26.11_3-linux-amd64.tar.gz.asc</value>
+      <value key="fs:signature">https://github.com/FreeSynergy-Net/fs-zentinel/releases/download/v26.11_6/zentinel-26.11_6-linux-amd64.tar.gz.asc</value>
       <value key="fs:provides">gateway.reverse-proxy</value>
       <value key="fs:upstream">https://github.com/zentinelproxy/zentinel</value>
       <value key="fs:source-code">https://github.com/FreeSynergy/fs-zentinel/releases/download/v26.11_3/zentinel-26.11_3-source.tar.gz</value>
